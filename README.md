@@ -29,7 +29,7 @@ python --version
 python -m unittest discover -s tests -v
 ```
 
-`requirements.txt` 仅声明使用标准库，无需安装额外包。没有使用 Agent 框架。
+运行依赖为 Python 标准库，依赖说明见 `requirements.txt`；Agent 调用循环采用原生实现。
 
 ## 无密钥运行
 
@@ -46,7 +46,7 @@ python -m src.evaluate --mode mock
 python scripts/verify.py
 ```
 
-`MockModel` 是明确标记的确定性离线策略，仅证明工具、记账、状态和保存流程。它不证明真实模型决策效果或生成质量。
+`MockModel` 使用确定性策略验证工具、记账、状态和保存流程。Mock 仅验证流程，模型决策与生成效果通过真实模式的运行记录评估。
 
 ## DeepSeek 真实运行
 
@@ -59,7 +59,7 @@ MODEL_NAME=deepseek-flash
 MODEL_TIMEOUT_SECONDS=90
 ```
 
-`.env` 已被 Git 忽略。`MODEL_NAME`、`MODEL_BASE_URL` 可配置，不在源码中绑定某个账号。真实模式使用模型原生工具调用决定动作；脚本生成工具再调用模型生成具体脚本。默认关闭 DeepSeek thinking 模式，不记录内部思维内容。
+`.env` 已被 Git 忽略，模型和接口地址通过 `MODEL_NAME`、`MODEL_BASE_URL` 配置。真实模式使用模型原生工具调用决定动作，脚本生成工具调用模型产出具体脚本。默认使用 DeepSeek 非思考模式，Trace 记录公开动作依据和工具结果。
 
 ```sh
 python -m src.main --input examples/inputs/normal.json --mode real --db runtime/real.sqlite3 --output runtime/normal-real.json
@@ -72,7 +72,7 @@ python -m src.evaluate --mode real
 python -m src.evaluate --mode real --case normal --case replan --case save-failure
 ```
 
-接口依据：[DeepSeek 接入说明](https://api-docs.deepseek.com/en/)、[工具调用](https://api-docs.deepseek.com/guides/tool_calls/)。调用失败明确返回 `MODEL_ERROR`，不会静默切换成 Mock。
+接口依据：[DeepSeek 接入说明](https://api-docs.deepseek.com/en/)、[工具调用](https://api-docs.deepseek.com/guides/tool_calls/)。接口异常返回 `MODEL_ERROR`，修复配置后可使用 `--resume` 继续任务。
 
 ## 输入与输出
 
@@ -81,9 +81,9 @@ python -m src.evaluate --mode real --case normal --case replan --case save-failu
 ```
 
 - 必填：`topic`、`budget`、`time_budget`。预算和时间使用不带后缀的模拟数值。
-- `time_budget` 表达任务开始后的相对截止时间。模拟时钟只按工具表累加，不等待对应的真实时间。
+- `time_budget` 表达任务开始后的相对截止时间，所有工具按费用与耗时表推进模拟时钟。
 - `request_id` 可省略，默认根据规范化请求生成；同一请求重复运行返回原结果。
-- `script_count` 可选，默认 `1`。仅用于指定需要几条脚本及验证部分成功场景；不得通过少交脚本规避约束。
+- `script_count` 可选，默认 `1`，指定需要生成的脚本数量。执行计划始终保留用户要求的数量。
 
 输出 JSON 包含 `status`、`task_plan`、`plan_revisions`、`steps`、`scripts`、`spent`、`remaining`、`saved_plan` 和 `reason`。`steps` 包含模型动作依据、工具参数、返回结果、消耗、下一步动作和模型响应标识。
 
@@ -122,4 +122,4 @@ git rev-parse HEAD
 python scripts/check_submission.py
 ```
 
-本地 `.env`、运行数据库和临时文件不会进入提交。真实模型验证未完成时，检查脚本会明确列出缺口。
+`.env`、运行数据库和临时文件由 `.gitignore` 排除。提交检查脚本核对材料完整性、运行证据和 Git 提交状态。
