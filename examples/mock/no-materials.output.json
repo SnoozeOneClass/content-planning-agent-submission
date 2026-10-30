@@ -1,0 +1,156 @@
+{
+  "input": {
+    "request_id": "no-materials",
+    "topic": "火星地质勘探",
+    "budget": 20,
+    "time_budget": 100
+  },
+  "runs": [
+    {
+      "request_id": "no-materials",
+      "request": {
+        "topic": "火星地质勘探",
+        "budget": 20,
+        "time_budget": 100,
+        "script_count": 1
+      },
+      "mode": "mock",
+      "status": "incomplete",
+      "reason": {
+        "code": "MODEL_STOPPED",
+        "message": "未检索到支持主题的资料，请补充素材"
+      },
+      "spent": {
+        "cost": 4,
+        "duration": 10
+      },
+      "remaining": {
+        "budget": 16,
+        "time_budget": 90
+      },
+      "decision_steps": 3,
+      "tool_calls": 2,
+      "task_plan": [],
+      "plan_revisions": [],
+      "scripts": [],
+      "saved_plan": null,
+      "steps": [
+        {
+          "step": 1,
+          "source": "offline_mock",
+          "action": "search_materials",
+          "arguments": {
+            "query": "火星地质勘探"
+          },
+          "reason": "Mock：先获取可用参考资料。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 0 份素材：",
+          "spent_after": {
+            "cost": 2,
+            "duration": 5
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 95
+          },
+          "next_action": "search_materials",
+          "next_reason": "Mock：先获取可用参考资料。"
+        },
+        {
+          "step": 2,
+          "source": "offline_mock",
+          "action": "search_materials",
+          "arguments": {
+            "query": "火星地质勘探"
+          },
+          "reason": "Mock：先获取可用参考资料。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 0 份素材：",
+          "spent_after": {
+            "cost": 4,
+            "duration": 10
+          },
+          "remaining_after": {
+            "budget": 16,
+            "time_budget": 90
+          },
+          "next_action": "finish",
+          "next_reason": "Mock：两次检索无结果。"
+        },
+        {
+          "step": 3,
+          "source": "offline_mock",
+          "action": "finish",
+          "arguments": {
+            "message": "未检索到支持主题的资料，请补充素材"
+          },
+          "reason": "Mock：两次检索无结果。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "finish",
+            "status": "stopped",
+            "data": {
+              "code": "MODEL_STOPPED",
+              "message": "未检索到支持主题的资料，请补充素材"
+            },
+            "charged": {
+              "cost": 0,
+              "duration": 0
+            }
+          },
+          "observation_summary": "{'code': 'MODEL_STOPPED', 'message': '未检索到支持主题的资料，请补充素材'}",
+          "spent_after": {
+            "cost": 4,
+            "duration": 10
+          },
+          "remaining_after": {
+            "budget": 16,
+            "time_budget": 90
+          },
+          "next_action": "end"
+        }
+      ],
+      "replayed": false,
+      "evidence_scope": "离线 Mock，仅验证流程，不证明真实模型决策效果"
+    }
+  ],
+  "checks": {
+    "expected_status": true,
+    "cost_ledger": true,
+    "duration_ledger": true,
+    "within_budget": true,
+    "within_time": true,
+    "database_matches_saved_result": true,
+    "completion_requires_saved_plan": true,
+    "unfinished_reason_present": true
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "version": "1.0",
+  "search_materials": {"cost": 2, "duration": 5},
+  "generate_script": {"base_cost": 2, "cost_per_material": 2, "base_duration": 10, "duration_per_material": 5},
+  "estimate_plan": {"cost": 0, "duration": 1},
+  "save_plan": {"cost": 0, "duration": 2}
+}

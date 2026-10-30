@@ -1,0 +1,44 @@
+Executed at: 2026-10-30T09:44:22.113822+00:00
+Python: 3.11.15
+Command: python -m unittest discover -s tests -v
+Exit code: 0
+
+test_budget_cannot_be_overrun_even_for_minimal_plan (test_agent.AgentTests.test_budget_cannot_be_overrun_even_for_minimal_plan) ... ok
+test_changed_materials_require_new_request_id (test_agent.AgentTests.test_changed_materials_require_new_request_id) ... ok
+test_checkpoint_survives_reopening_database (test_agent.AgentTests.test_checkpoint_survives_reopening_database) ... ok
+test_conflicting_request_id_does_not_overwrite (test_agent.AgentTests.test_conflicting_request_id_does_not_overwrite) ... ok
+test_duplicate_material_ids_count_once (test_agent.AgentTests.test_duplicate_material_ids_count_once) ... ok
+test_failure_invalidates_previous_budget_feasibility (test_agent.AgentTests.test_failure_invalidates_previous_budget_feasibility) ... ok
+test_generated_script_references_must_be_supplied (test_agent.AgentTests.test_generated_script_references_must_be_supplied) ... ok
+test_generated_success_is_cached_without_additional_charge (test_agent.AgentTests.test_generated_success_is_cached_without_additional_charge) ... ok
+test_identical_request_deduplicated_across_instances (test_agent.AgentTests.test_identical_request_deduplicated_across_instances) ... ok
+test_implicit_request_id_deduplicates (test_agent.AgentTests.test_implicit_request_id_deduplicates) ... ok
+test_invalid_actions_are_also_bounded (test_agent.AgentTests.test_invalid_actions_are_also_bounded) ... ok
+test_invalid_numeric_input (test_agent.AgentTests.test_invalid_numeric_input) ... ok
+test_lock_prevents_duplicate_concurrent_execution (test_agent.AgentTests.test_lock_prevents_duplicate_concurrent_execution) ... ok
+test_missing_budget_and_time_do_not_call_model (test_agent.AgentTests.test_missing_budget_and_time_do_not_call_model) ... ok
+test_model_unavailable_does_not_fallback_silently (test_agent.AgentTests.test_model_unavailable_does_not_fallback_silently) ... ok
+test_no_materials_returns_incomplete (test_agent.AgentTests.test_no_materials_returns_incomplete) ... ok
+test_normal_saved_result_is_actual_database_record (test_agent.AgentTests.test_normal_saved_result_is_actual_database_record) ... ok
+test_partial_failure_resume_preserves_success_and_consumption (test_agent.AgentTests.test_partial_failure_resume_preserves_success_and_consumption) ... ok
+test_replanning_cannot_remove_or_rewrite_a_successful_script (test_agent.AgentTests.test_replanning_cannot_remove_or_rewrite_a_successful_script) ... ok
+test_replanning_observes_estimate_and_changes_selection (test_agent.AgentTests.test_replanning_observes_estimate_and_changes_selection) ... ok
+test_retrieval_changes_with_document_content (test_agent.AgentTests.test_retrieval_changes_with_document_content) ... ok
+test_save_before_generation_is_rejected (test_agent.AgentTests.test_save_before_generation_is_rejected) ... ok
+test_save_failure_never_claims_success (test_agent.AgentTests.test_save_failure_never_claims_success) ... ok
+test_step_limit_is_explicit_and_resume_does_not_reset_it (test_agent.AgentTests.test_step_limit_is_explicit_and_resume_does_not_reset_it) ... ok
+test_temporary_failure_charges_attempt_and_keeps_search (test_agent.AgentTests.test_temporary_failure_charges_attempt_and_keeps_search) ... ok
+test_time_includes_estimates_and_mandatory_save (test_agent.AgentTests.test_time_includes_estimates_and_mandatory_save) ... ok
+test_unknown_materials_not_executed (test_agent.AgentTests.test_unknown_materials_not_executed) ... ok
+test_zero_budget_is_not_missing (test_agent.AgentTests.test_zero_budget_is_not_missing) ... ok
+test_http_error_does_not_echo_service_body_or_secret (test_model.ModelProtocolTests.test_http_error_does_not_echo_service_body_or_secret) ... ok
+test_insecure_remote_url_is_rejected (test_model.ModelProtocolTests.test_insecure_remote_url_is_rejected) ... ok
+test_malformed_tool_json_fails_clearly (test_model.ModelProtocolTests.test_malformed_tool_json_fails_clearly) ... ok
+test_native_tool_call_is_parsed_and_observation_is_in_context (test_model.ModelProtocolTests.test_native_tool_call_is_parsed_and_observation_is_in_context) ... ok
+test_no_silent_mock_when_key_is_missing (test_model.ModelProtocolTests.test_no_silent_mock_when_key_is_missing) ... ok
+test_writer_uses_separate_json_generation (test_model.ModelProtocolTests.test_writer_uses_separate_json_generation) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.972s
+
+OK

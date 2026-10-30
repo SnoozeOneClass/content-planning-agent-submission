@@ -1,0 +1,456 @@
+{
+  "input": {
+    "request_id": "save-failure",
+    "topic": "字幕功能推广",
+    "budget": 20,
+    "time_budget": 100
+  },
+  "runs": [
+    {
+      "request_id": "save-failure",
+      "request": {
+        "topic": "字幕功能推广",
+        "budget": 20,
+        "time_budget": 100,
+        "script_count": 1
+      },
+      "mode": "real",
+      "status": "incomplete",
+      "reason": {
+        "code": "MODEL_STOPPED",
+        "message": "脚本 S1 已成功生成（基于 M01–M04，覆盖添加/编辑字幕、字体与颜色适配、字幕位置避让、时间轴对齐四项能力），但保存方案时返回不可恢复错误（INJECTED_TOOL_FAILURE：方案存储暂不可写，retryable=false），且该错误无法通过重试或重新生成解决。因此本次内容活动方案未能保存，任务无法标记为完成。已生成的脚本内容保留在会话状态中；请在存储恢复后发起显式恢复请求，我将仅重新执行保存步骤（无需重新生成脚本）。"
+      },
+      "spent": {
+        "cost": 12,
+        "duration": 38
+      },
+      "remaining": {
+        "budget": 8,
+        "time_budget": 62
+      },
+      "decision_steps": 5,
+      "tool_calls": 4,
+      "task_plan": [
+        {
+          "step_id": "S1",
+          "material_ids": [
+            "M01",
+            "M02",
+            "M03",
+            "M04"
+          ],
+          "brief": "以“字幕功能推广”为主题，展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、按时间轴对齐字幕与视频片段四大能力，突出易用与画面适配。",
+          "status": "succeeded",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 1
+        }
+      ],
+      "plan_revisions": [
+        {
+          "decision_step": 2,
+          "plan": [
+            {
+              "step_id": "S1",
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "brief": "以“字幕功能推广”为主题，展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、按时间轴对齐字幕与视频片段四大能力，突出易用与画面适配。"
+            }
+          ],
+          "estimate": {
+            "feasible": true,
+            "remaining_steps_cost": 10,
+            "remaining_steps_duration": 32,
+            "projected_total_cost": 12,
+            "projected_total_duration": 38,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 0
+            },
+            "pending_step_ids": [
+              "S1"
+            ],
+            "includes_save": true
+          }
+        }
+      ],
+      "scripts": [
+        {
+          "step_id": "S1",
+          "plan_step": {
+            "step_id": "S1",
+            "material_ids": [
+              "M01",
+              "M02",
+              "M03",
+              "M04"
+            ],
+            "brief": "以“字幕功能推广”为主题，展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、按时间轴对齐字幕与视频片段四大能力，突出易用与画面适配。"
+          },
+          "title": "字幕功能：添加、编辑与画面适配",
+          "scenes": [
+            {
+              "visual": "视频画面中先出现一段无字幕片段，随后画面下方出现一行字幕文字；镜头停留在字幕区域，展示文字内容可被手动修改。",
+              "narration": "可以为视频添加字幕，字幕文字支持手动编辑。",
+              "material_ids": [
+                "M01"
+              ]
+            },
+            {
+              "visual": "同一画面切换不同背景：先浅色背景，再深色背景；字幕的字体大小与文字颜色随之调整，保持文字清晰可读。",
+              "narration": "字幕的字体大小和文字颜色可以调整，用于适配不同背景画面。",
+              "material_ids": [
+                "M02"
+              ]
+            },
+            {
+              "visual": "画面中人物位于中央，字幕位置从画面中部移动到下方，避开人物面部区域。",
+              "narration": "可以设置字幕在画面中的位置，避免字幕遮挡人物面部。",
+              "material_ids": [
+                "M03"
+              ]
+            },
+            {
+              "visual": "时间轴视图：每条字幕显示开始与结束时间标记，字幕随对应视频片段出现和消失。",
+              "narration": "支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+              "material_ids": [
+                "M04"
+              ]
+            }
+          ],
+          "material_ids": [
+            "M01",
+            "M02",
+            "M03",
+            "M04"
+          ],
+          "generation_receipt": {
+            "response_id": "aabca26c-6796-4271-be27-c60edee2e8f6",
+            "model": "deepseek-flash",
+            "source": "real_model"
+          }
+        }
+      ],
+      "saved_plan": null,
+      "steps": [
+        {
+          "step": 1,
+          "source": "real_model",
+          "action": "search_materials",
+          "arguments": {
+            "query": "字幕功能推广"
+          },
+          "reason": "先检索与字幕功能推广相关的参考资料",
+          "model_receipt": {
+            "response_id": "aa2b885d-dc17-4c3a-b162-5fdce34e289f",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_qnrv6fitG4aSlX8hD65C4480"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [
+              {
+                "material_id": "M01",
+                "topic": "字幕功能",
+                "content": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M02",
+                "topic": "字幕功能",
+                "content": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M03",
+                "topic": "字幕功能",
+                "content": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M04",
+                "topic": "字幕功能",
+                "content": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M08",
+                "topic": "视频裁剪",
+                "content": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                "relevance_score": 0.14
+              }
+            ],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 5 份素材：M01,M02,M03,M04,M08",
+          "spent_after": {
+            "cost": 2,
+            "duration": 5
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 95
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "已检索到4条高相关字幕功能素材，先估算单条脚本的整体费用与时间。"
+        },
+        {
+          "step": 2,
+          "source": "real_model",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "S1",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "brief": "以“字幕功能推广”为主题，展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、按时间轴对齐字幕与视频片段四大能力，突出易用与画面适配。"
+              }
+            ]
+          },
+          "reason": "已检索到4条高相关字幕功能素材，先估算单条脚本的整体费用与时间。",
+          "model_receipt": {
+            "response_id": "5643e760-7b95-4e3c-befc-03b99fb9b497",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_7ENnuRZas85nUBQ1SBkT1198"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": true,
+              "remaining_steps_cost": 10,
+              "remaining_steps_duration": 32,
+              "projected_total_cost": 12,
+              "projected_total_duration": 38,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 0
+              },
+              "pending_step_ids": [
+                "S1"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 12，总耗时 38，可行=True",
+          "spent_after": {
+            "cost": 2,
+            "duration": 6
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 94
+          },
+          "next_action": "generate_script",
+          "next_reason": "方案已估算可行且预算时间充足，执行唯一待生成的脚本 S1。"
+        },
+        {
+          "step": 3,
+          "source": "real_model",
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "S1"
+          },
+          "reason": "方案已估算可行且预算时间充足，执行唯一待生成的脚本 S1。",
+          "model_receipt": {
+            "response_id": "6fd56fa4-262c-450f-bb57-c08bb7d90ce3",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_gtLmWFJwmFbOhAhuzGCo2677"
+          },
+          "result": {
+            "tool": "generate_script",
+            "status": "succeeded",
+            "data": {
+              "step_id": "S1",
+              "plan_step": {
+                "step_id": "S1",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "brief": "以“字幕功能推广”为主题，展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、按时间轴对齐字幕与视频片段四大能力，突出易用与画面适配。"
+              },
+              "title": "字幕功能：添加、编辑与画面适配",
+              "scenes": [
+                {
+                  "visual": "视频画面中先出现一段无字幕片段，随后画面下方出现一行字幕文字；镜头停留在字幕区域，展示文字内容可被手动修改。",
+                  "narration": "可以为视频添加字幕，字幕文字支持手动编辑。",
+                  "material_ids": [
+                    "M01"
+                  ]
+                },
+                {
+                  "visual": "同一画面切换不同背景：先浅色背景，再深色背景；字幕的字体大小与文字颜色随之调整，保持文字清晰可读。",
+                  "narration": "字幕的字体大小和文字颜色可以调整，用于适配不同背景画面。",
+                  "material_ids": [
+                    "M02"
+                  ]
+                },
+                {
+                  "visual": "画面中人物位于中央，字幕位置从画面中部移动到下方，避开人物面部区域。",
+                  "narration": "可以设置字幕在画面中的位置，避免字幕遮挡人物面部。",
+                  "material_ids": [
+                    "M03"
+                  ]
+                },
+                {
+                  "visual": "时间轴视图：每条字幕显示开始与结束时间标记，字幕随对应视频片段出现和消失。",
+                  "narration": "支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                  "material_ids": [
+                    "M04"
+                  ]
+                }
+              ],
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "generation_receipt": {
+                "response_id": "aabca26c-6796-4271-be27-c60edee2e8f6",
+                "model": "deepseek-flash",
+                "source": "real_model"
+              }
+            },
+            "error": null,
+            "charged": {
+              "cost": 10,
+              "duration": 30
+            }
+          },
+          "observation_summary": "生成步骤 S1，素材=M01,M02,M03,M04",
+          "spent_after": {
+            "cost": 12,
+            "duration": 36
+          },
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 64
+          },
+          "next_action": "save_plan",
+          "next_reason": "唯一脚本 S1 已生成成功，按流程保存活动方案。"
+        },
+        {
+          "step": 4,
+          "source": "real_model",
+          "action": "save_plan",
+          "arguments": {
+            "title": "字幕功能推广：添加、编辑与画面适配",
+            "summary": "围绕“字幕功能推广”制作 1 条脚本（S1），依次展示四大能力：添加字幕并手动编辑文字（M01）、调整字体大小与颜色适配不同背景（M02）、设置字幕位置避免遮挡人物面部（M03）、按时间轴设置每条字幕起止时间与视频片段同步（M04）。整体节奏由基础编辑到画面适配再到时间对齐，突出易用性与画面适配效果。"
+          },
+          "reason": "唯一脚本 S1 已生成成功，按流程保存活动方案。",
+          "model_receipt": {
+            "response_id": "b2219516-1138-4f0b-84a1-e817bb015d95",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_kVfbL47L086HT3HSKyub4149"
+          },
+          "result": {
+            "tool": "save_plan",
+            "status": "failed",
+            "data": null,
+            "error": {
+              "code": "INJECTED_TOOL_FAILURE",
+              "message": "方案存储暂不可写，当前执行无法修复",
+              "retryable": false
+            },
+            "charged": {
+              "cost": 0,
+              "duration": 2
+            }
+          },
+          "observation_summary": "INJECTED_TOOL_FAILURE: 方案存储暂不可写，当前执行无法修复",
+          "spent_after": {
+            "cost": 12,
+            "duration": 38
+          },
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 62
+          },
+          "next_action": "finish",
+          "next_reason": "保存步骤返回不可恢复的存储故障，已成功脚本保留，需说明缺口并请求恢复。"
+        },
+        {
+          "step": 5,
+          "source": "real_model",
+          "action": "finish",
+          "arguments": {
+            "message": "脚本 S1 已成功生成（基于 M01–M04，覆盖添加/编辑字幕、字体与颜色适配、字幕位置避让、时间轴对齐四项能力），但保存方案时返回不可恢复错误（INJECTED_TOOL_FAILURE：方案存储暂不可写，retryable=false），且该错误无法通过重试或重新生成解决。因此本次内容活动方案未能保存，任务无法标记为完成。已生成的脚本内容保留在会话状态中；请在存储恢复后发起显式恢复请求，我将仅重新执行保存步骤（无需重新生成脚本）。"
+          },
+          "reason": "保存步骤返回不可恢复的存储故障，已成功脚本保留，需说明缺口并请求恢复。",
+          "model_receipt": {
+            "response_id": "9aaff62e-35a9-45fb-a3dd-1d4db0e54d02",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_Hij9i2xlVkWEq1zB419f2172"
+          },
+          "result": {
+            "tool": "finish",
+            "status": "stopped",
+            "data": {
+              "code": "MODEL_STOPPED",
+              "message": "脚本 S1 已成功生成（基于 M01–M04，覆盖添加/编辑字幕、字体与颜色适配、字幕位置避让、时间轴对齐四项能力），但保存方案时返回不可恢复错误（INJECTED_TOOL_FAILURE：方案存储暂不可写，retryable=false），且该错误无法通过重试或重新生成解决。因此本次内容活动方案未能保存，任务无法标记为完成。已生成的脚本内容保留在会话状态中；请在存储恢复后发起显式恢复请求，我将仅重新执行保存步骤（无需重新生成脚本）。"
+            },
+            "charged": {
+              "cost": 0,
+              "duration": 0
+            }
+          },
+          "observation_summary": "{'code': 'MODEL_STOPPED', 'message': '脚本 S1 已成功生成（基于 M01–M04，覆盖添加/编辑字幕、字体与颜色适配、字幕位置避让、时间轴对齐四项能力），但保存方案时返回不可恢复错误（INJECTED_TOOL_FAILURE：方案存储暂不可写，retryable=false），且该错误无法通过重试或重新生成解决。因此本次内容活动方案未能保存，任务无法标记为完成。已生成的脚本内容保留在会话状态中；请在存储恢复后发起显式恢复请求，我将仅重新执行保存步骤（无需重新生成脚本）。'}",
+          "spent_after": {
+            "cost": 12,
+            "duration": 38
+          },
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 62
+          },
+          "next_action": "end"
+        }
+      ],
+      "replayed": false,
+      "evidence_scope": "真实模型调用与实际工具执行"
+    }
+  ],
+  "checks": {
+    "expected_status": true,
+    "cost_ledger": true,
+    "duration_ledger": true,
+    "within_budget": true,
+    "within_time": true,
+    "database_matches_saved_result": true,
+    "completion_requires_saved_plan": true,
+    "unfinished_reason_present": true,
+    "failure_observed": true,
+    "successful_script_preserved": true,
+    "save_failure_not_saved": true
+  }
+}

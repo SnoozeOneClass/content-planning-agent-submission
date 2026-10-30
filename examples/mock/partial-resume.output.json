@@ -1,0 +1,1506 @@
+{
+  "input": {
+    "request_id": "partial-resume",
+    "topic": "字幕功能推广",
+    "budget": 50,
+    "time_budget": 200,
+    "script_count": 2
+  },
+  "runs": [
+    {
+      "request_id": "partial-resume",
+      "request": {
+        "topic": "字幕功能推广",
+        "budget": 50,
+        "time_budget": 200,
+        "script_count": 2
+      },
+      "mode": "mock",
+      "status": "incomplete",
+      "reason": {
+        "code": "MODEL_STOPPED",
+        "message": "第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑"
+      },
+      "spent": {
+        "cost": 22,
+        "duration": 66
+      },
+      "remaining": {
+        "budget": 28,
+        "time_budget": 134
+      },
+      "decision_steps": 5,
+      "tool_calls": 4,
+      "task_plan": [
+        {
+          "step_id": "script_1",
+          "material_ids": [
+            "M01",
+            "M02",
+            "M03",
+            "M04"
+          ],
+          "brief": "字幕功能推广介绍第1条",
+          "status": "succeeded",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 1
+        },
+        {
+          "step_id": "script_2",
+          "material_ids": [
+            "M01",
+            "M02",
+            "M03",
+            "M04"
+          ],
+          "brief": "字幕功能推广介绍第2条",
+          "status": "failed",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 1
+        }
+      ],
+      "plan_revisions": [
+        {
+          "decision_step": 2,
+          "plan": [
+            {
+              "step_id": "script_1",
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "brief": "字幕功能推广介绍第1条"
+            },
+            {
+              "step_id": "script_2",
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "brief": "字幕功能推广介绍第2条"
+            }
+          ],
+          "estimate": {
+            "feasible": true,
+            "remaining_steps_cost": 20,
+            "remaining_steps_duration": 62,
+            "projected_total_cost": 22,
+            "projected_total_duration": 68,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 0
+            },
+            "pending_step_ids": [
+              "script_1",
+              "script_2"
+            ],
+            "includes_save": true
+          }
+        }
+      ],
+      "scripts": [
+        {
+          "step_id": "script_1",
+          "plan_step": {
+            "step_id": "script_1",
+            "material_ids": [
+              "M01",
+              "M02",
+              "M03",
+              "M04"
+            ],
+            "brief": "字幕功能推广介绍第1条"
+          },
+          "title": "字幕功能推广介绍第1条",
+          "scenes": [
+            {
+              "visual": "展示资料所述功能的使用画面",
+              "narration": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+              "material_ids": [
+                "M01"
+              ]
+            },
+            {
+              "visual": "展示资料所述功能的使用画面",
+              "narration": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+              "material_ids": [
+                "M02"
+              ]
+            },
+            {
+              "visual": "展示资料所述功能的使用画面",
+              "narration": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+              "material_ids": [
+                "M03"
+              ]
+            },
+            {
+              "visual": "展示资料所述功能的使用画面",
+              "narration": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+              "material_ids": [
+                "M04"
+              ]
+            }
+          ],
+          "material_ids": [
+            "M01",
+            "M02",
+            "M03",
+            "M04"
+          ],
+          "generation_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          }
+        }
+      ],
+      "saved_plan": null,
+      "steps": [
+        {
+          "step": 1,
+          "source": "offline_mock",
+          "action": "search_materials",
+          "arguments": {
+            "query": "字幕功能推广"
+          },
+          "reason": "Mock：先获取可用参考资料。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [
+              {
+                "material_id": "M01",
+                "topic": "字幕功能",
+                "content": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M02",
+                "topic": "字幕功能",
+                "content": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M03",
+                "topic": "字幕功能",
+                "content": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M04",
+                "topic": "字幕功能",
+                "content": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M08",
+                "topic": "视频裁剪",
+                "content": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                "relevance_score": 0.14
+              }
+            ],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 5 份素材：M01,M02,M03,M04,M08",
+          "spent_after": {
+            "cost": 2,
+            "duration": 5
+          },
+          "remaining_after": {
+            "budget": 48,
+            "time_budget": 195
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "Mock：先估算候选计划。"
+        },
+        {
+          "step": 2,
+          "source": "offline_mock",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "script_1",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "brief": "字幕功能推广介绍第1条"
+              },
+              {
+                "step_id": "script_2",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "brief": "字幕功能推广介绍第2条"
+              }
+            ]
+          },
+          "reason": "Mock：先估算候选计划。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": true,
+              "remaining_steps_cost": 20,
+              "remaining_steps_duration": 62,
+              "projected_total_cost": 22,
+              "projected_total_duration": 68,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 0
+              },
+              "pending_step_ids": [
+                "script_1",
+                "script_2"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 22，总耗时 68，可行=True",
+          "spent_after": {
+            "cost": 2,
+            "duration": 6
+          },
+          "remaining_after": {
+            "budget": 48,
+            "time_budget": 194
+          },
+          "next_action": "generate_script",
+          "next_reason": "Mock：执行估算通过的未完成步骤。"
+        },
+        {
+          "step": 3,
+          "source": "offline_mock",
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "script_1"
+          },
+          "reason": "Mock：执行估算通过的未完成步骤。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "generate_script",
+            "status": "succeeded",
+            "data": {
+              "step_id": "script_1",
+              "plan_step": {
+                "step_id": "script_1",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "brief": "字幕功能推广介绍第1条"
+              },
+              "title": "字幕功能推广介绍第1条",
+              "scenes": [
+                {
+                  "visual": "展示资料所述功能的使用画面",
+                  "narration": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                  "material_ids": [
+                    "M01"
+                  ]
+                },
+                {
+                  "visual": "展示资料所述功能的使用画面",
+                  "narration": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                  "material_ids": [
+                    "M02"
+                  ]
+                },
+                {
+                  "visual": "展示资料所述功能的使用画面",
+                  "narration": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                  "material_ids": [
+                    "M03"
+                  ]
+                },
+                {
+                  "visual": "展示资料所述功能的使用画面",
+                  "narration": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                  "material_ids": [
+                    "M04"
+                  ]
+                }
+              ],
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "generation_receipt": {
+                "source": "offline_mock",
+                "model": "deterministic-offline-mock"
+              }
+            },
+            "error": null,
+            "charged": {
+              "cost": 10,
+              "duration": 30
+            }
+          },
+          "observation_summary": "生成步骤 script_1，素材=M01,M02,M03,M04",
+          "spent_after": {
+            "cost": 12,
+            "duration": 36
+          },
+          "remaining_after": {
+            "budget": 38,
+            "time_budget": 164
+          },
+          "next_action": "generate_script",
+          "next_reason": "Mock：执行估算通过的未完成步骤。"
+        },
+        {
+          "step": 4,
+          "source": "offline_mock",
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "script_2"
+          },
+          "reason": "Mock：执行估算通过的未完成步骤。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "generate_script",
+            "status": "failed",
+            "data": null,
+            "error": {
+              "code": "INJECTED_TOOL_FAILURE",
+              "message": "第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑",
+              "retryable": false
+            },
+            "charged": {
+              "cost": 10,
+              "duration": 30
+            }
+          },
+          "observation_summary": "INJECTED_TOOL_FAILURE: 第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑",
+          "spent_after": {
+            "cost": 22,
+            "duration": 66
+          },
+          "remaining_after": {
+            "budget": 28,
+            "time_budget": 134
+          },
+          "next_action": "finish",
+          "next_reason": "Mock：不可恢复错误，保留成功结果并停止。"
+        },
+        {
+          "step": 5,
+          "source": "offline_mock",
+          "action": "finish",
+          "arguments": {
+            "message": "第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑"
+          },
+          "reason": "Mock：不可恢复错误，保留成功结果并停止。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "finish",
+            "status": "stopped",
+            "data": {
+              "code": "MODEL_STOPPED",
+              "message": "第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑"
+            },
+            "charged": {
+              "cost": 0,
+              "duration": 0
+            }
+          },
+          "observation_summary": "{'code': 'MODEL_STOPPED', 'message': '第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑'}",
+          "spent_after": {
+            "cost": 22,
+            "duration": 66
+          },
+          "remaining_after": {
+            "budget": 28,
+            "time_budget": 134
+          },
+          "next_action": "end"
+        }
+      ],
+      "replayed": false,
+      "evidence_scope": "离线 Mock，仅验证流程，不证明真实模型决策效果"
+    },
+    {
+      "request_id": "partial-resume",
+      "request": {
+        "budget": 50,
+        "script_count": 2,
+        "time_budget": 200,
+        "topic": "字幕功能推广"
+      },
+      "mode": "mock",
+      "status": "completed",
+      "reason": null,
+      "spent": {
+        "cost": 32,
+        "duration": 99
+      },
+      "remaining": {
+        "budget": 18,
+        "time_budget": 101
+      },
+      "decision_steps": 8,
+      "tool_calls": 7,
+      "task_plan": [
+        {
+          "step_id": "script_1",
+          "material_ids": [
+            "M01",
+            "M02",
+            "M03",
+            "M04"
+          ],
+          "brief": "字幕功能推广介绍第1条",
+          "status": "succeeded",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 1
+        },
+        {
+          "step_id": "script_2",
+          "material_ids": [
+            "M01",
+            "M02",
+            "M03",
+            "M04"
+          ],
+          "brief": "字幕功能推广介绍第2条",
+          "status": "succeeded",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 2
+        }
+      ],
+      "plan_revisions": [
+        {
+          "decision_step": 2,
+          "estimate": {
+            "feasible": true,
+            "includes_save": true,
+            "pending_step_ids": [
+              "script_1",
+              "script_2"
+            ],
+            "projected_total_cost": 22,
+            "projected_total_duration": 68,
+            "remaining_steps_cost": 20,
+            "remaining_steps_duration": 62,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 0
+            }
+          },
+          "plan": [
+            {
+              "brief": "字幕功能推广介绍第1条",
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "step_id": "script_1"
+            },
+            {
+              "brief": "字幕功能推广介绍第2条",
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "step_id": "script_2"
+            }
+          ]
+        },
+        {
+          "decision_step": 6,
+          "plan": [
+            {
+              "step_id": "script_1",
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "brief": "字幕功能推广介绍第1条"
+            },
+            {
+              "step_id": "script_2",
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "brief": "字幕功能推广介绍第2条"
+            }
+          ],
+          "estimate": {
+            "feasible": true,
+            "remaining_steps_cost": 10,
+            "remaining_steps_duration": 32,
+            "projected_total_cost": 32,
+            "projected_total_duration": 99,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 0
+            },
+            "pending_step_ids": [
+              "script_2"
+            ],
+            "includes_save": true
+          }
+        }
+      ],
+      "scripts": [
+        {
+          "generation_receipt": {
+            "model": "deterministic-offline-mock",
+            "source": "offline_mock"
+          },
+          "material_ids": [
+            "M01",
+            "M02",
+            "M03",
+            "M04"
+          ],
+          "plan_step": {
+            "brief": "字幕功能推广介绍第1条",
+            "material_ids": [
+              "M01",
+              "M02",
+              "M03",
+              "M04"
+            ],
+            "step_id": "script_1"
+          },
+          "scenes": [
+            {
+              "material_ids": [
+                "M01"
+              ],
+              "narration": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+              "visual": "展示资料所述功能的使用画面"
+            },
+            {
+              "material_ids": [
+                "M02"
+              ],
+              "narration": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+              "visual": "展示资料所述功能的使用画面"
+            },
+            {
+              "material_ids": [
+                "M03"
+              ],
+              "narration": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+              "visual": "展示资料所述功能的使用画面"
+            },
+            {
+              "material_ids": [
+                "M04"
+              ],
+              "narration": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+              "visual": "展示资料所述功能的使用画面"
+            }
+          ],
+          "step_id": "script_1",
+          "title": "字幕功能推广介绍第1条"
+        },
+        {
+          "step_id": "script_2",
+          "plan_step": {
+            "step_id": "script_2",
+            "material_ids": [
+              "M01",
+              "M02",
+              "M03",
+              "M04"
+            ],
+            "brief": "字幕功能推广介绍第2条"
+          },
+          "title": "字幕功能推广介绍第2条",
+          "scenes": [
+            {
+              "visual": "展示资料所述功能的使用画面",
+              "narration": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+              "material_ids": [
+                "M01"
+              ]
+            },
+            {
+              "visual": "展示资料所述功能的使用画面",
+              "narration": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+              "material_ids": [
+                "M02"
+              ]
+            },
+            {
+              "visual": "展示资料所述功能的使用画面",
+              "narration": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+              "material_ids": [
+                "M03"
+              ]
+            },
+            {
+              "visual": "展示资料所述功能的使用画面",
+              "narration": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+              "material_ids": [
+                "M04"
+              ]
+            }
+          ],
+          "material_ids": [
+            "M01",
+            "M02",
+            "M03",
+            "M04"
+          ],
+          "generation_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          }
+        }
+      ],
+      "saved_plan": {
+        "title": "字幕功能推广内容活动方案",
+        "summary": "围绕主题组织已生成脚本，按脚本顺序完成内容准备。",
+        "topic": "字幕功能推广",
+        "scripts": [
+          {
+            "generation_receipt": {
+              "model": "deterministic-offline-mock",
+              "source": "offline_mock"
+            },
+            "material_ids": [
+              "M01",
+              "M02",
+              "M03",
+              "M04"
+            ],
+            "plan_step": {
+              "brief": "字幕功能推广介绍第1条",
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "step_id": "script_1"
+            },
+            "scenes": [
+              {
+                "material_ids": [
+                  "M01"
+                ],
+                "narration": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                "visual": "展示资料所述功能的使用画面"
+              },
+              {
+                "material_ids": [
+                  "M02"
+                ],
+                "narration": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                "visual": "展示资料所述功能的使用画面"
+              },
+              {
+                "material_ids": [
+                  "M03"
+                ],
+                "narration": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                "visual": "展示资料所述功能的使用画面"
+              },
+              {
+                "material_ids": [
+                  "M04"
+                ],
+                "narration": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "visual": "展示资料所述功能的使用画面"
+              }
+            ],
+            "step_id": "script_1",
+            "title": "字幕功能推广介绍第1条"
+          },
+          {
+            "step_id": "script_2",
+            "plan_step": {
+              "step_id": "script_2",
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "brief": "字幕功能推广介绍第2条"
+            },
+            "title": "字幕功能推广介绍第2条",
+            "scenes": [
+              {
+                "visual": "展示资料所述功能的使用画面",
+                "narration": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                "material_ids": [
+                  "M01"
+                ]
+              },
+              {
+                "visual": "展示资料所述功能的使用画面",
+                "narration": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                "material_ids": [
+                  "M02"
+                ]
+              },
+              {
+                "visual": "展示资料所述功能的使用画面",
+                "narration": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                "material_ids": [
+                  "M03"
+                ]
+              },
+              {
+                "visual": "展示资料所述功能的使用画面",
+                "narration": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "material_ids": [
+                  "M04"
+                ]
+              }
+            ],
+            "material_ids": [
+              "M01",
+              "M02",
+              "M03",
+              "M04"
+            ],
+            "generation_receipt": {
+              "source": "offline_mock",
+              "model": "deterministic-offline-mock"
+            }
+          }
+        ],
+        "task_plan": [
+          {
+            "step_id": "script_1",
+            "material_ids": [
+              "M01",
+              "M02",
+              "M03",
+              "M04"
+            ],
+            "brief": "字幕功能推广介绍第1条"
+          },
+          {
+            "step_id": "script_2",
+            "material_ids": [
+              "M01",
+              "M02",
+              "M03",
+              "M04"
+            ],
+            "brief": "字幕功能推广介绍第2条"
+          }
+        ],
+        "cost_total": 32,
+        "duration_total": 99,
+        "mode": "mock",
+        "plan_id": "P-0f9bd9566105714d",
+        "request_id": "partial-resume"
+      },
+      "steps": [
+        {
+          "action": "search_materials",
+          "arguments": {
+            "query": "字幕功能推广"
+          },
+          "model_receipt": {
+            "model": "deterministic-offline-mock",
+            "source": "offline_mock"
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "Mock：先估算候选计划。",
+          "observation_summary": "检索返回 5 份素材：M01,M02,M03,M04,M08",
+          "reason": "Mock：先获取可用参考资料。",
+          "remaining_after": {
+            "budget": 48,
+            "time_budget": 195
+          },
+          "result": {
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            },
+            "data": [
+              {
+                "content": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                "material_id": "M01",
+                "relevance_score": 0.72,
+                "topic": "字幕功能"
+              },
+              {
+                "content": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                "material_id": "M02",
+                "relevance_score": 0.72,
+                "topic": "字幕功能"
+              },
+              {
+                "content": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                "material_id": "M03",
+                "relevance_score": 0.72,
+                "topic": "字幕功能"
+              },
+              {
+                "content": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "material_id": "M04",
+                "relevance_score": 0.72,
+                "topic": "字幕功能"
+              },
+              {
+                "content": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                "material_id": "M08",
+                "relevance_score": 0.14,
+                "topic": "视频裁剪"
+              }
+            ],
+            "error": null,
+            "status": "succeeded",
+            "tool": "search_materials"
+          },
+          "source": "offline_mock",
+          "spent_after": {
+            "cost": 2,
+            "duration": 5
+          },
+          "step": 1
+        },
+        {
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "brief": "字幕功能推广介绍第1条",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "step_id": "script_1"
+              },
+              {
+                "brief": "字幕功能推广介绍第2条",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "step_id": "script_2"
+              }
+            ]
+          },
+          "model_receipt": {
+            "model": "deterministic-offline-mock",
+            "source": "offline_mock"
+          },
+          "next_action": "generate_script",
+          "next_reason": "Mock：执行估算通过的未完成步骤。",
+          "observation_summary": "预计总费用 22，总耗时 68，可行=True",
+          "reason": "Mock：先估算候选计划。",
+          "remaining_after": {
+            "budget": 48,
+            "time_budget": 194
+          },
+          "result": {
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            },
+            "data": {
+              "feasible": true,
+              "includes_save": true,
+              "pending_step_ids": [
+                "script_1",
+                "script_2"
+              ],
+              "projected_total_cost": 22,
+              "projected_total_duration": 68,
+              "remaining_steps_cost": 20,
+              "remaining_steps_duration": 62,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 0
+              }
+            },
+            "error": null,
+            "status": "succeeded",
+            "tool": "estimate_plan"
+          },
+          "source": "offline_mock",
+          "spent_after": {
+            "cost": 2,
+            "duration": 6
+          },
+          "step": 2
+        },
+        {
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "script_1"
+          },
+          "model_receipt": {
+            "model": "deterministic-offline-mock",
+            "source": "offline_mock"
+          },
+          "next_action": "generate_script",
+          "next_reason": "Mock：执行估算通过的未完成步骤。",
+          "observation_summary": "生成步骤 script_1，素材=M01,M02,M03,M04",
+          "reason": "Mock：执行估算通过的未完成步骤。",
+          "remaining_after": {
+            "budget": 38,
+            "time_budget": 164
+          },
+          "result": {
+            "charged": {
+              "cost": 10,
+              "duration": 30
+            },
+            "data": {
+              "generation_receipt": {
+                "model": "deterministic-offline-mock",
+                "source": "offline_mock"
+              },
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "plan_step": {
+                "brief": "字幕功能推广介绍第1条",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "step_id": "script_1"
+              },
+              "scenes": [
+                {
+                  "material_ids": [
+                    "M01"
+                  ],
+                  "narration": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                  "visual": "展示资料所述功能的使用画面"
+                },
+                {
+                  "material_ids": [
+                    "M02"
+                  ],
+                  "narration": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                  "visual": "展示资料所述功能的使用画面"
+                },
+                {
+                  "material_ids": [
+                    "M03"
+                  ],
+                  "narration": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                  "visual": "展示资料所述功能的使用画面"
+                },
+                {
+                  "material_ids": [
+                    "M04"
+                  ],
+                  "narration": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                  "visual": "展示资料所述功能的使用画面"
+                }
+              ],
+              "step_id": "script_1",
+              "title": "字幕功能推广介绍第1条"
+            },
+            "error": null,
+            "status": "succeeded",
+            "tool": "generate_script"
+          },
+          "source": "offline_mock",
+          "spent_after": {
+            "cost": 12,
+            "duration": 36
+          },
+          "step": 3
+        },
+        {
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "script_2"
+          },
+          "model_receipt": {
+            "model": "deterministic-offline-mock",
+            "source": "offline_mock"
+          },
+          "next_action": "finish",
+          "next_reason": "Mock：不可恢复错误，保留成功结果并停止。",
+          "observation_summary": "INJECTED_TOOL_FAILURE: 第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑",
+          "reason": "Mock：执行估算通过的未完成步骤。",
+          "remaining_after": {
+            "budget": 28,
+            "time_budget": 134
+          },
+          "result": {
+            "charged": {
+              "cost": 10,
+              "duration": 30
+            },
+            "data": null,
+            "error": {
+              "code": "INJECTED_TOOL_FAILURE",
+              "message": "第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑",
+              "retryable": false
+            },
+            "status": "failed",
+            "tool": "generate_script"
+          },
+          "source": "offline_mock",
+          "spent_after": {
+            "cost": 22,
+            "duration": 66
+          },
+          "step": 4
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "message": "第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑"
+          },
+          "model_receipt": {
+            "model": "deterministic-offline-mock",
+            "source": "offline_mock"
+          },
+          "next_action": "estimate_plan",
+          "observation_summary": "{'code': 'MODEL_STOPPED', 'message': '第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑'}",
+          "reason": "Mock：不可恢复错误，保留成功结果并停止。",
+          "remaining_after": {
+            "budget": 28,
+            "time_budget": 134
+          },
+          "result": {
+            "charged": {
+              "cost": 0,
+              "duration": 0
+            },
+            "data": {
+              "code": "MODEL_STOPPED",
+              "message": "第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑"
+            },
+            "status": "stopped",
+            "tool": "finish"
+          },
+          "source": "offline_mock",
+          "spent_after": {
+            "cost": 22,
+            "duration": 66
+          },
+          "step": 5,
+          "next_reason": "Mock：根据实际消耗重新估算未完成步骤。"
+        },
+        {
+          "step": 6,
+          "source": "offline_mock",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "brief": "字幕功能推广介绍第1条",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "step_id": "script_1"
+              },
+              {
+                "brief": "字幕功能推广介绍第2条",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "step_id": "script_2"
+              }
+            ]
+          },
+          "reason": "Mock：根据实际消耗重新估算未完成步骤。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": true,
+              "remaining_steps_cost": 10,
+              "remaining_steps_duration": 32,
+              "projected_total_cost": 32,
+              "projected_total_duration": 99,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 0
+              },
+              "pending_step_ids": [
+                "script_2"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 32，总耗时 99，可行=True",
+          "spent_after": {
+            "cost": 22,
+            "duration": 67
+          },
+          "remaining_after": {
+            "budget": 28,
+            "time_budget": 133
+          },
+          "next_action": "generate_script",
+          "next_reason": "Mock：执行估算通过的未完成步骤。"
+        },
+        {
+          "step": 7,
+          "source": "offline_mock",
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "script_2"
+          },
+          "reason": "Mock：执行估算通过的未完成步骤。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "generate_script",
+            "status": "succeeded",
+            "data": {
+              "step_id": "script_2",
+              "plan_step": {
+                "step_id": "script_2",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "brief": "字幕功能推广介绍第2条"
+              },
+              "title": "字幕功能推广介绍第2条",
+              "scenes": [
+                {
+                  "visual": "展示资料所述功能的使用画面",
+                  "narration": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                  "material_ids": [
+                    "M01"
+                  ]
+                },
+                {
+                  "visual": "展示资料所述功能的使用画面",
+                  "narration": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                  "material_ids": [
+                    "M02"
+                  ]
+                },
+                {
+                  "visual": "展示资料所述功能的使用画面",
+                  "narration": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                  "material_ids": [
+                    "M03"
+                  ]
+                },
+                {
+                  "visual": "展示资料所述功能的使用画面",
+                  "narration": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                  "material_ids": [
+                    "M04"
+                  ]
+                }
+              ],
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "generation_receipt": {
+                "source": "offline_mock",
+                "model": "deterministic-offline-mock"
+              }
+            },
+            "error": null,
+            "charged": {
+              "cost": 10,
+              "duration": 30
+            }
+          },
+          "observation_summary": "生成步骤 script_2，素材=M01,M02,M03,M04",
+          "spent_after": {
+            "cost": 32,
+            "duration": 97
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 103
+          },
+          "next_action": "save_plan",
+          "next_reason": "Mock：所有脚本成功后保存。"
+        },
+        {
+          "step": 8,
+          "source": "offline_mock",
+          "action": "save_plan",
+          "arguments": {
+            "title": "字幕功能推广内容活动方案",
+            "summary": "围绕主题组织已生成脚本，按脚本顺序完成内容准备。"
+          },
+          "reason": "Mock：所有脚本成功后保存。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "save_plan",
+            "status": "succeeded",
+            "data": {
+              "title": "字幕功能推广内容活动方案",
+              "summary": "围绕主题组织已生成脚本，按脚本顺序完成内容准备。",
+              "topic": "字幕功能推广",
+              "scripts": [
+                {
+                  "generation_receipt": {
+                    "model": "deterministic-offline-mock",
+                    "source": "offline_mock"
+                  },
+                  "material_ids": [
+                    "M01",
+                    "M02",
+                    "M03",
+                    "M04"
+                  ],
+                  "plan_step": {
+                    "brief": "字幕功能推广介绍第1条",
+                    "material_ids": [
+                      "M01",
+                      "M02",
+                      "M03",
+                      "M04"
+                    ],
+                    "step_id": "script_1"
+                  },
+                  "scenes": [
+                    {
+                      "material_ids": [
+                        "M01"
+                      ],
+                      "narration": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                      "visual": "展示资料所述功能的使用画面"
+                    },
+                    {
+                      "material_ids": [
+                        "M02"
+                      ],
+                      "narration": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                      "visual": "展示资料所述功能的使用画面"
+                    },
+                    {
+                      "material_ids": [
+                        "M03"
+                      ],
+                      "narration": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                      "visual": "展示资料所述功能的使用画面"
+                    },
+                    {
+                      "material_ids": [
+                        "M04"
+                      ],
+                      "narration": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                      "visual": "展示资料所述功能的使用画面"
+                    }
+                  ],
+                  "step_id": "script_1",
+                  "title": "字幕功能推广介绍第1条"
+                },
+                {
+                  "step_id": "script_2",
+                  "plan_step": {
+                    "step_id": "script_2",
+                    "material_ids": [
+                      "M01",
+                      "M02",
+                      "M03",
+                      "M04"
+                    ],
+                    "brief": "字幕功能推广介绍第2条"
+                  },
+                  "title": "字幕功能推广介绍第2条",
+                  "scenes": [
+                    {
+                      "visual": "展示资料所述功能的使用画面",
+                      "narration": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                      "material_ids": [
+                        "M01"
+                      ]
+                    },
+                    {
+                      "visual": "展示资料所述功能的使用画面",
+                      "narration": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                      "material_ids": [
+                        "M02"
+                      ]
+                    },
+                    {
+                      "visual": "展示资料所述功能的使用画面",
+                      "narration": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                      "material_ids": [
+                        "M03"
+                      ]
+                    },
+                    {
+                      "visual": "展示资料所述功能的使用画面",
+                      "narration": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                      "material_ids": [
+                        "M04"
+                      ]
+                    }
+                  ],
+                  "material_ids": [
+                    "M01",
+                    "M02",
+                    "M03",
+                    "M04"
+                  ],
+                  "generation_receipt": {
+                    "source": "offline_mock",
+                    "model": "deterministic-offline-mock"
+                  }
+                }
+              ],
+              "task_plan": [
+                {
+                  "step_id": "script_1",
+                  "material_ids": [
+                    "M01",
+                    "M02",
+                    "M03",
+                    "M04"
+                  ],
+                  "brief": "字幕功能推广介绍第1条"
+                },
+                {
+                  "step_id": "script_2",
+                  "material_ids": [
+                    "M01",
+                    "M02",
+                    "M03",
+                    "M04"
+                  ],
+                  "brief": "字幕功能推广介绍第2条"
+                }
+              ],
+              "cost_total": 32,
+              "duration_total": 99,
+              "mode": "mock",
+              "plan_id": "P-0f9bd9566105714d",
+              "request_id": "partial-resume"
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 2
+            }
+          },
+          "observation_summary": "方案已保存：P-0f9bd9566105714d",
+          "spent_after": {
+            "cost": 32,
+            "duration": 99
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 101
+          },
+          "next_action": "end"
+        }
+      ],
+      "replayed": false,
+      "evidence_scope": "离线 Mock，仅验证流程，不证明真实模型决策效果"
+    }
+  ],
+  "checks": {
+    "expected_status": true,
+    "cost_ledger": true,
+    "duration_ledger": true,
+    "within_budget": true,
+    "within_time": true,
+    "database_matches_saved_result": true,
+    "completion_requires_saved_plan": true,
+    "required_script_count": true,
+    "generated_text_present": true,
+    "failure_observed": true,
+    "partial_success_before_resume": true,
+    "resume_keeps_success": true,
+    "resume_does_not_regenerate_success": true
+  }
+}

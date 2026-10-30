@@ -1,0 +1,630 @@
+{
+  "input": {
+    "request_id": "replan",
+    "topic": "字幕功能推广",
+    "budget": 10,
+    "time_budget": 30
+  },
+  "runs": [
+    {
+      "request_id": "replan",
+      "request": {
+        "topic": "字幕功能推广",
+        "budget": 10,
+        "time_budget": 30,
+        "script_count": 1
+      },
+      "mode": "real",
+      "status": "completed",
+      "reason": null,
+      "spent": {
+        "cost": 8,
+        "duration": 29
+      },
+      "remaining": {
+        "budget": 2,
+        "time_budget": 1
+      },
+      "decision_steps": 5,
+      "tool_calls": 5,
+      "task_plan": [
+        {
+          "step_id": "S1",
+          "material_ids": [
+            "M01",
+            "M04"
+          ],
+          "brief": "以字幕功能推广为主题，展示为视频添加并手动编辑字幕、设置每条字幕起止时间与画面同步的核心能力。",
+          "status": "succeeded",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 1
+        }
+      ],
+      "plan_revisions": [
+        {
+          "decision_step": 2,
+          "plan": [
+            {
+              "step_id": "S1",
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "brief": "以字幕功能推广为主题，展示添加与手动编辑字幕、调整字体大小与颜色、设置字幕位置避免遮挡面部、设置每条字幕起止时间与画面同步等核心能力。"
+            }
+          ],
+          "estimate": {
+            "feasible": false,
+            "remaining_steps_cost": 10,
+            "remaining_steps_duration": 32,
+            "projected_total_cost": 12,
+            "projected_total_duration": 38,
+            "shortfall": {
+              "budget": 2,
+              "time_budget": 8
+            },
+            "pending_step_ids": [
+              "S1"
+            ],
+            "includes_save": true
+          }
+        },
+        {
+          "decision_step": 3,
+          "plan": [
+            {
+              "step_id": "S1",
+              "material_ids": [
+                "M01",
+                "M04"
+              ],
+              "brief": "以字幕功能推广为主题，展示为视频添加并手动编辑字幕、设置每条字幕起止时间与画面同步的核心能力。"
+            }
+          ],
+          "estimate": {
+            "feasible": true,
+            "remaining_steps_cost": 6,
+            "remaining_steps_duration": 22,
+            "projected_total_cost": 8,
+            "projected_total_duration": 29,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 0
+            },
+            "pending_step_ids": [
+              "S1"
+            ],
+            "includes_save": true
+          }
+        }
+      ],
+      "scripts": [
+        {
+          "step_id": "S1",
+          "plan_step": {
+            "step_id": "S1",
+            "material_ids": [
+              "M01",
+              "M04"
+            ],
+            "brief": "以字幕功能推广为主题，展示为视频添加并手动编辑字幕、设置每条字幕起止时间与画面同步的核心能力。"
+          },
+          "title": "为视频添加并编辑字幕",
+          "scenes": [
+            {
+              "visual": "画面展示一段视频素材，视频画面上叠加字幕文字，字幕内容清晰可见。",
+              "narration": "可以为视频添加字幕，字幕文字支持手动编辑。",
+              "material_ids": [
+                "M01"
+              ]
+            },
+            {
+              "visual": "画面聚焦字幕文字区域，展示字幕文字被修改后的内容，体现字幕文字可手动编辑。",
+              "narration": "字幕文字支持手动编辑，可按需要调整字幕内容。",
+              "material_ids": [
+                "M01"
+              ]
+            },
+            {
+              "visual": "画面展示字幕的时间设置区域，呈现每条字幕的开始时间和结束时间。",
+              "narration": "支持设置每条字幕的开始和结束时间。",
+              "material_ids": [
+                "M04"
+              ]
+            },
+            {
+              "visual": "画面展示字幕文字与对应的视频片段同时出现，字幕与画面内容对应。",
+              "narration": "设置好起止时间后，字幕文字与对应的视频片段一起出现。",
+              "material_ids": [
+                "M04"
+              ]
+            }
+          ],
+          "material_ids": [
+            "M01",
+            "M04"
+          ],
+          "generation_receipt": {
+            "response_id": "38c13401-2fcf-4ecc-841c-3992e1e0c048",
+            "model": "deepseek-flash",
+            "source": "real_model"
+          }
+        }
+      ],
+      "saved_plan": {
+        "title": "字幕功能推广：添加编辑与时间同步",
+        "summary": "围绕字幕功能推广主题，产出 1 条脚本：先展示为视频添加字幕并手动编辑字幕文字，再展示设置每条字幕的开始与结束时间，使字幕与对应视频片段同步出现。素材依据 M01、M04。",
+        "topic": "字幕功能推广",
+        "scripts": [
+          {
+            "step_id": "S1",
+            "plan_step": {
+              "step_id": "S1",
+              "material_ids": [
+                "M01",
+                "M04"
+              ],
+              "brief": "以字幕功能推广为主题，展示为视频添加并手动编辑字幕、设置每条字幕起止时间与画面同步的核心能力。"
+            },
+            "title": "为视频添加并编辑字幕",
+            "scenes": [
+              {
+                "visual": "画面展示一段视频素材，视频画面上叠加字幕文字，字幕内容清晰可见。",
+                "narration": "可以为视频添加字幕，字幕文字支持手动编辑。",
+                "material_ids": [
+                  "M01"
+                ]
+              },
+              {
+                "visual": "画面聚焦字幕文字区域，展示字幕文字被修改后的内容，体现字幕文字可手动编辑。",
+                "narration": "字幕文字支持手动编辑，可按需要调整字幕内容。",
+                "material_ids": [
+                  "M01"
+                ]
+              },
+              {
+                "visual": "画面展示字幕的时间设置区域，呈现每条字幕的开始时间和结束时间。",
+                "narration": "支持设置每条字幕的开始和结束时间。",
+                "material_ids": [
+                  "M04"
+                ]
+              },
+              {
+                "visual": "画面展示字幕文字与对应的视频片段同时出现，字幕与画面内容对应。",
+                "narration": "设置好起止时间后，字幕文字与对应的视频片段一起出现。",
+                "material_ids": [
+                  "M04"
+                ]
+              }
+            ],
+            "material_ids": [
+              "M01",
+              "M04"
+            ],
+            "generation_receipt": {
+              "response_id": "38c13401-2fcf-4ecc-841c-3992e1e0c048",
+              "model": "deepseek-flash",
+              "source": "real_model"
+            }
+          }
+        ],
+        "task_plan": [
+          {
+            "step_id": "S1",
+            "material_ids": [
+              "M01",
+              "M04"
+            ],
+            "brief": "以字幕功能推广为主题，展示为视频添加并手动编辑字幕、设置每条字幕起止时间与画面同步的核心能力。"
+          }
+        ],
+        "cost_total": 8,
+        "duration_total": 29,
+        "mode": "real",
+        "plan_id": "P-9372d683a3c07911",
+        "request_id": "replan"
+      },
+      "steps": [
+        {
+          "step": 1,
+          "source": "real_model",
+          "action": "search_materials",
+          "arguments": {
+            "query": "字幕功能 推广 自动生成字幕"
+          },
+          "reason": "先检索与字幕功能推广相关的参考资料",
+          "model_receipt": {
+            "response_id": "cccf14de-f9d3-4288-9e79-cb69e14a6db6",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_2VnxgthyQPbNgW34nRX45192"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [
+              {
+                "material_id": "M01",
+                "topic": "字幕功能",
+                "content": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                "relevance_score": 0.51
+              },
+              {
+                "material_id": "M02",
+                "topic": "字幕功能",
+                "content": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                "relevance_score": 0.51
+              },
+              {
+                "material_id": "M03",
+                "topic": "字幕功能",
+                "content": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                "relevance_score": 0.51
+              },
+              {
+                "material_id": "M04",
+                "topic": "字幕功能",
+                "content": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "relevance_score": 0.51
+              },
+              {
+                "material_id": "M08",
+                "topic": "视频裁剪",
+                "content": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                "relevance_score": 0.07
+              }
+            ],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 5 份素材：M01,M02,M03,M04,M08",
+          "spent_after": {
+            "cost": 2,
+            "duration": 5
+          },
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 25
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "用检索到的字幕功能素材规划一条推广脚本并校验费用与时间。"
+        },
+        {
+          "step": 2,
+          "source": "real_model",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "S1",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "brief": "以字幕功能推广为主题，展示添加与手动编辑字幕、调整字体大小与颜色、设置字幕位置避免遮挡面部、设置每条字幕起止时间与画面同步等核心能力。"
+              }
+            ]
+          },
+          "reason": "用检索到的字幕功能素材规划一条推广脚本并校验费用与时间。",
+          "model_receipt": {
+            "response_id": "875eaa4d-7e88-4a9b-9262-4438db774ceb",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_bxoKfVuJ2WnQmhpBvGq04378"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": false,
+              "remaining_steps_cost": 10,
+              "remaining_steps_duration": 32,
+              "projected_total_cost": 12,
+              "projected_total_duration": 38,
+              "shortfall": {
+                "budget": 2,
+                "time_budget": 8
+              },
+              "pending_step_ids": [
+                "S1"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 12，总耗时 38，可行=False",
+          "spent_after": {
+            "cost": 2,
+            "duration": 6
+          },
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 24
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "减少素材数量以压缩生成费用与耗时，保留最核心的添加编辑与时间同步能力。"
+        },
+        {
+          "step": 3,
+          "source": "real_model",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "S1",
+                "material_ids": [
+                  "M01",
+                  "M04"
+                ],
+                "brief": "以字幕功能推广为主题，展示为视频添加并手动编辑字幕、设置每条字幕起止时间与画面同步的核心能力。"
+              }
+            ]
+          },
+          "reason": "减少素材数量以压缩生成费用与耗时，保留最核心的添加编辑与时间同步能力。",
+          "model_receipt": {
+            "response_id": "8fd85ccc-8793-4730-bbdc-e270073fcfbb",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_uVbffLjmDj0fUu6dscUF2168"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": true,
+              "remaining_steps_cost": 6,
+              "remaining_steps_duration": 22,
+              "projected_total_cost": 8,
+              "projected_total_duration": 29,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 0
+              },
+              "pending_step_ids": [
+                "S1"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 8，总耗时 29，可行=True",
+          "spent_after": {
+            "cost": 2,
+            "duration": 7
+          },
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 23
+          },
+          "next_action": "generate_script",
+          "next_reason": "已估算方案可行且预算时间充足，执行唯一待生成脚本。"
+        },
+        {
+          "step": 4,
+          "source": "real_model",
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "S1"
+          },
+          "reason": "已估算方案可行且预算时间充足，执行唯一待生成脚本。",
+          "model_receipt": {
+            "response_id": "16384941-ad4e-408c-bf67-7f5ccabf84f3",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_xU7o6wmElPFQ3Ync4mOo4753"
+          },
+          "result": {
+            "tool": "generate_script",
+            "status": "succeeded",
+            "data": {
+              "step_id": "S1",
+              "plan_step": {
+                "step_id": "S1",
+                "material_ids": [
+                  "M01",
+                  "M04"
+                ],
+                "brief": "以字幕功能推广为主题，展示为视频添加并手动编辑字幕、设置每条字幕起止时间与画面同步的核心能力。"
+              },
+              "title": "为视频添加并编辑字幕",
+              "scenes": [
+                {
+                  "visual": "画面展示一段视频素材，视频画面上叠加字幕文字，字幕内容清晰可见。",
+                  "narration": "可以为视频添加字幕，字幕文字支持手动编辑。",
+                  "material_ids": [
+                    "M01"
+                  ]
+                },
+                {
+                  "visual": "画面聚焦字幕文字区域，展示字幕文字被修改后的内容，体现字幕文字可手动编辑。",
+                  "narration": "字幕文字支持手动编辑，可按需要调整字幕内容。",
+                  "material_ids": [
+                    "M01"
+                  ]
+                },
+                {
+                  "visual": "画面展示字幕的时间设置区域，呈现每条字幕的开始时间和结束时间。",
+                  "narration": "支持设置每条字幕的开始和结束时间。",
+                  "material_ids": [
+                    "M04"
+                  ]
+                },
+                {
+                  "visual": "画面展示字幕文字与对应的视频片段同时出现，字幕与画面内容对应。",
+                  "narration": "设置好起止时间后，字幕文字与对应的视频片段一起出现。",
+                  "material_ids": [
+                    "M04"
+                  ]
+                }
+              ],
+              "material_ids": [
+                "M01",
+                "M04"
+              ],
+              "generation_receipt": {
+                "response_id": "38c13401-2fcf-4ecc-841c-3992e1e0c048",
+                "model": "deepseek-flash",
+                "source": "real_model"
+              }
+            },
+            "error": null,
+            "charged": {
+              "cost": 6,
+              "duration": 20
+            }
+          },
+          "observation_summary": "生成步骤 S1，素材=M01,M04",
+          "spent_after": {
+            "cost": 8,
+            "duration": 27
+          },
+          "remaining_after": {
+            "budget": 2,
+            "time_budget": 3
+          },
+          "next_action": "save_plan",
+          "next_reason": "唯一脚本已生成成功，剩余额度足够保存方案。"
+        },
+        {
+          "step": 5,
+          "source": "real_model",
+          "action": "save_plan",
+          "arguments": {
+            "title": "字幕功能推广：添加编辑与时间同步",
+            "summary": "围绕字幕功能推广主题，产出 1 条脚本：先展示为视频添加字幕并手动编辑字幕文字，再展示设置每条字幕的开始与结束时间，使字幕与对应视频片段同步出现。素材依据 M01、M04。"
+          },
+          "reason": "唯一脚本已生成成功，剩余额度足够保存方案。",
+          "model_receipt": {
+            "response_id": "8def6430-adfe-481d-bb45-db91b2df93db",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_2GUfekH3L3zCvrgpP5Eo5156"
+          },
+          "result": {
+            "tool": "save_plan",
+            "status": "succeeded",
+            "data": {
+              "title": "字幕功能推广：添加编辑与时间同步",
+              "summary": "围绕字幕功能推广主题，产出 1 条脚本：先展示为视频添加字幕并手动编辑字幕文字，再展示设置每条字幕的开始与结束时间，使字幕与对应视频片段同步出现。素材依据 M01、M04。",
+              "topic": "字幕功能推广",
+              "scripts": [
+                {
+                  "step_id": "S1",
+                  "plan_step": {
+                    "step_id": "S1",
+                    "material_ids": [
+                      "M01",
+                      "M04"
+                    ],
+                    "brief": "以字幕功能推广为主题，展示为视频添加并手动编辑字幕、设置每条字幕起止时间与画面同步的核心能力。"
+                  },
+                  "title": "为视频添加并编辑字幕",
+                  "scenes": [
+                    {
+                      "visual": "画面展示一段视频素材，视频画面上叠加字幕文字，字幕内容清晰可见。",
+                      "narration": "可以为视频添加字幕，字幕文字支持手动编辑。",
+                      "material_ids": [
+                        "M01"
+                      ]
+                    },
+                    {
+                      "visual": "画面聚焦字幕文字区域，展示字幕文字被修改后的内容，体现字幕文字可手动编辑。",
+                      "narration": "字幕文字支持手动编辑，可按需要调整字幕内容。",
+                      "material_ids": [
+                        "M01"
+                      ]
+                    },
+                    {
+                      "visual": "画面展示字幕的时间设置区域，呈现每条字幕的开始时间和结束时间。",
+                      "narration": "支持设置每条字幕的开始和结束时间。",
+                      "material_ids": [
+                        "M04"
+                      ]
+                    },
+                    {
+                      "visual": "画面展示字幕文字与对应的视频片段同时出现，字幕与画面内容对应。",
+                      "narration": "设置好起止时间后，字幕文字与对应的视频片段一起出现。",
+                      "material_ids": [
+                        "M04"
+                      ]
+                    }
+                  ],
+                  "material_ids": [
+                    "M01",
+                    "M04"
+                  ],
+                  "generation_receipt": {
+                    "response_id": "38c13401-2fcf-4ecc-841c-3992e1e0c048",
+                    "model": "deepseek-flash",
+                    "source": "real_model"
+                  }
+                }
+              ],
+              "task_plan": [
+                {
+                  "step_id": "S1",
+                  "material_ids": [
+                    "M01",
+                    "M04"
+                  ],
+                  "brief": "以字幕功能推广为主题，展示为视频添加并手动编辑字幕、设置每条字幕起止时间与画面同步的核心能力。"
+                }
+              ],
+              "cost_total": 8,
+              "duration_total": 29,
+              "mode": "real",
+              "plan_id": "P-9372d683a3c07911",
+              "request_id": "replan"
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 2
+            }
+          },
+          "observation_summary": "方案已保存：P-9372d683a3c07911",
+          "spent_after": {
+            "cost": 8,
+            "duration": 29
+          },
+          "remaining_after": {
+            "budget": 2,
+            "time_budget": 1
+          },
+          "next_action": "end"
+        }
+      ],
+      "replayed": false,
+      "evidence_scope": "真实模型调用与实际工具执行"
+    }
+  ],
+  "checks": {
+    "expected_status": true,
+    "cost_ledger": true,
+    "duration_ledger": true,
+    "within_budget": true,
+    "within_time": true,
+    "database_matches_saved_result": true,
+    "completion_requires_saved_plan": true,
+    "required_script_count": true,
+    "generated_text_present": true
+  }
+}

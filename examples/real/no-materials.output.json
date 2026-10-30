@@ -1,0 +1,234 @@
+{
+  "input": {
+    "request_id": "no-materials",
+    "topic": "火星地质勘探",
+    "budget": 20,
+    "time_budget": 100
+  },
+  "runs": [
+    {
+      "request_id": "no-materials",
+      "request": {
+        "topic": "火星地质勘探",
+        "budget": 20,
+        "time_budget": 100,
+        "script_count": 1
+      },
+      "mode": "real",
+      "status": "incomplete",
+      "reason": {
+        "code": "MODEL_STOPPED",
+        "message": "已用四组不同关键词（火星地质勘探、火星 地质 探测、火星探测 地质 岩石 样本、火星 地质 岩石 矿物 探测任务）检索参考资料，结果均为空，没有可用的 material_id，因此无法为「火星地质勘探」规划并生成脚本。请补充可用的参考资料或素材来源（例如火星探测任务介绍、地质样本分析资料等），或确认是否放宽主题范围，我再继续。"
+      },
+      "spent": {
+        "cost": 8,
+        "duration": 20
+      },
+      "remaining": {
+        "budget": 12,
+        "time_budget": 80
+      },
+      "decision_steps": 5,
+      "tool_calls": 4,
+      "task_plan": [],
+      "plan_revisions": [],
+      "scripts": [],
+      "saved_plan": null,
+      "steps": [
+        {
+          "step": 1,
+          "source": "real_model",
+          "action": "search_materials",
+          "arguments": {
+            "query": "火星地质勘探"
+          },
+          "reason": "先检索与火星地质勘探主题相关的参考资料",
+          "model_receipt": {
+            "response_id": "858b1fe4-3105-40b1-bf57-95e56e539136",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_lHBBy9SvsxFmgiiVDC8F8278"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 0 份素材：",
+          "spent_after": {
+            "cost": 2,
+            "duration": 5
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 95
+          },
+          "next_action": "search_materials",
+          "next_reason": "首次检索无结果，改用更宽泛的关键词再次检索火星地质相关素材。"
+        },
+        {
+          "step": 2,
+          "source": "real_model",
+          "action": "search_materials",
+          "arguments": {
+            "query": "火星 地质 探测"
+          },
+          "reason": "首次检索无结果，改用更宽泛的关键词再次检索火星地质相关素材。",
+          "model_receipt": {
+            "response_id": "77f99e9e-38e0-422b-8205-1f61df091815",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_Tcis3za3xixYIEtH0x8c9837"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 0 份素材：",
+          "spent_after": {
+            "cost": 4,
+            "duration": 10
+          },
+          "remaining_after": {
+            "budget": 16,
+            "time_budget": 90
+          },
+          "next_action": "search_materials",
+          "next_reason": "前两次检索无结果，改写关键词再试一次以获取可用素材。"
+        },
+        {
+          "step": 3,
+          "source": "real_model",
+          "action": "search_materials",
+          "arguments": {
+            "query": "火星探测 地质 岩石 样本"
+          },
+          "reason": "前两次检索无结果，改写关键词再试一次以获取可用素材。",
+          "model_receipt": {
+            "response_id": "c1b5e564-5362-4103-95fb-9bc63e533e73",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_MHlayTmzbULOwqvaFI2z5578"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 0 份素材：",
+          "spent_after": {
+            "cost": 6,
+            "duration": 15
+          },
+          "remaining_after": {
+            "budget": 14,
+            "time_budget": 85
+          },
+          "next_action": "search_materials",
+          "next_reason": "前三次检索均无结果，改用更宽泛的关键词再试一次"
+        },
+        {
+          "step": 4,
+          "source": "real_model",
+          "action": "search_materials",
+          "arguments": {
+            "query": "火星 地质 岩石 矿物 探测任务"
+          },
+          "reason": "前三次检索均无结果，改用更宽泛的关键词再试一次",
+          "model_receipt": {
+            "response_id": "99e62a57-8456-40df-a842-3feeb6656efb",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_3x77ruJB1pRGhfnVTPDF1284"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 0 份素材：",
+          "spent_after": {
+            "cost": 8,
+            "duration": 20
+          },
+          "remaining_after": {
+            "budget": 12,
+            "time_budget": 80
+          },
+          "next_action": "finish",
+          "next_reason": "多次改写查询检索仍无任何素材，缺少可用 material_id，无法生成脚本。"
+        },
+        {
+          "step": 5,
+          "source": "real_model",
+          "action": "finish",
+          "arguments": {
+            "message": "已用四组不同关键词（火星地质勘探、火星 地质 探测、火星探测 地质 岩石 样本、火星 地质 岩石 矿物 探测任务）检索参考资料，结果均为空，没有可用的 material_id，因此无法为「火星地质勘探」规划并生成脚本。请补充可用的参考资料或素材来源（例如火星探测任务介绍、地质样本分析资料等），或确认是否放宽主题范围，我再继续。"
+          },
+          "reason": "多次改写查询检索仍无任何素材，缺少可用 material_id，无法生成脚本。",
+          "model_receipt": {
+            "response_id": "b42ce2f5-3cad-4876-8785-b09bc9b0a2d6",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_N7YQ7d5d1f56bSscp7Ig3197"
+          },
+          "result": {
+            "tool": "finish",
+            "status": "stopped",
+            "data": {
+              "code": "MODEL_STOPPED",
+              "message": "已用四组不同关键词（火星地质勘探、火星 地质 探测、火星探测 地质 岩石 样本、火星 地质 岩石 矿物 探测任务）检索参考资料，结果均为空，没有可用的 material_id，因此无法为「火星地质勘探」规划并生成脚本。请补充可用的参考资料或素材来源（例如火星探测任务介绍、地质样本分析资料等），或确认是否放宽主题范围，我再继续。"
+            },
+            "charged": {
+              "cost": 0,
+              "duration": 0
+            }
+          },
+          "observation_summary": "{'code': 'MODEL_STOPPED', 'message': '已用四组不同关键词（火星地质勘探、火星 地质 探测、火星探测 地质 岩石 样本、火星 地质 岩石 矿物 探测任务）检索参考资料，结果均为空，没有可用的 material_id，因此无法为「火星地质勘探」规划并生成脚本。请补充可用的参考资料或素材来源（例如火星探测任务介绍、地质样本分析资料等），或确认是否放宽主题范围，我再继续。'}",
+          "spent_after": {
+            "cost": 8,
+            "duration": 20
+          },
+          "remaining_after": {
+            "budget": 12,
+            "time_budget": 80
+          },
+          "next_action": "end"
+        }
+      ],
+      "replayed": false,
+      "evidence_scope": "真实模型调用与实际工具执行"
+    }
+  ],
+  "checks": {
+    "expected_status": true,
+    "cost_ledger": true,
+    "duration_ledger": true,
+    "within_budget": true,
+    "within_time": true,
+    "database_matches_saved_result": true,
+    "completion_requires_saved_plan": true,
+    "unfinished_reason_present": true
+  }
+}

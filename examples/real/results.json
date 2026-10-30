@@ -1,0 +1,397 @@
+{
+  "mode": "real",
+  "generated_at": "2026-10-30T09:41:39.969502+00:00",
+  "python": "3.11.15",
+  "materials_sha256": "a31d91998ae3f7d69e4f1a3347899ea0e929b62a69083bb2d173a385306047b8",
+  "rates_sha256": "2600a4e10057d0376e6adbcbbf615eb9417b4184ebf75a0870d257fc44b60b81",
+  "passed": 12,
+  "total": 12,
+  "cases": [
+    {
+      "case": "normal",
+      "passed": true,
+      "checks": {
+        "expected_status": true,
+        "cost_ledger": true,
+        "duration_ledger": true,
+        "within_budget": true,
+        "within_time": true,
+        "database_matches_saved_result": true,
+        "completion_requires_saved_plan": true,
+        "required_script_count": true,
+        "generated_text_present": true
+      },
+      "status": "completed",
+      "spent": {
+        "cost": 12,
+        "duration": 38
+      },
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "generate_script",
+        "save_plan"
+      ],
+      "replanning_observed": false,
+      "failure_handling_observed": false,
+      "real_model_responses": 4,
+      "input": "examples/inputs/normal.json",
+      "output": "normal.output.json",
+      "trace": "normal.trace.md"
+    },
+    {
+      "case": "replan",
+      "passed": true,
+      "checks": {
+        "expected_status": true,
+        "cost_ledger": true,
+        "duration_ledger": true,
+        "within_budget": true,
+        "within_time": true,
+        "database_matches_saved_result": true,
+        "completion_requires_saved_plan": true,
+        "required_script_count": true,
+        "generated_text_present": true
+      },
+      "status": "completed",
+      "spent": {
+        "cost": 8,
+        "duration": 29
+      },
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "estimate_plan",
+        "generate_script",
+        "save_plan"
+      ],
+      "replanning_observed": true,
+      "failure_handling_observed": false,
+      "real_model_responses": 5,
+      "input": "examples/inputs/replan.json",
+      "output": "replan.output.json",
+      "trace": "replan.trace.md"
+    },
+    {
+      "case": "missing-budget",
+      "passed": true,
+      "checks": {
+        "expected_status": true,
+        "cost_ledger": true,
+        "duration_ledger": true,
+        "database_matches_saved_result": true,
+        "completion_requires_saved_plan": true,
+        "missing_field_identified": true,
+        "missing_input_no_actions": true
+      },
+      "status": "needs_input",
+      "spent": {
+        "cost": 0,
+        "duration": 0
+      },
+      "actions": [],
+      "replanning_observed": false,
+      "failure_handling_observed": false,
+      "real_model_responses": 0,
+      "input": "examples/inputs/missing-budget.json",
+      "output": "missing-budget.output.json",
+      "trace": "missing-budget.trace.md"
+    },
+    {
+      "case": "missing-time",
+      "passed": true,
+      "checks": {
+        "expected_status": true,
+        "cost_ledger": true,
+        "duration_ledger": true,
+        "database_matches_saved_result": true,
+        "completion_requires_saved_plan": true,
+        "missing_field_identified": true,
+        "missing_input_no_actions": true
+      },
+      "status": "needs_input",
+      "spent": {
+        "cost": 0,
+        "duration": 0
+      },
+      "actions": [],
+      "replanning_observed": false,
+      "failure_handling_observed": false,
+      "real_model_responses": 0,
+      "input": "examples/inputs/missing-time.json",
+      "output": "missing-time.output.json",
+      "trace": "missing-time.trace.md"
+    },
+    {
+      "case": "tool-failure",
+      "passed": true,
+      "checks": {
+        "expected_status": true,
+        "cost_ledger": true,
+        "duration_ledger": true,
+        "within_budget": true,
+        "within_time": true,
+        "database_matches_saved_result": true,
+        "completion_requires_saved_plan": true,
+        "required_script_count": true,
+        "generated_text_present": true,
+        "failure_observed": true
+      },
+      "status": "completed",
+      "spent": {
+        "cost": 22,
+        "duration": 68
+      },
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "generate_script",
+        "generate_script",
+        "save_plan"
+      ],
+      "replanning_observed": false,
+      "failure_handling_observed": true,
+      "real_model_responses": 5,
+      "input": "examples/inputs/tool-failure.json",
+      "output": "tool-failure.output.json",
+      "trace": "tool-failure.trace.md"
+    },
+    {
+      "case": "save-failure",
+      "passed": true,
+      "checks": {
+        "expected_status": true,
+        "cost_ledger": true,
+        "duration_ledger": true,
+        "within_budget": true,
+        "within_time": true,
+        "database_matches_saved_result": true,
+        "completion_requires_saved_plan": true,
+        "unfinished_reason_present": true,
+        "failure_observed": true,
+        "successful_script_preserved": true,
+        "save_failure_not_saved": true
+      },
+      "status": "incomplete",
+      "spent": {
+        "cost": 12,
+        "duration": 38
+      },
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "generate_script",
+        "save_plan",
+        "finish"
+      ],
+      "replanning_observed": false,
+      "failure_handling_observed": true,
+      "real_model_responses": 5,
+      "input": "examples/inputs/save-failure.json",
+      "output": "save-failure.output.json",
+      "trace": "save-failure.trace.md"
+    },
+    {
+      "case": "over-budget",
+      "passed": true,
+      "checks": {
+        "expected_status": true,
+        "cost_ledger": true,
+        "duration_ledger": true,
+        "within_budget": true,
+        "within_time": true,
+        "database_matches_saved_result": true,
+        "completion_requires_saved_plan": true,
+        "unfinished_reason_present": true,
+        "shortfall_reported": true
+      },
+      "status": "incomplete",
+      "spent": {
+        "cost": 2,
+        "duration": 7
+      },
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "estimate_plan",
+        "finish"
+      ],
+      "replanning_observed": true,
+      "failure_handling_observed": false,
+      "real_model_responses": 4,
+      "input": "examples/inputs/over-budget.json",
+      "output": "over-budget.output.json",
+      "trace": "over-budget.trace.md"
+    },
+    {
+      "case": "out-of-time",
+      "passed": true,
+      "checks": {
+        "expected_status": true,
+        "cost_ledger": true,
+        "duration_ledger": true,
+        "within_budget": true,
+        "within_time": true,
+        "database_matches_saved_result": true,
+        "completion_requires_saved_plan": true,
+        "unfinished_reason_present": true,
+        "shortfall_reported": true
+      },
+      "status": "incomplete",
+      "spent": {
+        "cost": 2,
+        "duration": 8
+      },
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "estimate_plan",
+        "estimate_plan",
+        "finish"
+      ],
+      "replanning_observed": true,
+      "failure_handling_observed": false,
+      "real_model_responses": 5,
+      "input": "examples/inputs/out-of-time.json",
+      "output": "out-of-time.output.json",
+      "trace": "out-of-time.trace.md"
+    },
+    {
+      "case": "no-materials",
+      "passed": true,
+      "checks": {
+        "expected_status": true,
+        "cost_ledger": true,
+        "duration_ledger": true,
+        "within_budget": true,
+        "within_time": true,
+        "database_matches_saved_result": true,
+        "completion_requires_saved_plan": true,
+        "unfinished_reason_present": true
+      },
+      "status": "incomplete",
+      "spent": {
+        "cost": 8,
+        "duration": 20
+      },
+      "actions": [
+        "search_materials",
+        "search_materials",
+        "search_materials",
+        "search_materials",
+        "finish"
+      ],
+      "replanning_observed": false,
+      "failure_handling_observed": false,
+      "real_model_responses": 5,
+      "input": "examples/inputs/no-materials.json",
+      "output": "no-materials.output.json",
+      "trace": "no-materials.trace.md"
+    },
+    {
+      "case": "repeat",
+      "passed": true,
+      "checks": {
+        "expected_status": true,
+        "cost_ledger": true,
+        "duration_ledger": true,
+        "within_budget": true,
+        "within_time": true,
+        "database_matches_saved_result": true,
+        "completion_requires_saved_plan": true,
+        "required_script_count": true,
+        "generated_text_present": true,
+        "duplicate_returns_cache": true,
+        "duplicate_no_new_consumption": true,
+        "duplicate_same_plan": true,
+        "duplicate_no_new_steps": true
+      },
+      "status": "completed",
+      "spent": {
+        "cost": 12,
+        "duration": 38
+      },
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "generate_script",
+        "save_plan"
+      ],
+      "replanning_observed": false,
+      "failure_handling_observed": false,
+      "real_model_responses": 4,
+      "input": "examples/inputs/repeat.json",
+      "output": "repeat.output.json",
+      "trace": "repeat.trace.md"
+    },
+    {
+      "case": "partial-resume",
+      "passed": true,
+      "checks": {
+        "expected_status": true,
+        "cost_ledger": true,
+        "duration_ledger": true,
+        "within_budget": true,
+        "within_time": true,
+        "database_matches_saved_result": true,
+        "completion_requires_saved_plan": true,
+        "required_script_count": true,
+        "generated_text_present": true,
+        "failure_observed": true,
+        "partial_success_before_resume": true,
+        "resume_keeps_success": true,
+        "resume_does_not_regenerate_success": true
+      },
+      "status": "completed",
+      "spent": {
+        "cost": 20,
+        "duration": 68
+      },
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "generate_script",
+        "generate_script",
+        "finish",
+        "generate_script",
+        "save_plan"
+      ],
+      "replanning_observed": false,
+      "failure_handling_observed": true,
+      "real_model_responses": 7,
+      "input": "examples/inputs/partial-resume.json",
+      "output": "partial-resume.output.json",
+      "trace": "partial-resume.trace.md"
+    },
+    {
+      "case": "step-limit",
+      "passed": true,
+      "checks": {
+        "expected_status": true,
+        "cost_ledger": true,
+        "duration_ledger": true,
+        "within_budget": true,
+        "within_time": true,
+        "database_matches_saved_result": true,
+        "completion_requires_saved_plan": true,
+        "unfinished_reason_present": true,
+        "explicit_step_limit": true
+      },
+      "status": "incomplete",
+      "spent": {
+        "cost": 2,
+        "duration": 5
+      },
+      "actions": [
+        "search_materials"
+      ],
+      "replanning_observed": false,
+      "failure_handling_observed": false,
+      "real_model_responses": 1,
+      "input": "examples/inputs/step-limit.json",
+      "output": "step-limit.output.json",
+      "trace": "step-limit.trace.md"
+    }
+  ],
+  "evidence_scope": "真实模型运行"
+}

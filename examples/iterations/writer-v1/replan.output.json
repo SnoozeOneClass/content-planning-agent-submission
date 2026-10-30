@@ -1,0 +1,723 @@
+{
+  "input": {
+    "request_id": "replan",
+    "topic": "字幕功能推广",
+    "budget": 10,
+    "time_budget": 30
+  },
+  "runs": [
+    {
+      "request_id": "replan",
+      "request": {
+        "topic": "字幕功能推广",
+        "budget": 10,
+        "time_budget": 30,
+        "script_count": 1
+      },
+      "mode": "real",
+      "status": "completed",
+      "reason": null,
+      "spent": {
+        "cost": 8,
+        "duration": 30
+      },
+      "remaining": {
+        "budget": 2,
+        "time_budget": 0
+      },
+      "decision_steps": 6,
+      "tool_calls": 6,
+      "task_plan": [
+        {
+          "step_id": "S1",
+          "material_ids": [
+            "M01",
+            "M02"
+          ],
+          "brief": "以“两步搞定视频字幕”为主线，先展示添加字幕并手动编辑文字，再展示调整字体大小与颜色适配不同背景画面，突出易用性。",
+          "status": "succeeded",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 1
+        }
+      ],
+      "plan_revisions": [
+        {
+          "decision_step": 2,
+          "plan": [
+            {
+              "step_id": "S1",
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "brief": "以“三步搞定视频字幕”为主线，依次展示添加并手动编辑字幕文字、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、按时间轴对齐每条字幕起止时间，突出易用与专业。"
+            }
+          ],
+          "estimate": {
+            "feasible": false,
+            "remaining_steps_cost": 10,
+            "remaining_steps_duration": 32,
+            "projected_total_cost": 12,
+            "projected_total_duration": 38,
+            "shortfall": {
+              "budget": 2,
+              "time_budget": 8
+            },
+            "pending_step_ids": [
+              "S1"
+            ],
+            "includes_save": true
+          }
+        },
+        {
+          "decision_step": 3,
+          "plan": [
+            {
+              "step_id": "S1",
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03"
+              ],
+              "brief": "以“三步搞定视频字幕”为主线，依次展示添加并手动编辑字幕文字、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物，突出易用性。"
+            }
+          ],
+          "estimate": {
+            "feasible": false,
+            "remaining_steps_cost": 8,
+            "remaining_steps_duration": 27,
+            "projected_total_cost": 10,
+            "projected_total_duration": 34,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 4
+            },
+            "pending_step_ids": [
+              "S1"
+            ],
+            "includes_save": true
+          }
+        },
+        {
+          "decision_step": 4,
+          "plan": [
+            {
+              "step_id": "S1",
+              "material_ids": [
+                "M01",
+                "M02"
+              ],
+              "brief": "以“两步搞定视频字幕”为主线，先展示添加字幕并手动编辑文字，再展示调整字体大小与颜色适配不同背景画面，突出易用性。"
+            }
+          ],
+          "estimate": {
+            "feasible": true,
+            "remaining_steps_cost": 6,
+            "remaining_steps_duration": 22,
+            "projected_total_cost": 8,
+            "projected_total_duration": 30,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 0
+            },
+            "pending_step_ids": [
+              "S1"
+            ],
+            "includes_save": true
+          }
+        }
+      ],
+      "scripts": [
+        {
+          "step_id": "S1",
+          "plan_step": {
+            "step_id": "S1",
+            "material_ids": [
+              "M01",
+              "M02"
+            ],
+            "brief": "以“两步搞定视频字幕”为主线，先展示添加字幕并手动编辑文字，再展示调整字体大小与颜色适配不同背景画面，突出易用性。"
+          },
+          "title": "两步搞定视频字幕：添加编辑与样式适配",
+          "scenes": [
+            {
+              "visual": "开场画面：屏幕录制或实拍电脑操作界面，鼠标点击“添加字幕”按钮，视频画面上出现字幕文本框，光标在文本框内闪烁。",
+              "narration": "第一步，给视频添加字幕。点击添加字幕后，字幕文字可以直接手动编辑，改成你需要的内容。",
+              "material_ids": [
+                "M01"
+              ]
+            },
+            {
+              "visual": "特写镜头：操作者在字幕文本框中选中文字并输入修改，字幕内容实时变化，画面清晰展示编辑过程。",
+              "narration": "字幕文字支持手动编辑，输入即改，不用来回切换工具。",
+              "material_ids": [
+                "M01"
+              ]
+            },
+            {
+              "visual": "对比画面：同一段视频分别搭配浅色背景和深色背景，操作者调整字幕字体大小与文字颜色，字幕在两种背景下都清晰可读。",
+              "narration": "第二步，调整字体大小和文字颜色，让字幕适配不同的背景画面。",
+              "material_ids": [
+                "M02"
+              ]
+            },
+            {
+              "visual": "收尾画面：分屏展示编辑前后的字幕效果，画面中央出现“两步搞定”文字提示，引导观众尝试。",
+              "narration": "添加并编辑字幕，再调整字体大小和颜色，两步搞定视频字幕。",
+              "material_ids": [
+                "M01",
+                "M02"
+              ]
+            }
+          ],
+          "material_ids": [
+            "M01",
+            "M02"
+          ],
+          "generation_receipt": {
+            "response_id": "973f6e5c-9735-4c78-8fa9-c4922b669f3f",
+            "model": "deepseek-flash",
+            "source": "real_model"
+          }
+        }
+      ],
+      "saved_plan": {
+        "title": "两步搞定视频字幕：添加编辑与样式适配",
+        "summary": "围绕“字幕功能推广”主题，基于字幕功能素材（M01 添加字幕并手动编辑文字、M02 调整字体大小与文字颜色适配不同背景）制作 1 条推广脚本。脚本以“两步搞定视频字幕”为主线：第一步演示添加字幕并手动编辑文字，第二步演示调整字体大小与颜色以适配不同背景画面，结尾分屏对比编辑前后效果并引导观众尝试。受预算与时间额度限制，未纳入字幕位置设置（M03）与时间轴对齐（M04）内容。",
+        "topic": "字幕功能推广",
+        "scripts": [
+          {
+            "step_id": "S1",
+            "plan_step": {
+              "step_id": "S1",
+              "material_ids": [
+                "M01",
+                "M02"
+              ],
+              "brief": "以“两步搞定视频字幕”为主线，先展示添加字幕并手动编辑文字，再展示调整字体大小与颜色适配不同背景画面，突出易用性。"
+            },
+            "title": "两步搞定视频字幕：添加编辑与样式适配",
+            "scenes": [
+              {
+                "visual": "开场画面：屏幕录制或实拍电脑操作界面，鼠标点击“添加字幕”按钮，视频画面上出现字幕文本框，光标在文本框内闪烁。",
+                "narration": "第一步，给视频添加字幕。点击添加字幕后，字幕文字可以直接手动编辑，改成你需要的内容。",
+                "material_ids": [
+                  "M01"
+                ]
+              },
+              {
+                "visual": "特写镜头：操作者在字幕文本框中选中文字并输入修改，字幕内容实时变化，画面清晰展示编辑过程。",
+                "narration": "字幕文字支持手动编辑，输入即改，不用来回切换工具。",
+                "material_ids": [
+                  "M01"
+                ]
+              },
+              {
+                "visual": "对比画面：同一段视频分别搭配浅色背景和深色背景，操作者调整字幕字体大小与文字颜色，字幕在两种背景下都清晰可读。",
+                "narration": "第二步，调整字体大小和文字颜色，让字幕适配不同的背景画面。",
+                "material_ids": [
+                  "M02"
+                ]
+              },
+              {
+                "visual": "收尾画面：分屏展示编辑前后的字幕效果，画面中央出现“两步搞定”文字提示，引导观众尝试。",
+                "narration": "添加并编辑字幕，再调整字体大小和颜色，两步搞定视频字幕。",
+                "material_ids": [
+                  "M01",
+                  "M02"
+                ]
+              }
+            ],
+            "material_ids": [
+              "M01",
+              "M02"
+            ],
+            "generation_receipt": {
+              "response_id": "973f6e5c-9735-4c78-8fa9-c4922b669f3f",
+              "model": "deepseek-flash",
+              "source": "real_model"
+            }
+          }
+        ],
+        "task_plan": [
+          {
+            "step_id": "S1",
+            "material_ids": [
+              "M01",
+              "M02"
+            ],
+            "brief": "以“两步搞定视频字幕”为主线，先展示添加字幕并手动编辑文字，再展示调整字体大小与颜色适配不同背景画面，突出易用性。"
+          }
+        ],
+        "cost_total": 8,
+        "duration_total": 30,
+        "mode": "real",
+        "plan_id": "P-9372d683a3c07911",
+        "request_id": "replan"
+      },
+      "steps": [
+        {
+          "step": 1,
+          "source": "real_model",
+          "action": "search_materials",
+          "arguments": {
+            "query": "字幕功能推广"
+          },
+          "reason": "先检索字幕功能推广相关的参考资料",
+          "model_receipt": {
+            "response_id": "6aa9726b-8d17-49c6-bc24-c782f218d5c7",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_ESXp4rTXQzXVN1yB3NYM4075"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [
+              {
+                "material_id": "M01",
+                "topic": "字幕功能",
+                "content": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M02",
+                "topic": "字幕功能",
+                "content": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M03",
+                "topic": "字幕功能",
+                "content": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M04",
+                "topic": "字幕功能",
+                "content": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M08",
+                "topic": "视频裁剪",
+                "content": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                "relevance_score": 0.14
+              }
+            ],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 5 份素材：M01,M02,M03,M04,M08",
+          "spent_after": {
+            "cost": 2,
+            "duration": 5
+          },
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 25
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "用检索到的四条字幕功能素材规划一条推广脚本，并校验剩余额度是否足够。"
+        },
+        {
+          "step": 2,
+          "source": "real_model",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "S1",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "brief": "以“三步搞定视频字幕”为主线，依次展示添加并手动编辑字幕文字、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、按时间轴对齐每条字幕起止时间，突出易用与专业。"
+              }
+            ]
+          },
+          "reason": "用检索到的四条字幕功能素材规划一条推广脚本，并校验剩余额度是否足够。",
+          "model_receipt": {
+            "response_id": "938c3f74-8b70-4e14-9859-d320f063675a",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_OUXyaoTemuSZydOzTXHn7846"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": false,
+              "remaining_steps_cost": 10,
+              "remaining_steps_duration": 32,
+              "projected_total_cost": 12,
+              "projected_total_duration": 38,
+              "shortfall": {
+                "budget": 2,
+                "time_budget": 8
+              },
+              "pending_step_ids": [
+                "S1"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 12，总耗时 38，可行=False",
+          "spent_after": {
+            "cost": 2,
+            "duration": 6
+          },
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 24
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "四素材方案超出预算与时间，改用三条最相关素材重新估算以适配额度。"
+        },
+        {
+          "step": 3,
+          "source": "real_model",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "S1",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03"
+                ],
+                "brief": "以“三步搞定视频字幕”为主线，依次展示添加并手动编辑字幕文字、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物，突出易用性。"
+              }
+            ]
+          },
+          "reason": "四素材方案超出预算与时间，改用三条最相关素材重新估算以适配额度。",
+          "model_receipt": {
+            "response_id": "b4a00496-a7b4-4d6f-99b4-fd26f87f785a",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_hKSQ6sfhgotusPX6MY8t8404"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": false,
+              "remaining_steps_cost": 8,
+              "remaining_steps_duration": 27,
+              "projected_total_cost": 10,
+              "projected_total_duration": 34,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 4
+              },
+              "pending_step_ids": [
+                "S1"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 10，总耗时 34，可行=False",
+          "spent_after": {
+            "cost": 2,
+            "duration": 7
+          },
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 23
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "缩减到两条最相关素材以适配剩余预算与时间"
+        },
+        {
+          "step": 4,
+          "source": "real_model",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "S1",
+                "material_ids": [
+                  "M01",
+                  "M02"
+                ],
+                "brief": "以“两步搞定视频字幕”为主线，先展示添加字幕并手动编辑文字，再展示调整字体大小与颜色适配不同背景画面，突出易用性。"
+              }
+            ]
+          },
+          "reason": "缩减到两条最相关素材以适配剩余预算与时间",
+          "model_receipt": {
+            "response_id": "13d4b243-0e9c-428f-8faf-5a438332a147",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_2uskVbZDUUnZbpkXynKu5779"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": true,
+              "remaining_steps_cost": 6,
+              "remaining_steps_duration": 22,
+              "projected_total_cost": 8,
+              "projected_total_duration": 30,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 0
+              },
+              "pending_step_ids": [
+                "S1"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 8，总耗时 30，可行=True",
+          "spent_after": {
+            "cost": 2,
+            "duration": 8
+          },
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 22
+          },
+          "next_action": "generate_script",
+          "next_reason": "已估算方案可行且预算时间刚好覆盖，执行唯一脚本步骤。"
+        },
+        {
+          "step": 5,
+          "source": "real_model",
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "S1"
+          },
+          "reason": "已估算方案可行且预算时间刚好覆盖，执行唯一脚本步骤。",
+          "model_receipt": {
+            "response_id": "f93f98e7-a05d-4534-8d22-aa248a1f2131",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_fLtiiJ4a1r7zJx896tiO2111"
+          },
+          "result": {
+            "tool": "generate_script",
+            "status": "succeeded",
+            "data": {
+              "step_id": "S1",
+              "plan_step": {
+                "step_id": "S1",
+                "material_ids": [
+                  "M01",
+                  "M02"
+                ],
+                "brief": "以“两步搞定视频字幕”为主线，先展示添加字幕并手动编辑文字，再展示调整字体大小与颜色适配不同背景画面，突出易用性。"
+              },
+              "title": "两步搞定视频字幕：添加编辑与样式适配",
+              "scenes": [
+                {
+                  "visual": "开场画面：屏幕录制或实拍电脑操作界面，鼠标点击“添加字幕”按钮，视频画面上出现字幕文本框，光标在文本框内闪烁。",
+                  "narration": "第一步，给视频添加字幕。点击添加字幕后，字幕文字可以直接手动编辑，改成你需要的内容。",
+                  "material_ids": [
+                    "M01"
+                  ]
+                },
+                {
+                  "visual": "特写镜头：操作者在字幕文本框中选中文字并输入修改，字幕内容实时变化，画面清晰展示编辑过程。",
+                  "narration": "字幕文字支持手动编辑，输入即改，不用来回切换工具。",
+                  "material_ids": [
+                    "M01"
+                  ]
+                },
+                {
+                  "visual": "对比画面：同一段视频分别搭配浅色背景和深色背景，操作者调整字幕字体大小与文字颜色，字幕在两种背景下都清晰可读。",
+                  "narration": "第二步，调整字体大小和文字颜色，让字幕适配不同的背景画面。",
+                  "material_ids": [
+                    "M02"
+                  ]
+                },
+                {
+                  "visual": "收尾画面：分屏展示编辑前后的字幕效果，画面中央出现“两步搞定”文字提示，引导观众尝试。",
+                  "narration": "添加并编辑字幕，再调整字体大小和颜色，两步搞定视频字幕。",
+                  "material_ids": [
+                    "M01",
+                    "M02"
+                  ]
+                }
+              ],
+              "material_ids": [
+                "M01",
+                "M02"
+              ],
+              "generation_receipt": {
+                "response_id": "973f6e5c-9735-4c78-8fa9-c4922b669f3f",
+                "model": "deepseek-flash",
+                "source": "real_model"
+              }
+            },
+            "error": null,
+            "charged": {
+              "cost": 6,
+              "duration": 20
+            }
+          },
+          "observation_summary": "生成步骤 S1，素材=M01,M02",
+          "spent_after": {
+            "cost": 8,
+            "duration": 28
+          },
+          "remaining_after": {
+            "budget": 2,
+            "time_budget": 2
+          },
+          "next_action": "save_plan",
+          "next_reason": "唯一脚本已生成成功，剩余额度足够保存方案，直接保存活动安排。"
+        },
+        {
+          "step": 6,
+          "source": "real_model",
+          "action": "save_plan",
+          "arguments": {
+            "title": "两步搞定视频字幕：添加编辑与样式适配",
+            "summary": "围绕“字幕功能推广”主题，基于字幕功能素材（M01 添加字幕并手动编辑文字、M02 调整字体大小与文字颜色适配不同背景）制作 1 条推广脚本。脚本以“两步搞定视频字幕”为主线：第一步演示添加字幕并手动编辑文字，第二步演示调整字体大小与颜色以适配不同背景画面，结尾分屏对比编辑前后效果并引导观众尝试。受预算与时间额度限制，未纳入字幕位置设置（M03）与时间轴对齐（M04）内容。"
+          },
+          "reason": "唯一脚本已生成成功，剩余额度足够保存方案，直接保存活动安排。",
+          "model_receipt": {
+            "response_id": "54e98a4f-c6c1-45a8-8c99-9549514461ee",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_jTIrHgqa9h1MZLWExgo56804"
+          },
+          "result": {
+            "tool": "save_plan",
+            "status": "succeeded",
+            "data": {
+              "title": "两步搞定视频字幕：添加编辑与样式适配",
+              "summary": "围绕“字幕功能推广”主题，基于字幕功能素材（M01 添加字幕并手动编辑文字、M02 调整字体大小与文字颜色适配不同背景）制作 1 条推广脚本。脚本以“两步搞定视频字幕”为主线：第一步演示添加字幕并手动编辑文字，第二步演示调整字体大小与颜色以适配不同背景画面，结尾分屏对比编辑前后效果并引导观众尝试。受预算与时间额度限制，未纳入字幕位置设置（M03）与时间轴对齐（M04）内容。",
+              "topic": "字幕功能推广",
+              "scripts": [
+                {
+                  "step_id": "S1",
+                  "plan_step": {
+                    "step_id": "S1",
+                    "material_ids": [
+                      "M01",
+                      "M02"
+                    ],
+                    "brief": "以“两步搞定视频字幕”为主线，先展示添加字幕并手动编辑文字，再展示调整字体大小与颜色适配不同背景画面，突出易用性。"
+                  },
+                  "title": "两步搞定视频字幕：添加编辑与样式适配",
+                  "scenes": [
+                    {
+                      "visual": "开场画面：屏幕录制或实拍电脑操作界面，鼠标点击“添加字幕”按钮，视频画面上出现字幕文本框，光标在文本框内闪烁。",
+                      "narration": "第一步，给视频添加字幕。点击添加字幕后，字幕文字可以直接手动编辑，改成你需要的内容。",
+                      "material_ids": [
+                        "M01"
+                      ]
+                    },
+                    {
+                      "visual": "特写镜头：操作者在字幕文本框中选中文字并输入修改，字幕内容实时变化，画面清晰展示编辑过程。",
+                      "narration": "字幕文字支持手动编辑，输入即改，不用来回切换工具。",
+                      "material_ids": [
+                        "M01"
+                      ]
+                    },
+                    {
+                      "visual": "对比画面：同一段视频分别搭配浅色背景和深色背景，操作者调整字幕字体大小与文字颜色，字幕在两种背景下都清晰可读。",
+                      "narration": "第二步，调整字体大小和文字颜色，让字幕适配不同的背景画面。",
+                      "material_ids": [
+                        "M02"
+                      ]
+                    },
+                    {
+                      "visual": "收尾画面：分屏展示编辑前后的字幕效果，画面中央出现“两步搞定”文字提示，引导观众尝试。",
+                      "narration": "添加并编辑字幕，再调整字体大小和颜色，两步搞定视频字幕。",
+                      "material_ids": [
+                        "M01",
+                        "M02"
+                      ]
+                    }
+                  ],
+                  "material_ids": [
+                    "M01",
+                    "M02"
+                  ],
+                  "generation_receipt": {
+                    "response_id": "973f6e5c-9735-4c78-8fa9-c4922b669f3f",
+                    "model": "deepseek-flash",
+                    "source": "real_model"
+                  }
+                }
+              ],
+              "task_plan": [
+                {
+                  "step_id": "S1",
+                  "material_ids": [
+                    "M01",
+                    "M02"
+                  ],
+                  "brief": "以“两步搞定视频字幕”为主线，先展示添加字幕并手动编辑文字，再展示调整字体大小与颜色适配不同背景画面，突出易用性。"
+                }
+              ],
+              "cost_total": 8,
+              "duration_total": 30,
+              "mode": "real",
+              "plan_id": "P-9372d683a3c07911",
+              "request_id": "replan"
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 2
+            }
+          },
+          "observation_summary": "方案已保存：P-9372d683a3c07911",
+          "spent_after": {
+            "cost": 8,
+            "duration": 30
+          },
+          "remaining_after": {
+            "budget": 2,
+            "time_budget": 0
+          },
+          "next_action": "end"
+        }
+      ],
+      "replayed": false,
+      "evidence_scope": "真实模型调用与实际工具执行"
+    }
+  ],
+  "checks": {
+    "expected_status": true,
+    "cost_ledger": true,
+    "duration_ledger": true,
+    "within_budget": true,
+    "within_time": true,
+    "database_matches_saved_result": true,
+    "completion_requires_saved_plan": true,
+    "required_script_count": true,
+    "generated_text_present": true
+  }
+}

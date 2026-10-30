@@ -1,0 +1,434 @@
+{
+  "input": {
+    "request_id": "out-of-time",
+    "topic": "字幕功能推广",
+    "budget": 20,
+    "time_budget": 20
+  },
+  "runs": [
+    {
+      "request_id": "out-of-time",
+      "request": {
+        "topic": "字幕功能推广",
+        "budget": 20,
+        "time_budget": 20,
+        "script_count": 1
+      },
+      "mode": "mock",
+      "status": "incomplete",
+      "reason": {
+        "code": "MODEL_STOPPED",
+        "message": "最小可执行计划仍不满足预算或时间，缺口见估算结果",
+        "shortfall": {
+          "budget": 0,
+          "time_budget": 5
+        }
+      },
+      "spent": {
+        "cost": 2,
+        "duration": 8
+      },
+      "remaining": {
+        "budget": 18,
+        "time_budget": 12
+      },
+      "decision_steps": 5,
+      "tool_calls": 4,
+      "task_plan": [
+        {
+          "step_id": "script_1",
+          "material_ids": [
+            "M01"
+          ],
+          "brief": "字幕功能推广介绍第1条",
+          "status": "pending",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 0
+        }
+      ],
+      "plan_revisions": [
+        {
+          "decision_step": 2,
+          "plan": [
+            {
+              "step_id": "script_1",
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "brief": "字幕功能推广介绍第1条"
+            }
+          ],
+          "estimate": {
+            "feasible": false,
+            "remaining_steps_cost": 10,
+            "remaining_steps_duration": 32,
+            "projected_total_cost": 12,
+            "projected_total_duration": 38,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 18
+            },
+            "pending_step_ids": [
+              "script_1"
+            ],
+            "includes_save": true
+          }
+        },
+        {
+          "decision_step": 3,
+          "plan": [
+            {
+              "step_id": "script_1",
+              "material_ids": [
+                "M01",
+                "M02"
+              ],
+              "brief": "字幕功能推广介绍第1条"
+            }
+          ],
+          "estimate": {
+            "feasible": false,
+            "remaining_steps_cost": 6,
+            "remaining_steps_duration": 22,
+            "projected_total_cost": 8,
+            "projected_total_duration": 29,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 9
+            },
+            "pending_step_ids": [
+              "script_1"
+            ],
+            "includes_save": true
+          }
+        },
+        {
+          "decision_step": 4,
+          "plan": [
+            {
+              "step_id": "script_1",
+              "material_ids": [
+                "M01"
+              ],
+              "brief": "字幕功能推广介绍第1条"
+            }
+          ],
+          "estimate": {
+            "feasible": false,
+            "remaining_steps_cost": 4,
+            "remaining_steps_duration": 17,
+            "projected_total_cost": 6,
+            "projected_total_duration": 25,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 5
+            },
+            "pending_step_ids": [
+              "script_1"
+            ],
+            "includes_save": true
+          }
+        }
+      ],
+      "scripts": [],
+      "saved_plan": null,
+      "steps": [
+        {
+          "step": 1,
+          "source": "offline_mock",
+          "action": "search_materials",
+          "arguments": {
+            "query": "字幕功能推广"
+          },
+          "reason": "Mock：先获取可用参考资料。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [
+              {
+                "material_id": "M01",
+                "topic": "字幕功能",
+                "content": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M02",
+                "topic": "字幕功能",
+                "content": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M03",
+                "topic": "字幕功能",
+                "content": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M04",
+                "topic": "字幕功能",
+                "content": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M08",
+                "topic": "视频裁剪",
+                "content": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                "relevance_score": 0.14
+              }
+            ],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 5 份素材：M01,M02,M03,M04,M08",
+          "spent_after": {
+            "cost": 2,
+            "duration": 5
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 15
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "Mock：先估算候选计划。"
+        },
+        {
+          "step": 2,
+          "source": "offline_mock",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "script_1",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "brief": "字幕功能推广介绍第1条"
+              }
+            ]
+          },
+          "reason": "Mock：先估算候选计划。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": false,
+              "remaining_steps_cost": 10,
+              "remaining_steps_duration": 32,
+              "projected_total_cost": 12,
+              "projected_total_duration": 38,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 18
+              },
+              "pending_step_ids": [
+                "script_1"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 12，总耗时 38，可行=False",
+          "spent_after": {
+            "cost": 2,
+            "duration": 6
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 14
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "Mock：根据超限估算减少选用素材，再次估算。"
+        },
+        {
+          "step": 3,
+          "source": "offline_mock",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "script_1",
+                "material_ids": [
+                  "M01",
+                  "M02"
+                ],
+                "brief": "字幕功能推广介绍第1条"
+              }
+            ]
+          },
+          "reason": "Mock：根据超限估算减少选用素材，再次估算。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": false,
+              "remaining_steps_cost": 6,
+              "remaining_steps_duration": 22,
+              "projected_total_cost": 8,
+              "projected_total_duration": 29,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 9
+              },
+              "pending_step_ids": [
+                "script_1"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 8，总耗时 29，可行=False",
+          "spent_after": {
+            "cost": 2,
+            "duration": 7
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 13
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "Mock：根据超限估算减少选用素材，再次估算。"
+        },
+        {
+          "step": 4,
+          "source": "offline_mock",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "script_1",
+                "material_ids": [
+                  "M01"
+                ],
+                "brief": "字幕功能推广介绍第1条"
+              }
+            ]
+          },
+          "reason": "Mock：根据超限估算减少选用素材，再次估算。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": false,
+              "remaining_steps_cost": 4,
+              "remaining_steps_duration": 17,
+              "projected_total_cost": 6,
+              "projected_total_duration": 25,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 5
+              },
+              "pending_step_ids": [
+                "script_1"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 6，总耗时 25，可行=False",
+          "spent_after": {
+            "cost": 2,
+            "duration": 8
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 12
+          },
+          "next_action": "finish",
+          "next_reason": "Mock：无可行方案。"
+        },
+        {
+          "step": 5,
+          "source": "offline_mock",
+          "action": "finish",
+          "arguments": {
+            "message": "最小可执行计划仍不满足预算或时间，缺口见估算结果"
+          },
+          "reason": "Mock：无可行方案。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "finish",
+            "status": "stopped",
+            "data": {
+              "code": "MODEL_STOPPED",
+              "message": "最小可执行计划仍不满足预算或时间，缺口见估算结果",
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 5
+              }
+            },
+            "charged": {
+              "cost": 0,
+              "duration": 0
+            }
+          },
+          "observation_summary": "{'code': 'MODEL_STOPPED', 'message': '最小可执行计划仍不满足预算或时间，缺口见估算结果', 'shortfall': {'budget': 0, 'time_budget': 5}}",
+          "spent_after": {
+            "cost": 2,
+            "duration": 8
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 12
+          },
+          "next_action": "end"
+        }
+      ],
+      "replayed": false,
+      "evidence_scope": "离线 Mock，仅验证流程，不证明真实模型决策效果"
+    }
+  ],
+  "checks": {
+    "expected_status": true,
+    "cost_ledger": true,
+    "duration_ledger": true,
+    "within_budget": true,
+    "within_time": true,
+    "database_matches_saved_result": true,
+    "completion_requires_saved_plan": true,
+    "unfinished_reason_present": true,
+    "shortfall_reported": true
+  }
+}

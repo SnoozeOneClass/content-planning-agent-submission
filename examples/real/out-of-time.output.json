@@ -1,0 +1,444 @@
+{
+  "input": {
+    "request_id": "out-of-time",
+    "topic": "字幕功能推广",
+    "budget": 20,
+    "time_budget": 20
+  },
+  "runs": [
+    {
+      "request_id": "out-of-time",
+      "request": {
+        "topic": "字幕功能推广",
+        "budget": 20,
+        "time_budget": 20,
+        "script_count": 1
+      },
+      "mode": "real",
+      "status": "incomplete",
+      "reason": {
+        "code": "MODEL_STOPPED",
+        "message": "无法在剩余额度内完成：当前剩余预算 18、剩余时间 12。即使只使用 1 条最相关素材（M01）生成 1 条脚本，估算总费用 6、总耗时 25（含保存），仍超出时间预算 5。已检索到可用素材 M01–M04（字幕添加与编辑、字体颜色、位置、起止时间），但生成步骤耗时超出剩余时间。请补充时间额度（至少再增加约 5–10 秒）或降低要求后重试。",
+        "shortfall": {
+          "budget": 0,
+          "time_budget": 5
+        }
+      },
+      "spent": {
+        "cost": 2,
+        "duration": 8
+      },
+      "remaining": {
+        "budget": 18,
+        "time_budget": 12
+      },
+      "decision_steps": 5,
+      "tool_calls": 4,
+      "task_plan": [
+        {
+          "step_id": "S1",
+          "material_ids": [
+            "M01"
+          ],
+          "brief": "以字幕功能推广为主题，展示为视频添加字幕并手动编辑字幕文字的核心流程。",
+          "status": "pending",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 0
+        }
+      ],
+      "plan_revisions": [
+        {
+          "decision_step": 2,
+          "plan": [
+            {
+              "step_id": "S1",
+              "material_ids": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ],
+              "brief": "以字幕功能推广为主题，展示添加与编辑字幕文字、调整字体大小与颜色、设置字幕位置避免遮挡人物、以及设置字幕起止时间与画面同步的完整流程。"
+            }
+          ],
+          "estimate": {
+            "feasible": false,
+            "remaining_steps_cost": 10,
+            "remaining_steps_duration": 32,
+            "projected_total_cost": 12,
+            "projected_total_duration": 38,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 18
+            },
+            "pending_step_ids": [
+              "S1"
+            ],
+            "includes_save": true
+          }
+        },
+        {
+          "decision_step": 3,
+          "plan": [
+            {
+              "step_id": "S1",
+              "material_ids": [
+                "M01",
+                "M04"
+              ],
+              "brief": "以字幕功能推广为主题，展示为视频添加并手动编辑字幕文字，以及设置每条字幕起止时间使文字与对应视频片段同步出现的核心流程。"
+            }
+          ],
+          "estimate": {
+            "feasible": false,
+            "remaining_steps_cost": 6,
+            "remaining_steps_duration": 22,
+            "projected_total_cost": 8,
+            "projected_total_duration": 29,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 9
+            },
+            "pending_step_ids": [
+              "S1"
+            ],
+            "includes_save": true
+          }
+        },
+        {
+          "decision_step": 4,
+          "plan": [
+            {
+              "step_id": "S1",
+              "material_ids": [
+                "M01"
+              ],
+              "brief": "以字幕功能推广为主题，展示为视频添加字幕并手动编辑字幕文字的核心流程。"
+            }
+          ],
+          "estimate": {
+            "feasible": false,
+            "remaining_steps_cost": 4,
+            "remaining_steps_duration": 17,
+            "projected_total_cost": 6,
+            "projected_total_duration": 25,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 5
+            },
+            "pending_step_ids": [
+              "S1"
+            ],
+            "includes_save": true
+          }
+        }
+      ],
+      "scripts": [],
+      "saved_plan": null,
+      "steps": [
+        {
+          "step": 1,
+          "source": "real_model",
+          "action": "search_materials",
+          "arguments": {
+            "query": "字幕功能推广"
+          },
+          "reason": "先检索字幕功能推广相关的参考资料",
+          "model_receipt": {
+            "response_id": "2f5819e6-7740-4808-8f91-2b6f277f70e8",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_fO0ODAH6hh6qcARW48n70126"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [
+              {
+                "material_id": "M01",
+                "topic": "字幕功能",
+                "content": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M02",
+                "topic": "字幕功能",
+                "content": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M03",
+                "topic": "字幕功能",
+                "content": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M04",
+                "topic": "字幕功能",
+                "content": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M08",
+                "topic": "视频裁剪",
+                "content": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                "relevance_score": 0.14
+              }
+            ],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 5 份素材：M01,M02,M03,M04,M08",
+          "spent_after": {
+            "cost": 2,
+            "duration": 5
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 15
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "检索到4条高相关字幕功能素材，先估算单条脚本的整体费用与时间。"
+        },
+        {
+          "step": 2,
+          "source": "real_model",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "S1",
+                "material_ids": [
+                  "M01",
+                  "M02",
+                  "M03",
+                  "M04"
+                ],
+                "brief": "以字幕功能推广为主题，展示添加与编辑字幕文字、调整字体大小与颜色、设置字幕位置避免遮挡人物、以及设置字幕起止时间与画面同步的完整流程。"
+              }
+            ]
+          },
+          "reason": "检索到4条高相关字幕功能素材，先估算单条脚本的整体费用与时间。",
+          "model_receipt": {
+            "response_id": "da621482-3519-4063-b1ca-753e45a64aa4",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_AGfRG3Jf1IthYi5LOUz01594"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": false,
+              "remaining_steps_cost": 10,
+              "remaining_steps_duration": 32,
+              "projected_total_cost": 12,
+              "projected_total_duration": 38,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 18
+              },
+              "pending_step_ids": [
+                "S1"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 12，总耗时 38，可行=False",
+          "spent_after": {
+            "cost": 2,
+            "duration": 6
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 14
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "4条素材超出剩余时间，改用2条最核心素材重新估算以适配预算与时间。"
+        },
+        {
+          "step": 3,
+          "source": "real_model",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "S1",
+                "material_ids": [
+                  "M01",
+                  "M04"
+                ],
+                "brief": "以字幕功能推广为主题，展示为视频添加并手动编辑字幕文字，以及设置每条字幕起止时间使文字与对应视频片段同步出现的核心流程。"
+              }
+            ]
+          },
+          "reason": "4条素材超出剩余时间，改用2条最核心素材重新估算以适配预算与时间。",
+          "model_receipt": {
+            "response_id": "3ea10db8-2605-4563-9dcd-d50aabfaeaac",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_F8O3sibtBBgZT7ZStw746093"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": false,
+              "remaining_steps_cost": 6,
+              "remaining_steps_duration": 22,
+              "projected_total_cost": 8,
+              "projected_total_duration": 29,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 9
+              },
+              "pending_step_ids": [
+                "S1"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 8，总耗时 29，可行=False",
+          "spent_after": {
+            "cost": 2,
+            "duration": 7
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 13
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "单条脚本仅用1个素材可压缩生成耗时，尝试在剩余额度内完成。"
+        },
+        {
+          "step": 4,
+          "source": "real_model",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "S1",
+                "material_ids": [
+                  "M01"
+                ],
+                "brief": "以字幕功能推广为主题，展示为视频添加字幕并手动编辑字幕文字的核心流程。"
+              }
+            ]
+          },
+          "reason": "单条脚本仅用1个素材可压缩生成耗时，尝试在剩余额度内完成。",
+          "model_receipt": {
+            "response_id": "4e57a834-f307-4f4c-b2c0-1b4fd8bfa40f",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_34a2dx9fOs2DZEmkNoHj6449"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": false,
+              "remaining_steps_cost": 4,
+              "remaining_steps_duration": 17,
+              "projected_total_cost": 6,
+              "projected_total_duration": 25,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 5
+              },
+              "pending_step_ids": [
+                "S1"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 6，总耗时 25，可行=False",
+          "spent_after": {
+            "cost": 2,
+            "duration": 8
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 12
+          },
+          "next_action": "finish",
+          "next_reason": "最小可行方案仍超时间预算，需请求补充额度。"
+        },
+        {
+          "step": 5,
+          "source": "real_model",
+          "action": "finish",
+          "arguments": {
+            "message": "无法在剩余额度内完成：当前剩余预算 18、剩余时间 12。即使只使用 1 条最相关素材（M01）生成 1 条脚本，估算总费用 6、总耗时 25（含保存），仍超出时间预算 5。已检索到可用素材 M01–M04（字幕添加与编辑、字体颜色、位置、起止时间），但生成步骤耗时超出剩余时间。请补充时间额度（至少再增加约 5–10 秒）或降低要求后重试。"
+          },
+          "reason": "最小可行方案仍超时间预算，需请求补充额度。",
+          "model_receipt": {
+            "response_id": "bd0fcf13-977f-4f09-8fc1-12696f522017",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_NnCzfrJZuvPK9uHFGQ4g2074"
+          },
+          "result": {
+            "tool": "finish",
+            "status": "stopped",
+            "data": {
+              "code": "MODEL_STOPPED",
+              "message": "无法在剩余额度内完成：当前剩余预算 18、剩余时间 12。即使只使用 1 条最相关素材（M01）生成 1 条脚本，估算总费用 6、总耗时 25（含保存），仍超出时间预算 5。已检索到可用素材 M01–M04（字幕添加与编辑、字体颜色、位置、起止时间），但生成步骤耗时超出剩余时间。请补充时间额度（至少再增加约 5–10 秒）或降低要求后重试。",
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 5
+              }
+            },
+            "charged": {
+              "cost": 0,
+              "duration": 0
+            }
+          },
+          "observation_summary": "{'code': 'MODEL_STOPPED', 'message': '无法在剩余额度内完成：当前剩余预算 18、剩余时间 12。即使只使用 1 条最相关素材（M01）生成 1 条脚本，估算总费用 6、总耗时 25（含保存），仍超出时间预算 5。已检索到可用素材 M01–M04（字幕添加与编辑、字体颜色、位置、起止时间），但生成步骤耗时超出剩余时间。请补充时间额度（至少再增加约 5–10 秒）或降低要求后重试。', 'shortfall': {'budget': 0, 'time_budget': 5}}",
+          "spent_after": {
+            "cost": 2,
+            "duration": 8
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 12
+          },
+          "next_action": "end"
+        }
+      ],
+      "replayed": false,
+      "evidence_scope": "真实模型调用与实际工具执行"
+    }
+  ],
+  "checks": {
+    "expected_status": true,
+    "cost_ledger": true,
+    "duration_ledger": true,
+    "within_budget": true,
+    "within_time": true,
+    "database_matches_saved_result": true,
+    "completion_requires_saved_plan": true,
+    "unfinished_reason_present": true,
+    "shortfall_reported": true
+  }
+}

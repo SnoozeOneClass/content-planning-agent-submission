@@ -1,0 +1,1125 @@
+{
+  "input": {
+    "request_id": "repeat",
+    "topic": "视频裁剪推广",
+    "budget": 20,
+    "time_budget": 100
+  },
+  "runs": [
+    {
+      "request_id": "repeat",
+      "request": {
+        "topic": "视频裁剪推广",
+        "budget": 20,
+        "time_budget": 100,
+        "script_count": 1
+      },
+      "mode": "real",
+      "status": "completed",
+      "reason": null,
+      "spent": {
+        "cost": 12,
+        "duration": 38
+      },
+      "remaining": {
+        "budget": 8,
+        "time_budget": 62
+      },
+      "decision_steps": 4,
+      "tool_calls": 4,
+      "task_plan": [
+        {
+          "step_id": "S1",
+          "material_ids": [
+            "M05",
+            "M06",
+            "M07",
+            "M08"
+          ],
+          "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。",
+          "status": "succeeded",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 1
+        }
+      ],
+      "plan_revisions": [
+        {
+          "decision_step": 2,
+          "plan": [
+            {
+              "step_id": "S1",
+              "material_ids": [
+                "M05",
+                "M06",
+                "M07",
+                "M08"
+              ],
+              "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。"
+            }
+          ],
+          "estimate": {
+            "feasible": true,
+            "remaining_steps_cost": 10,
+            "remaining_steps_duration": 32,
+            "projected_total_cost": 12,
+            "projected_total_duration": 38,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 0
+            },
+            "pending_step_ids": [
+              "S1"
+            ],
+            "includes_save": true
+          }
+        }
+      ],
+      "scripts": [
+        {
+          "step_id": "S1",
+          "plan_step": {
+            "step_id": "S1",
+            "material_ids": [
+              "M05",
+              "M06",
+              "M07",
+              "M08"
+            ],
+            "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。"
+          },
+          "title": "视频裁剪功能展示：选取片段、分割长视频、调整顺序与导出前预览",
+          "scenes": [
+            {
+              "visual": "画面展示一段视频素材，标注出所选区间的起点与终点，突出保留的片段范围。",
+              "narration": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+              "material_ids": [
+                "M05"
+              ]
+            },
+            {
+              "visual": "画面展示一段长视频被分割为多个片段，各片段分别呈现，便于查看各段内容。",
+              "narration": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+              "material_ids": [
+                "M06"
+              ]
+            },
+            {
+              "visual": "画面展示多个视频片段，片段排列顺序被调整，用于组织不同的叙述顺序。",
+              "narration": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+              "material_ids": [
+                "M07"
+              ]
+            },
+            {
+              "visual": "画面展示裁剪后的片段预览，在导出前查看内容。",
+              "narration": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+              "material_ids": [
+                "M08"
+              ]
+            }
+          ],
+          "material_ids": [
+            "M05",
+            "M06",
+            "M07",
+            "M08"
+          ],
+          "generation_receipt": {
+            "response_id": "a72cb4cc-1dde-40e9-bd48-461ee675e7a6",
+            "model": "deepseek-flash",
+            "source": "real_model"
+          }
+        }
+      ],
+      "saved_plan": {
+        "title": "视频裁剪功能推广方案",
+        "summary": "围绕视频裁剪推广主题，制作 1 条功能演示脚本：依次展示选取片段起止点并保留区间、将长视频分割为多段分别查看、调整片段排列顺序组织叙述、导出前预览裁剪结果四项能力，突出高效剪辑体验。素材取自 M05、M06、M07、M08。",
+        "topic": "视频裁剪推广",
+        "scripts": [
+          {
+            "step_id": "S1",
+            "plan_step": {
+              "step_id": "S1",
+              "material_ids": [
+                "M05",
+                "M06",
+                "M07",
+                "M08"
+              ],
+              "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。"
+            },
+            "title": "视频裁剪功能展示：选取片段、分割长视频、调整顺序与导出前预览",
+            "scenes": [
+              {
+                "visual": "画面展示一段视频素材，标注出所选区间的起点与终点，突出保留的片段范围。",
+                "narration": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+                "material_ids": [
+                  "M05"
+                ]
+              },
+              {
+                "visual": "画面展示一段长视频被分割为多个片段，各片段分别呈现，便于查看各段内容。",
+                "narration": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+                "material_ids": [
+                  "M06"
+                ]
+              },
+              {
+                "visual": "画面展示多个视频片段，片段排列顺序被调整，用于组织不同的叙述顺序。",
+                "narration": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+                "material_ids": [
+                  "M07"
+                ]
+              },
+              {
+                "visual": "画面展示裁剪后的片段预览，在导出前查看内容。",
+                "narration": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                "material_ids": [
+                  "M08"
+                ]
+              }
+            ],
+            "material_ids": [
+              "M05",
+              "M06",
+              "M07",
+              "M08"
+            ],
+            "generation_receipt": {
+              "response_id": "a72cb4cc-1dde-40e9-bd48-461ee675e7a6",
+              "model": "deepseek-flash",
+              "source": "real_model"
+            }
+          }
+        ],
+        "task_plan": [
+          {
+            "step_id": "S1",
+            "material_ids": [
+              "M05",
+              "M06",
+              "M07",
+              "M08"
+            ],
+            "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。"
+          }
+        ],
+        "cost_total": 12,
+        "duration_total": 38,
+        "mode": "real",
+        "plan_id": "P-b578280bb4112d68",
+        "request_id": "repeat"
+      },
+      "steps": [
+        {
+          "step": 1,
+          "source": "real_model",
+          "action": "search_materials",
+          "arguments": {
+            "query": "视频裁剪推广"
+          },
+          "reason": "先检索与视频裁剪推广主题相关的参考资料",
+          "model_receipt": {
+            "response_id": "6d758b63-c3f3-4b49-8d38-13c0a03e2819",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_gYuWYqrI9BseEvouUkje3575"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [
+              {
+                "material_id": "M05",
+                "topic": "视频裁剪",
+                "content": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M06",
+                "topic": "视频裁剪",
+                "content": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M07",
+                "topic": "视频裁剪",
+                "content": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M08",
+                "topic": "视频裁剪",
+                "content": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M01",
+                "topic": "字幕功能",
+                "content": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                "relevance_score": 0.14
+              },
+              {
+                "material_id": "M04",
+                "topic": "字幕功能",
+                "content": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "relevance_score": 0.14
+              }
+            ],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 6 份素材：M05,M06,M07,M08,M01,M04",
+          "spent_after": {
+            "cost": 2,
+            "duration": 5
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 95
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "用检索到的四条高相关视频裁剪素材规划一条推广脚本并校验费用时间。"
+        },
+        {
+          "step": 2,
+          "source": "real_model",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "S1",
+                "material_ids": [
+                  "M05",
+                  "M06",
+                  "M07",
+                  "M08"
+                ],
+                "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。"
+              }
+            ]
+          },
+          "reason": "用检索到的四条高相关视频裁剪素材规划一条推广脚本并校验费用时间。",
+          "model_receipt": {
+            "response_id": "0dac6fb5-2127-456f-845e-21b12fab023c",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_tNGqMyp0yJNuJOb3QC214845"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": true,
+              "remaining_steps_cost": 10,
+              "remaining_steps_duration": 32,
+              "projected_total_cost": 12,
+              "projected_total_duration": 38,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 0
+              },
+              "pending_step_ids": [
+                "S1"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 12，总耗时 38，可行=True",
+          "spent_after": {
+            "cost": 2,
+            "duration": 6
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 94
+          },
+          "next_action": "generate_script",
+          "next_reason": "方案已估算可行且预算时间充足，执行唯一待生成脚本。"
+        },
+        {
+          "step": 3,
+          "source": "real_model",
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "S1"
+          },
+          "reason": "方案已估算可行且预算时间充足，执行唯一待生成脚本。",
+          "model_receipt": {
+            "response_id": "513703b9-81fc-48ac-bcb2-67fda104a105",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_PDXdmkLODN1ntQIdYv1T3651"
+          },
+          "result": {
+            "tool": "generate_script",
+            "status": "succeeded",
+            "data": {
+              "step_id": "S1",
+              "plan_step": {
+                "step_id": "S1",
+                "material_ids": [
+                  "M05",
+                  "M06",
+                  "M07",
+                  "M08"
+                ],
+                "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。"
+              },
+              "title": "视频裁剪功能展示：选取片段、分割长视频、调整顺序与导出前预览",
+              "scenes": [
+                {
+                  "visual": "画面展示一段视频素材，标注出所选区间的起点与终点，突出保留的片段范围。",
+                  "narration": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+                  "material_ids": [
+                    "M05"
+                  ]
+                },
+                {
+                  "visual": "画面展示一段长视频被分割为多个片段，各片段分别呈现，便于查看各段内容。",
+                  "narration": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+                  "material_ids": [
+                    "M06"
+                  ]
+                },
+                {
+                  "visual": "画面展示多个视频片段，片段排列顺序被调整，用于组织不同的叙述顺序。",
+                  "narration": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+                  "material_ids": [
+                    "M07"
+                  ]
+                },
+                {
+                  "visual": "画面展示裁剪后的片段预览，在导出前查看内容。",
+                  "narration": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                  "material_ids": [
+                    "M08"
+                  ]
+                }
+              ],
+              "material_ids": [
+                "M05",
+                "M06",
+                "M07",
+                "M08"
+              ],
+              "generation_receipt": {
+                "response_id": "a72cb4cc-1dde-40e9-bd48-461ee675e7a6",
+                "model": "deepseek-flash",
+                "source": "real_model"
+              }
+            },
+            "error": null,
+            "charged": {
+              "cost": 10,
+              "duration": 30
+            }
+          },
+          "observation_summary": "生成步骤 S1，素材=M05,M06,M07,M08",
+          "spent_after": {
+            "cost": 12,
+            "duration": 36
+          },
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 64
+          },
+          "next_action": "save_plan",
+          "next_reason": "唯一脚本已生成成功，保存方案以完成任务。"
+        },
+        {
+          "step": 4,
+          "source": "real_model",
+          "action": "save_plan",
+          "arguments": {
+            "title": "视频裁剪功能推广方案",
+            "summary": "围绕视频裁剪推广主题，制作 1 条功能演示脚本：依次展示选取片段起止点并保留区间、将长视频分割为多段分别查看、调整片段排列顺序组织叙述、导出前预览裁剪结果四项能力，突出高效剪辑体验。素材取自 M05、M06、M07、M08。"
+          },
+          "reason": "唯一脚本已生成成功，保存方案以完成任务。",
+          "model_receipt": {
+            "response_id": "f28e3d7a-d5ca-4ee7-bff3-40a93ab100ae",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_EK8q7GvRfVv2NbeUznrN3903"
+          },
+          "result": {
+            "tool": "save_plan",
+            "status": "succeeded",
+            "data": {
+              "title": "视频裁剪功能推广方案",
+              "summary": "围绕视频裁剪推广主题，制作 1 条功能演示脚本：依次展示选取片段起止点并保留区间、将长视频分割为多段分别查看、调整片段排列顺序组织叙述、导出前预览裁剪结果四项能力，突出高效剪辑体验。素材取自 M05、M06、M07、M08。",
+              "topic": "视频裁剪推广",
+              "scripts": [
+                {
+                  "step_id": "S1",
+                  "plan_step": {
+                    "step_id": "S1",
+                    "material_ids": [
+                      "M05",
+                      "M06",
+                      "M07",
+                      "M08"
+                    ],
+                    "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。"
+                  },
+                  "title": "视频裁剪功能展示：选取片段、分割长视频、调整顺序与导出前预览",
+                  "scenes": [
+                    {
+                      "visual": "画面展示一段视频素材，标注出所选区间的起点与终点，突出保留的片段范围。",
+                      "narration": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+                      "material_ids": [
+                        "M05"
+                      ]
+                    },
+                    {
+                      "visual": "画面展示一段长视频被分割为多个片段，各片段分别呈现，便于查看各段内容。",
+                      "narration": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+                      "material_ids": [
+                        "M06"
+                      ]
+                    },
+                    {
+                      "visual": "画面展示多个视频片段，片段排列顺序被调整，用于组织不同的叙述顺序。",
+                      "narration": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+                      "material_ids": [
+                        "M07"
+                      ]
+                    },
+                    {
+                      "visual": "画面展示裁剪后的片段预览，在导出前查看内容。",
+                      "narration": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                      "material_ids": [
+                        "M08"
+                      ]
+                    }
+                  ],
+                  "material_ids": [
+                    "M05",
+                    "M06",
+                    "M07",
+                    "M08"
+                  ],
+                  "generation_receipt": {
+                    "response_id": "a72cb4cc-1dde-40e9-bd48-461ee675e7a6",
+                    "model": "deepseek-flash",
+                    "source": "real_model"
+                  }
+                }
+              ],
+              "task_plan": [
+                {
+                  "step_id": "S1",
+                  "material_ids": [
+                    "M05",
+                    "M06",
+                    "M07",
+                    "M08"
+                  ],
+                  "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。"
+                }
+              ],
+              "cost_total": 12,
+              "duration_total": 38,
+              "mode": "real",
+              "plan_id": "P-b578280bb4112d68",
+              "request_id": "repeat"
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 2
+            }
+          },
+          "observation_summary": "方案已保存：P-b578280bb4112d68",
+          "spent_after": {
+            "cost": 12,
+            "duration": 38
+          },
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 62
+          },
+          "next_action": "end"
+        }
+      ],
+      "replayed": false,
+      "evidence_scope": "真实模型调用与实际工具执行"
+    },
+    {
+      "request_id": "repeat",
+      "request": {
+        "budget": 20,
+        "script_count": 1,
+        "time_budget": 100,
+        "topic": "视频裁剪推广"
+      },
+      "mode": "real",
+      "status": "completed",
+      "reason": null,
+      "spent": {
+        "cost": 12,
+        "duration": 38
+      },
+      "remaining": {
+        "budget": 8,
+        "time_budget": 62
+      },
+      "decision_steps": 4,
+      "tool_calls": 4,
+      "task_plan": [
+        {
+          "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。",
+          "material_ids": [
+            "M05",
+            "M06",
+            "M07",
+            "M08"
+          ],
+          "step_id": "S1",
+          "status": "succeeded",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 1
+        }
+      ],
+      "plan_revisions": [
+        {
+          "decision_step": 2,
+          "estimate": {
+            "feasible": true,
+            "includes_save": true,
+            "pending_step_ids": [
+              "S1"
+            ],
+            "projected_total_cost": 12,
+            "projected_total_duration": 38,
+            "remaining_steps_cost": 10,
+            "remaining_steps_duration": 32,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 0
+            }
+          },
+          "plan": [
+            {
+              "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。",
+              "material_ids": [
+                "M05",
+                "M06",
+                "M07",
+                "M08"
+              ],
+              "step_id": "S1"
+            }
+          ]
+        }
+      ],
+      "scripts": [
+        {
+          "generation_receipt": {
+            "model": "deepseek-flash",
+            "response_id": "a72cb4cc-1dde-40e9-bd48-461ee675e7a6",
+            "source": "real_model"
+          },
+          "material_ids": [
+            "M05",
+            "M06",
+            "M07",
+            "M08"
+          ],
+          "plan_step": {
+            "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。",
+            "material_ids": [
+              "M05",
+              "M06",
+              "M07",
+              "M08"
+            ],
+            "step_id": "S1"
+          },
+          "scenes": [
+            {
+              "material_ids": [
+                "M05"
+              ],
+              "narration": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+              "visual": "画面展示一段视频素材，标注出所选区间的起点与终点，突出保留的片段范围。"
+            },
+            {
+              "material_ids": [
+                "M06"
+              ],
+              "narration": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+              "visual": "画面展示一段长视频被分割为多个片段，各片段分别呈现，便于查看各段内容。"
+            },
+            {
+              "material_ids": [
+                "M07"
+              ],
+              "narration": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+              "visual": "画面展示多个视频片段，片段排列顺序被调整，用于组织不同的叙述顺序。"
+            },
+            {
+              "material_ids": [
+                "M08"
+              ],
+              "narration": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+              "visual": "画面展示裁剪后的片段预览，在导出前查看内容。"
+            }
+          ],
+          "step_id": "S1",
+          "title": "视频裁剪功能展示：选取片段、分割长视频、调整顺序与导出前预览"
+        }
+      ],
+      "saved_plan": {
+        "cost_total": 12,
+        "duration_total": 38,
+        "mode": "real",
+        "plan_id": "P-b578280bb4112d68",
+        "request_id": "repeat",
+        "scripts": [
+          {
+            "generation_receipt": {
+              "model": "deepseek-flash",
+              "response_id": "a72cb4cc-1dde-40e9-bd48-461ee675e7a6",
+              "source": "real_model"
+            },
+            "material_ids": [
+              "M05",
+              "M06",
+              "M07",
+              "M08"
+            ],
+            "plan_step": {
+              "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。",
+              "material_ids": [
+                "M05",
+                "M06",
+                "M07",
+                "M08"
+              ],
+              "step_id": "S1"
+            },
+            "scenes": [
+              {
+                "material_ids": [
+                  "M05"
+                ],
+                "narration": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+                "visual": "画面展示一段视频素材，标注出所选区间的起点与终点，突出保留的片段范围。"
+              },
+              {
+                "material_ids": [
+                  "M06"
+                ],
+                "narration": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+                "visual": "画面展示一段长视频被分割为多个片段，各片段分别呈现，便于查看各段内容。"
+              },
+              {
+                "material_ids": [
+                  "M07"
+                ],
+                "narration": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+                "visual": "画面展示多个视频片段，片段排列顺序被调整，用于组织不同的叙述顺序。"
+              },
+              {
+                "material_ids": [
+                  "M08"
+                ],
+                "narration": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                "visual": "画面展示裁剪后的片段预览，在导出前查看内容。"
+              }
+            ],
+            "step_id": "S1",
+            "title": "视频裁剪功能展示：选取片段、分割长视频、调整顺序与导出前预览"
+          }
+        ],
+        "summary": "围绕视频裁剪推广主题，制作 1 条功能演示脚本：依次展示选取片段起止点并保留区间、将长视频分割为多段分别查看、调整片段排列顺序组织叙述、导出前预览裁剪结果四项能力，突出高效剪辑体验。素材取自 M05、M06、M07、M08。",
+        "task_plan": [
+          {
+            "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。",
+            "material_ids": [
+              "M05",
+              "M06",
+              "M07",
+              "M08"
+            ],
+            "step_id": "S1"
+          }
+        ],
+        "title": "视频裁剪功能推广方案",
+        "topic": "视频裁剪推广"
+      },
+      "steps": [
+        {
+          "action": "search_materials",
+          "arguments": {
+            "query": "视频裁剪推广"
+          },
+          "model_receipt": {
+            "model": "deepseek-flash",
+            "response_id": "6d758b63-c3f3-4b49-8d38-13c0a03e2819",
+            "source": "real_model",
+            "tool_call_id": "call_00_gYuWYqrI9BseEvouUkje3575"
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "用检索到的四条高相关视频裁剪素材规划一条推广脚本并校验费用时间。",
+          "observation_summary": "检索返回 6 份素材：M05,M06,M07,M08,M01,M04",
+          "reason": "先检索与视频裁剪推广主题相关的参考资料",
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 95
+          },
+          "result": {
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            },
+            "data": [
+              {
+                "content": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+                "material_id": "M05",
+                "relevance_score": 0.72,
+                "topic": "视频裁剪"
+              },
+              {
+                "content": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+                "material_id": "M06",
+                "relevance_score": 0.72,
+                "topic": "视频裁剪"
+              },
+              {
+                "content": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+                "material_id": "M07",
+                "relevance_score": 0.72,
+                "topic": "视频裁剪"
+              },
+              {
+                "content": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                "material_id": "M08",
+                "relevance_score": 0.72,
+                "topic": "视频裁剪"
+              },
+              {
+                "content": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                "material_id": "M01",
+                "relevance_score": 0.14,
+                "topic": "字幕功能"
+              },
+              {
+                "content": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "material_id": "M04",
+                "relevance_score": 0.14,
+                "topic": "字幕功能"
+              }
+            ],
+            "error": null,
+            "status": "succeeded",
+            "tool": "search_materials"
+          },
+          "source": "real_model",
+          "spent_after": {
+            "cost": 2,
+            "duration": 5
+          },
+          "step": 1
+        },
+        {
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。",
+                "material_ids": [
+                  "M05",
+                  "M06",
+                  "M07",
+                  "M08"
+                ],
+                "step_id": "S1"
+              }
+            ]
+          },
+          "model_receipt": {
+            "model": "deepseek-flash",
+            "response_id": "0dac6fb5-2127-456f-845e-21b12fab023c",
+            "source": "real_model",
+            "tool_call_id": "call_00_tNGqMyp0yJNuJOb3QC214845"
+          },
+          "next_action": "generate_script",
+          "next_reason": "方案已估算可行且预算时间充足，执行唯一待生成脚本。",
+          "observation_summary": "预计总费用 12，总耗时 38，可行=True",
+          "reason": "用检索到的四条高相关视频裁剪素材规划一条推广脚本并校验费用时间。",
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 94
+          },
+          "result": {
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            },
+            "data": {
+              "feasible": true,
+              "includes_save": true,
+              "pending_step_ids": [
+                "S1"
+              ],
+              "projected_total_cost": 12,
+              "projected_total_duration": 38,
+              "remaining_steps_cost": 10,
+              "remaining_steps_duration": 32,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 0
+              }
+            },
+            "error": null,
+            "status": "succeeded",
+            "tool": "estimate_plan"
+          },
+          "source": "real_model",
+          "spent_after": {
+            "cost": 2,
+            "duration": 6
+          },
+          "step": 2
+        },
+        {
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "S1"
+          },
+          "model_receipt": {
+            "model": "deepseek-flash",
+            "response_id": "513703b9-81fc-48ac-bcb2-67fda104a105",
+            "source": "real_model",
+            "tool_call_id": "call_00_PDXdmkLODN1ntQIdYv1T3651"
+          },
+          "next_action": "save_plan",
+          "next_reason": "唯一脚本已生成成功，保存方案以完成任务。",
+          "observation_summary": "生成步骤 S1，素材=M05,M06,M07,M08",
+          "reason": "方案已估算可行且预算时间充足，执行唯一待生成脚本。",
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 64
+          },
+          "result": {
+            "charged": {
+              "cost": 10,
+              "duration": 30
+            },
+            "data": {
+              "generation_receipt": {
+                "model": "deepseek-flash",
+                "response_id": "a72cb4cc-1dde-40e9-bd48-461ee675e7a6",
+                "source": "real_model"
+              },
+              "material_ids": [
+                "M05",
+                "M06",
+                "M07",
+                "M08"
+              ],
+              "plan_step": {
+                "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。",
+                "material_ids": [
+                  "M05",
+                  "M06",
+                  "M07",
+                  "M08"
+                ],
+                "step_id": "S1"
+              },
+              "scenes": [
+                {
+                  "material_ids": [
+                    "M05"
+                  ],
+                  "narration": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+                  "visual": "画面展示一段视频素材，标注出所选区间的起点与终点，突出保留的片段范围。"
+                },
+                {
+                  "material_ids": [
+                    "M06"
+                  ],
+                  "narration": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+                  "visual": "画面展示一段长视频被分割为多个片段，各片段分别呈现，便于查看各段内容。"
+                },
+                {
+                  "material_ids": [
+                    "M07"
+                  ],
+                  "narration": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+                  "visual": "画面展示多个视频片段，片段排列顺序被调整，用于组织不同的叙述顺序。"
+                },
+                {
+                  "material_ids": [
+                    "M08"
+                  ],
+                  "narration": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                  "visual": "画面展示裁剪后的片段预览，在导出前查看内容。"
+                }
+              ],
+              "step_id": "S1",
+              "title": "视频裁剪功能展示：选取片段、分割长视频、调整顺序与导出前预览"
+            },
+            "error": null,
+            "status": "succeeded",
+            "tool": "generate_script"
+          },
+          "source": "real_model",
+          "spent_after": {
+            "cost": 12,
+            "duration": 36
+          },
+          "step": 3
+        },
+        {
+          "action": "save_plan",
+          "arguments": {
+            "summary": "围绕视频裁剪推广主题，制作 1 条功能演示脚本：依次展示选取片段起止点并保留区间、将长视频分割为多段分别查看、调整片段排列顺序组织叙述、导出前预览裁剪结果四项能力，突出高效剪辑体验。素材取自 M05、M06、M07、M08。",
+            "title": "视频裁剪功能推广方案"
+          },
+          "model_receipt": {
+            "model": "deepseek-flash",
+            "response_id": "f28e3d7a-d5ca-4ee7-bff3-40a93ab100ae",
+            "source": "real_model",
+            "tool_call_id": "call_00_EK8q7GvRfVv2NbeUznrN3903"
+          },
+          "next_action": "end",
+          "observation_summary": "方案已保存：P-b578280bb4112d68",
+          "reason": "唯一脚本已生成成功，保存方案以完成任务。",
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 62
+          },
+          "result": {
+            "charged": {
+              "cost": 0,
+              "duration": 2
+            },
+            "data": {
+              "cost_total": 12,
+              "duration_total": 38,
+              "mode": "real",
+              "plan_id": "P-b578280bb4112d68",
+              "request_id": "repeat",
+              "scripts": [
+                {
+                  "generation_receipt": {
+                    "model": "deepseek-flash",
+                    "response_id": "a72cb4cc-1dde-40e9-bd48-461ee675e7a6",
+                    "source": "real_model"
+                  },
+                  "material_ids": [
+                    "M05",
+                    "M06",
+                    "M07",
+                    "M08"
+                  ],
+                  "plan_step": {
+                    "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。",
+                    "material_ids": [
+                      "M05",
+                      "M06",
+                      "M07",
+                      "M08"
+                    ],
+                    "step_id": "S1"
+                  },
+                  "scenes": [
+                    {
+                      "material_ids": [
+                        "M05"
+                      ],
+                      "narration": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+                      "visual": "画面展示一段视频素材，标注出所选区间的起点与终点，突出保留的片段范围。"
+                    },
+                    {
+                      "material_ids": [
+                        "M06"
+                      ],
+                      "narration": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+                      "visual": "画面展示一段长视频被分割为多个片段，各片段分别呈现，便于查看各段内容。"
+                    },
+                    {
+                      "material_ids": [
+                        "M07"
+                      ],
+                      "narration": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+                      "visual": "画面展示多个视频片段，片段排列顺序被调整，用于组织不同的叙述顺序。"
+                    },
+                    {
+                      "material_ids": [
+                        "M08"
+                      ],
+                      "narration": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                      "visual": "画面展示裁剪后的片段预览，在导出前查看内容。"
+                    }
+                  ],
+                  "step_id": "S1",
+                  "title": "视频裁剪功能展示：选取片段、分割长视频、调整顺序与导出前预览"
+                }
+              ],
+              "summary": "围绕视频裁剪推广主题，制作 1 条功能演示脚本：依次展示选取片段起止点并保留区间、将长视频分割为多段分别查看、调整片段排列顺序组织叙述、导出前预览裁剪结果四项能力，突出高效剪辑体验。素材取自 M05、M06、M07、M08。",
+              "task_plan": [
+                {
+                  "brief": "以视频裁剪推广为主题，依次展示选取片段起止点、长视频分割、片段排序与导出前预览四项能力，突出高效剪辑体验。",
+                  "material_ids": [
+                    "M05",
+                    "M06",
+                    "M07",
+                    "M08"
+                  ],
+                  "step_id": "S1"
+                }
+              ],
+              "title": "视频裁剪功能推广方案",
+              "topic": "视频裁剪推广"
+            },
+            "error": null,
+            "status": "succeeded",
+            "tool": "save_plan"
+          },
+          "source": "real_model",
+          "spent_after": {
+            "cost": 12,
+            "duration": 38
+          },
+          "step": 4
+        }
+      ],
+      "replayed": true,
+      "evidence_scope": "真实模型调用与实际工具执行"
+    }
+  ],
+  "checks": {
+    "expected_status": true,
+    "cost_ledger": true,
+    "duration_ledger": true,
+    "within_budget": true,
+    "within_time": true,
+    "database_matches_saved_result": true,
+    "completion_requires_saved_plan": true,
+    "required_script_count": true,
+    "generated_text_present": true,
+    "duplicate_returns_cache": true,
+    "duplicate_no_new_consumption": true,
+    "duplicate_same_plan": true,
+    "duplicate_no_new_steps": true
+  }
+}

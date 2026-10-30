@@ -1,0 +1,1335 @@
+{
+  "input": {
+    "request_id": "partial-resume",
+    "topic": "字幕功能推广",
+    "budget": 50,
+    "time_budget": 200,
+    "script_count": 2
+  },
+  "runs": [
+    {
+      "request_id": "partial-resume",
+      "request": {
+        "topic": "字幕功能推广",
+        "budget": 50,
+        "time_budget": 200,
+        "script_count": 2
+      },
+      "mode": "real",
+      "status": "incomplete",
+      "reason": {
+        "code": "MODEL_STOPPED",
+        "message": "第二条脚本（S2）生成时返回不可重试故障 INJECTED_TOOL_FAILURE，本次运行已停止。已完成并保留 S1（字幕文字可手动编辑、字体大小与颜色可调整）。剩余额度充足（预算 36、时间 154），请在服务恢复后显式发起续跑，我将仅重试 S2 并随后保存方案。"
+      },
+      "spent": {
+        "cost": 14,
+        "duration": 46
+      },
+      "remaining": {
+        "budget": 36,
+        "time_budget": 154
+      },
+      "decision_steps": 5,
+      "tool_calls": 4,
+      "task_plan": [
+        {
+          "step_id": "S1",
+          "material_ids": [
+            "M01",
+            "M02"
+          ],
+          "brief": "面向新手创作者，突出可手动编辑字幕文字、自由调整字体大小与颜色以适配不同背景，强调上手简单。",
+          "status": "succeeded",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 1
+        },
+        {
+          "step_id": "S2",
+          "material_ids": [
+            "M03",
+            "M04"
+          ],
+          "brief": "面向进阶剪辑用户，突出字幕位置可调避免遮挡人物面部、可精确设置每条字幕起止时间与画面同步。",
+          "status": "failed",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 1
+        }
+      ],
+      "plan_revisions": [
+        {
+          "decision_step": 2,
+          "plan": [
+            {
+              "step_id": "S1",
+              "material_ids": [
+                "M01",
+                "M02"
+              ],
+              "brief": "面向新手创作者，突出可手动编辑字幕文字、自由调整字体大小与颜色以适配不同背景，强调上手简单。"
+            },
+            {
+              "step_id": "S2",
+              "material_ids": [
+                "M03",
+                "M04"
+              ],
+              "brief": "面向进阶剪辑用户，突出字幕位置可调避免遮挡人物面部、可精确设置每条字幕起止时间与画面同步。"
+            }
+          ],
+          "estimate": {
+            "feasible": true,
+            "remaining_steps_cost": 12,
+            "remaining_steps_duration": 42,
+            "projected_total_cost": 14,
+            "projected_total_duration": 48,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 0
+            },
+            "pending_step_ids": [
+              "S1",
+              "S2"
+            ],
+            "includes_save": true
+          }
+        }
+      ],
+      "scripts": [
+        {
+          "step_id": "S1",
+          "plan_step": {
+            "step_id": "S1",
+            "material_ids": [
+              "M01",
+              "M02"
+            ],
+            "brief": "面向新手创作者，突出可手动编辑字幕文字、自由调整字体大小与颜色以适配不同背景，强调上手简单。"
+          },
+          "title": "字幕文字可手动编辑，字体大小与颜色可调整",
+          "scenes": [
+            {
+              "visual": "画面展示一段带有字幕的视频画面，字幕文字清晰可见，镜头停留在字幕区域。",
+              "narration": "为视频添加字幕后，字幕文字支持手动编辑。",
+              "material_ids": [
+                "M01"
+              ]
+            },
+            {
+              "visual": "画面展示字幕文字被修改后的效果，前后文字内容不同，突出文字内容可手动编辑。",
+              "narration": "字幕文字可以手动编辑，按需要修改文字内容。",
+              "material_ids": [
+                "M01"
+              ]
+            },
+            {
+              "visual": "画面展示同一字幕在不同背景画面上，分别调整字体大小和文字颜色，字幕与背景形成对比。",
+              "narration": "字幕的字体大小和文字颜色可以调整，用于适配不同背景画面。",
+              "material_ids": [
+                "M02"
+              ]
+            },
+            {
+              "visual": "画面并排展示调整字体大小与文字颜色后的字幕效果，字幕在背景画面中清晰可辨。",
+              "narration": "通过调整字体大小和文字颜色，让字幕适配不同的背景画面。",
+              "material_ids": [
+                "M02"
+              ]
+            }
+          ],
+          "material_ids": [
+            "M01",
+            "M02"
+          ],
+          "generation_receipt": {
+            "response_id": "06bd2d8d-93f3-4067-b115-c1a599504344",
+            "model": "deepseek-flash",
+            "source": "real_model"
+          }
+        }
+      ],
+      "saved_plan": null,
+      "steps": [
+        {
+          "step": 1,
+          "source": "real_model",
+          "action": "search_materials",
+          "arguments": {
+            "query": "字幕功能 推广 自动生成字幕"
+          },
+          "reason": "先检索与字幕功能推广相关的参考资料",
+          "model_receipt": {
+            "response_id": "f34f8287-add8-441e-a6aa-8fc68b156578",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_nwQ7FpDuxEsXGQ7gSMn46552"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [
+              {
+                "material_id": "M01",
+                "topic": "字幕功能",
+                "content": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                "relevance_score": 0.51
+              },
+              {
+                "material_id": "M02",
+                "topic": "字幕功能",
+                "content": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                "relevance_score": 0.51
+              },
+              {
+                "material_id": "M03",
+                "topic": "字幕功能",
+                "content": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                "relevance_score": 0.51
+              },
+              {
+                "material_id": "M04",
+                "topic": "字幕功能",
+                "content": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "relevance_score": 0.51
+              },
+              {
+                "material_id": "M08",
+                "topic": "视频裁剪",
+                "content": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                "relevance_score": 0.07
+              }
+            ],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 5 份素材：M01,M02,M03,M04,M08",
+          "spent_after": {
+            "cost": 2,
+            "duration": 5
+          },
+          "remaining_after": {
+            "budget": 48,
+            "time_budget": 195
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "基于已检索的字幕功能素材，为两条推广脚本规划并校验费用与时间。"
+        },
+        {
+          "step": 2,
+          "source": "real_model",
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "step_id": "S1",
+                "material_ids": [
+                  "M01",
+                  "M02"
+                ],
+                "brief": "面向新手创作者，突出可手动编辑字幕文字、自由调整字体大小与颜色以适配不同背景，强调上手简单。"
+              },
+              {
+                "step_id": "S2",
+                "material_ids": [
+                  "M03",
+                  "M04"
+                ],
+                "brief": "面向进阶剪辑用户，突出字幕位置可调避免遮挡人物面部、可精确设置每条字幕起止时间与画面同步。"
+              }
+            ]
+          },
+          "reason": "基于已检索的字幕功能素材，为两条推广脚本规划并校验费用与时间。",
+          "model_receipt": {
+            "response_id": "6c88a5e7-adbf-4481-9780-03d9c303f439",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_88GSw3WDabZSnZY8OJ5N1451"
+          },
+          "result": {
+            "tool": "estimate_plan",
+            "status": "succeeded",
+            "data": {
+              "feasible": true,
+              "remaining_steps_cost": 12,
+              "remaining_steps_duration": 42,
+              "projected_total_cost": 14,
+              "projected_total_duration": 48,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 0
+              },
+              "pending_step_ids": [
+                "S1",
+                "S2"
+              ],
+              "includes_save": true
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            }
+          },
+          "observation_summary": "预计总费用 14，总耗时 48，可行=True",
+          "spent_after": {
+            "cost": 2,
+            "duration": 6
+          },
+          "remaining_after": {
+            "budget": 48,
+            "time_budget": 194
+          },
+          "next_action": "generate_script",
+          "next_reason": "方案已估算可行且预算充足，先执行第一条脚本 S1。"
+        },
+        {
+          "step": 3,
+          "source": "real_model",
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "S1"
+          },
+          "reason": "方案已估算可行且预算充足，先执行第一条脚本 S1。",
+          "model_receipt": {
+            "response_id": "286864bd-49b2-4805-83ff-44423d2c39b4",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_yr7VJsZc3pMsLPdms4CH3933"
+          },
+          "result": {
+            "tool": "generate_script",
+            "status": "succeeded",
+            "data": {
+              "step_id": "S1",
+              "plan_step": {
+                "step_id": "S1",
+                "material_ids": [
+                  "M01",
+                  "M02"
+                ],
+                "brief": "面向新手创作者，突出可手动编辑字幕文字、自由调整字体大小与颜色以适配不同背景，强调上手简单。"
+              },
+              "title": "字幕文字可手动编辑，字体大小与颜色可调整",
+              "scenes": [
+                {
+                  "visual": "画面展示一段带有字幕的视频画面，字幕文字清晰可见，镜头停留在字幕区域。",
+                  "narration": "为视频添加字幕后，字幕文字支持手动编辑。",
+                  "material_ids": [
+                    "M01"
+                  ]
+                },
+                {
+                  "visual": "画面展示字幕文字被修改后的效果，前后文字内容不同，突出文字内容可手动编辑。",
+                  "narration": "字幕文字可以手动编辑，按需要修改文字内容。",
+                  "material_ids": [
+                    "M01"
+                  ]
+                },
+                {
+                  "visual": "画面展示同一字幕在不同背景画面上，分别调整字体大小和文字颜色，字幕与背景形成对比。",
+                  "narration": "字幕的字体大小和文字颜色可以调整，用于适配不同背景画面。",
+                  "material_ids": [
+                    "M02"
+                  ]
+                },
+                {
+                  "visual": "画面并排展示调整字体大小与文字颜色后的字幕效果，字幕在背景画面中清晰可辨。",
+                  "narration": "通过调整字体大小和文字颜色，让字幕适配不同的背景画面。",
+                  "material_ids": [
+                    "M02"
+                  ]
+                }
+              ],
+              "material_ids": [
+                "M01",
+                "M02"
+              ],
+              "generation_receipt": {
+                "response_id": "06bd2d8d-93f3-4067-b115-c1a599504344",
+                "model": "deepseek-flash",
+                "source": "real_model"
+              }
+            },
+            "error": null,
+            "charged": {
+              "cost": 6,
+              "duration": 20
+            }
+          },
+          "observation_summary": "生成步骤 S1，素材=M01,M02",
+          "spent_after": {
+            "cost": 8,
+            "duration": 26
+          },
+          "remaining_after": {
+            "budget": 42,
+            "time_budget": 174
+          },
+          "next_action": "generate_script",
+          "next_reason": "S1 已成功，继续执行已估算计划中的 S2。"
+        },
+        {
+          "step": 4,
+          "source": "real_model",
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "S2"
+          },
+          "reason": "S1 已成功，继续执行已估算计划中的 S2。",
+          "model_receipt": {
+            "response_id": "bf5895a5-37d4-41c4-9358-97badb39e6ed",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_41j4xI7Cj2jmHy0dS0Ua1314"
+          },
+          "result": {
+            "tool": "generate_script",
+            "status": "failed",
+            "data": null,
+            "error": {
+              "code": "INJECTED_TOOL_FAILURE",
+              "message": "第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑",
+              "retryable": false
+            },
+            "charged": {
+              "cost": 6,
+              "duration": 20
+            }
+          },
+          "observation_summary": "INJECTED_TOOL_FAILURE: 第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑",
+          "spent_after": {
+            "cost": 14,
+            "duration": 46
+          },
+          "remaining_after": {
+            "budget": 36,
+            "time_budget": 154
+          },
+          "next_action": "finish",
+          "next_reason": "生成工具返回不可重试故障，需等待服务恢复后显式续跑。"
+        },
+        {
+          "step": 5,
+          "source": "real_model",
+          "action": "finish",
+          "arguments": {
+            "message": "第二条脚本（S2）生成时返回不可重试故障 INJECTED_TOOL_FAILURE，本次运行已停止。已完成并保留 S1（字幕文字可手动编辑、字体大小与颜色可调整）。剩余额度充足（预算 36、时间 154），请在服务恢复后显式发起续跑，我将仅重试 S2 并随后保存方案。"
+          },
+          "reason": "生成工具返回不可重试故障，需等待服务恢复后显式续跑。",
+          "model_receipt": {
+            "response_id": "44cf5915-9d2c-4b39-9e61-9c1723482763",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_9qoHKkJTP9DC6sYNq3AE2092"
+          },
+          "result": {
+            "tool": "finish",
+            "status": "stopped",
+            "data": {
+              "code": "MODEL_STOPPED",
+              "message": "第二条脚本（S2）生成时返回不可重试故障 INJECTED_TOOL_FAILURE，本次运行已停止。已完成并保留 S1（字幕文字可手动编辑、字体大小与颜色可调整）。剩余额度充足（预算 36、时间 154），请在服务恢复后显式发起续跑，我将仅重试 S2 并随后保存方案。"
+            },
+            "charged": {
+              "cost": 0,
+              "duration": 0
+            }
+          },
+          "observation_summary": "{'code': 'MODEL_STOPPED', 'message': '第二条脚本（S2）生成时返回不可重试故障 INJECTED_TOOL_FAILURE，本次运行已停止。已完成并保留 S1（字幕文字可手动编辑、字体大小与颜色可调整）。剩余额度充足（预算 36、时间 154），请在服务恢复后显式发起续跑，我将仅重试 S2 并随后保存方案。'}",
+          "spent_after": {
+            "cost": 14,
+            "duration": 46
+          },
+          "remaining_after": {
+            "budget": 36,
+            "time_budget": 154
+          },
+          "next_action": "end"
+        }
+      ],
+      "replayed": false,
+      "evidence_scope": "真实模型调用与实际工具执行"
+    },
+    {
+      "request_id": "partial-resume",
+      "request": {
+        "budget": 50,
+        "script_count": 2,
+        "time_budget": 200,
+        "topic": "字幕功能推广"
+      },
+      "mode": "real",
+      "status": "completed",
+      "reason": null,
+      "spent": {
+        "cost": 20,
+        "duration": 68
+      },
+      "remaining": {
+        "budget": 30,
+        "time_budget": 132
+      },
+      "decision_steps": 7,
+      "tool_calls": 6,
+      "task_plan": [
+        {
+          "brief": "面向新手创作者，突出可手动编辑字幕文字、自由调整字体大小与颜色以适配不同背景，强调上手简单。",
+          "material_ids": [
+            "M01",
+            "M02"
+          ],
+          "step_id": "S1",
+          "status": "succeeded",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 1
+        },
+        {
+          "brief": "面向进阶剪辑用户，突出字幕位置可调避免遮挡人物面部、可精确设置每条字幕起止时间与画面同步。",
+          "material_ids": [
+            "M03",
+            "M04"
+          ],
+          "step_id": "S2",
+          "status": "succeeded",
+          "depends_on": [
+            "search_materials",
+            "estimate_plan"
+          ],
+          "attempts": 2
+        }
+      ],
+      "plan_revisions": [
+        {
+          "decision_step": 2,
+          "estimate": {
+            "feasible": true,
+            "includes_save": true,
+            "pending_step_ids": [
+              "S1",
+              "S2"
+            ],
+            "projected_total_cost": 14,
+            "projected_total_duration": 48,
+            "remaining_steps_cost": 12,
+            "remaining_steps_duration": 42,
+            "shortfall": {
+              "budget": 0,
+              "time_budget": 0
+            }
+          },
+          "plan": [
+            {
+              "brief": "面向新手创作者，突出可手动编辑字幕文字、自由调整字体大小与颜色以适配不同背景，强调上手简单。",
+              "material_ids": [
+                "M01",
+                "M02"
+              ],
+              "step_id": "S1"
+            },
+            {
+              "brief": "面向进阶剪辑用户，突出字幕位置可调避免遮挡人物面部、可精确设置每条字幕起止时间与画面同步。",
+              "material_ids": [
+                "M03",
+                "M04"
+              ],
+              "step_id": "S2"
+            }
+          ]
+        }
+      ],
+      "scripts": [
+        {
+          "generation_receipt": {
+            "model": "deepseek-flash",
+            "response_id": "06bd2d8d-93f3-4067-b115-c1a599504344",
+            "source": "real_model"
+          },
+          "material_ids": [
+            "M01",
+            "M02"
+          ],
+          "plan_step": {
+            "brief": "面向新手创作者，突出可手动编辑字幕文字、自由调整字体大小与颜色以适配不同背景，强调上手简单。",
+            "material_ids": [
+              "M01",
+              "M02"
+            ],
+            "step_id": "S1"
+          },
+          "scenes": [
+            {
+              "material_ids": [
+                "M01"
+              ],
+              "narration": "为视频添加字幕后，字幕文字支持手动编辑。",
+              "visual": "画面展示一段带有字幕的视频画面，字幕文字清晰可见，镜头停留在字幕区域。"
+            },
+            {
+              "material_ids": [
+                "M01"
+              ],
+              "narration": "字幕文字可以手动编辑，按需要修改文字内容。",
+              "visual": "画面展示字幕文字被修改后的效果，前后文字内容不同，突出文字内容可手动编辑。"
+            },
+            {
+              "material_ids": [
+                "M02"
+              ],
+              "narration": "字幕的字体大小和文字颜色可以调整，用于适配不同背景画面。",
+              "visual": "画面展示同一字幕在不同背景画面上，分别调整字体大小和文字颜色，字幕与背景形成对比。"
+            },
+            {
+              "material_ids": [
+                "M02"
+              ],
+              "narration": "通过调整字体大小和文字颜色，让字幕适配不同的背景画面。",
+              "visual": "画面并排展示调整字体大小与文字颜色后的字幕效果，字幕在背景画面中清晰可辨。"
+            }
+          ],
+          "step_id": "S1",
+          "title": "字幕文字可手动编辑，字体大小与颜色可调整"
+        },
+        {
+          "step_id": "S2",
+          "plan_step": {
+            "brief": "面向进阶剪辑用户，突出字幕位置可调避免遮挡人物面部、可精确设置每条字幕起止时间与画面同步。",
+            "material_ids": [
+              "M03",
+              "M04"
+            ],
+            "step_id": "S2"
+          },
+          "title": "字幕位置与时间设置功能说明",
+          "scenes": [
+            {
+              "visual": "画面中展示一段包含人物的视频素材，字幕位于画面中；随后演示将字幕位置调整到不遮挡人物面部的区域。",
+              "narration": "产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+              "material_ids": [
+                "M03"
+              ]
+            },
+            {
+              "visual": "画面展示字幕时间设置界面，逐条设置字幕的开始和结束时间，并对应到视频片段。",
+              "narration": "产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+              "material_ids": [
+                "M04"
+              ]
+            },
+            {
+              "visual": "画面同时呈现已调整位置的字幕与已设置起止时间的字幕，配合对应视频片段播放。",
+              "narration": "通过设置字幕位置与每条字幕的起止时间，字幕可与对应视频片段一起出现，并可避免遮挡人物面部。",
+              "material_ids": [
+                "M03",
+                "M04"
+              ]
+            }
+          ],
+          "material_ids": [
+            "M03",
+            "M04"
+          ],
+          "generation_receipt": {
+            "response_id": "b8fd8112-1ef2-49c2-b3b3-5ebe88fbd7fa",
+            "model": "deepseek-flash",
+            "source": "real_model"
+          }
+        }
+      ],
+      "saved_plan": {
+        "title": "字幕功能推广：双脚本内容方案",
+        "summary": "围绕字幕功能推广，产出两条脚本：S1 面向新手创作者，基于 M01、M02 展示字幕文字可手动编辑、字体大小与颜色可调以适配不同背景，强调上手简单；S2 面向进阶剪辑用户，基于 M03、M04 展示字幕位置可调避免遮挡人物面部、每条字幕起止时间可精确设置并与画面同步。两条脚本均已生成成功，可直接用于后续内容制作与投放排期。",
+        "topic": "字幕功能推广",
+        "scripts": [
+          {
+            "generation_receipt": {
+              "model": "deepseek-flash",
+              "response_id": "06bd2d8d-93f3-4067-b115-c1a599504344",
+              "source": "real_model"
+            },
+            "material_ids": [
+              "M01",
+              "M02"
+            ],
+            "plan_step": {
+              "brief": "面向新手创作者，突出可手动编辑字幕文字、自由调整字体大小与颜色以适配不同背景，强调上手简单。",
+              "material_ids": [
+                "M01",
+                "M02"
+              ],
+              "step_id": "S1"
+            },
+            "scenes": [
+              {
+                "material_ids": [
+                  "M01"
+                ],
+                "narration": "为视频添加字幕后，字幕文字支持手动编辑。",
+                "visual": "画面展示一段带有字幕的视频画面，字幕文字清晰可见，镜头停留在字幕区域。"
+              },
+              {
+                "material_ids": [
+                  "M01"
+                ],
+                "narration": "字幕文字可以手动编辑，按需要修改文字内容。",
+                "visual": "画面展示字幕文字被修改后的效果，前后文字内容不同，突出文字内容可手动编辑。"
+              },
+              {
+                "material_ids": [
+                  "M02"
+                ],
+                "narration": "字幕的字体大小和文字颜色可以调整，用于适配不同背景画面。",
+                "visual": "画面展示同一字幕在不同背景画面上，分别调整字体大小和文字颜色，字幕与背景形成对比。"
+              },
+              {
+                "material_ids": [
+                  "M02"
+                ],
+                "narration": "通过调整字体大小和文字颜色，让字幕适配不同的背景画面。",
+                "visual": "画面并排展示调整字体大小与文字颜色后的字幕效果，字幕在背景画面中清晰可辨。"
+              }
+            ],
+            "step_id": "S1",
+            "title": "字幕文字可手动编辑，字体大小与颜色可调整"
+          },
+          {
+            "step_id": "S2",
+            "plan_step": {
+              "brief": "面向进阶剪辑用户，突出字幕位置可调避免遮挡人物面部、可精确设置每条字幕起止时间与画面同步。",
+              "material_ids": [
+                "M03",
+                "M04"
+              ],
+              "step_id": "S2"
+            },
+            "title": "字幕位置与时间设置功能说明",
+            "scenes": [
+              {
+                "visual": "画面中展示一段包含人物的视频素材，字幕位于画面中；随后演示将字幕位置调整到不遮挡人物面部的区域。",
+                "narration": "产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                "material_ids": [
+                  "M03"
+                ]
+              },
+              {
+                "visual": "画面展示字幕时间设置界面，逐条设置字幕的开始和结束时间，并对应到视频片段。",
+                "narration": "产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "material_ids": [
+                  "M04"
+                ]
+              },
+              {
+                "visual": "画面同时呈现已调整位置的字幕与已设置起止时间的字幕，配合对应视频片段播放。",
+                "narration": "通过设置字幕位置与每条字幕的起止时间，字幕可与对应视频片段一起出现，并可避免遮挡人物面部。",
+                "material_ids": [
+                  "M03",
+                  "M04"
+                ]
+              }
+            ],
+            "material_ids": [
+              "M03",
+              "M04"
+            ],
+            "generation_receipt": {
+              "response_id": "b8fd8112-1ef2-49c2-b3b3-5ebe88fbd7fa",
+              "model": "deepseek-flash",
+              "source": "real_model"
+            }
+          }
+        ],
+        "task_plan": [
+          {
+            "brief": "面向新手创作者，突出可手动编辑字幕文字、自由调整字体大小与颜色以适配不同背景，强调上手简单。",
+            "material_ids": [
+              "M01",
+              "M02"
+            ],
+            "step_id": "S1"
+          },
+          {
+            "brief": "面向进阶剪辑用户，突出字幕位置可调避免遮挡人物面部、可精确设置每条字幕起止时间与画面同步。",
+            "material_ids": [
+              "M03",
+              "M04"
+            ],
+            "step_id": "S2"
+          }
+        ],
+        "cost_total": 20,
+        "duration_total": 68,
+        "mode": "real",
+        "plan_id": "P-0f9bd9566105714d",
+        "request_id": "partial-resume"
+      },
+      "steps": [
+        {
+          "action": "search_materials",
+          "arguments": {
+            "query": "字幕功能 推广 自动生成字幕"
+          },
+          "model_receipt": {
+            "model": "deepseek-flash",
+            "response_id": "f34f8287-add8-441e-a6aa-8fc68b156578",
+            "source": "real_model",
+            "tool_call_id": "call_00_nwQ7FpDuxEsXGQ7gSMn46552"
+          },
+          "next_action": "estimate_plan",
+          "next_reason": "基于已检索的字幕功能素材，为两条推广脚本规划并校验费用与时间。",
+          "observation_summary": "检索返回 5 份素材：M01,M02,M03,M04,M08",
+          "reason": "先检索与字幕功能推广相关的参考资料",
+          "remaining_after": {
+            "budget": 48,
+            "time_budget": 195
+          },
+          "result": {
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            },
+            "data": [
+              {
+                "content": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                "material_id": "M01",
+                "relevance_score": 0.51,
+                "topic": "字幕功能"
+              },
+              {
+                "content": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                "material_id": "M02",
+                "relevance_score": 0.51,
+                "topic": "字幕功能"
+              },
+              {
+                "content": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                "material_id": "M03",
+                "relevance_score": 0.51,
+                "topic": "字幕功能"
+              },
+              {
+                "content": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "material_id": "M04",
+                "relevance_score": 0.51,
+                "topic": "字幕功能"
+              },
+              {
+                "content": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                "material_id": "M08",
+                "relevance_score": 0.07,
+                "topic": "视频裁剪"
+              }
+            ],
+            "error": null,
+            "status": "succeeded",
+            "tool": "search_materials"
+          },
+          "source": "real_model",
+          "spent_after": {
+            "cost": 2,
+            "duration": 5
+          },
+          "step": 1
+        },
+        {
+          "action": "estimate_plan",
+          "arguments": {
+            "scripts": [
+              {
+                "brief": "面向新手创作者，突出可手动编辑字幕文字、自由调整字体大小与颜色以适配不同背景，强调上手简单。",
+                "material_ids": [
+                  "M01",
+                  "M02"
+                ],
+                "step_id": "S1"
+              },
+              {
+                "brief": "面向进阶剪辑用户，突出字幕位置可调避免遮挡人物面部、可精确设置每条字幕起止时间与画面同步。",
+                "material_ids": [
+                  "M03",
+                  "M04"
+                ],
+                "step_id": "S2"
+              }
+            ]
+          },
+          "model_receipt": {
+            "model": "deepseek-flash",
+            "response_id": "6c88a5e7-adbf-4481-9780-03d9c303f439",
+            "source": "real_model",
+            "tool_call_id": "call_00_88GSw3WDabZSnZY8OJ5N1451"
+          },
+          "next_action": "generate_script",
+          "next_reason": "方案已估算可行且预算充足，先执行第一条脚本 S1。",
+          "observation_summary": "预计总费用 14，总耗时 48，可行=True",
+          "reason": "基于已检索的字幕功能素材，为两条推广脚本规划并校验费用与时间。",
+          "remaining_after": {
+            "budget": 48,
+            "time_budget": 194
+          },
+          "result": {
+            "charged": {
+              "cost": 0,
+              "duration": 1
+            },
+            "data": {
+              "feasible": true,
+              "includes_save": true,
+              "pending_step_ids": [
+                "S1",
+                "S2"
+              ],
+              "projected_total_cost": 14,
+              "projected_total_duration": 48,
+              "remaining_steps_cost": 12,
+              "remaining_steps_duration": 42,
+              "shortfall": {
+                "budget": 0,
+                "time_budget": 0
+              }
+            },
+            "error": null,
+            "status": "succeeded",
+            "tool": "estimate_plan"
+          },
+          "source": "real_model",
+          "spent_after": {
+            "cost": 2,
+            "duration": 6
+          },
+          "step": 2
+        },
+        {
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "S1"
+          },
+          "model_receipt": {
+            "model": "deepseek-flash",
+            "response_id": "286864bd-49b2-4805-83ff-44423d2c39b4",
+            "source": "real_model",
+            "tool_call_id": "call_00_yr7VJsZc3pMsLPdms4CH3933"
+          },
+          "next_action": "generate_script",
+          "next_reason": "S1 已成功，继续执行已估算计划中的 S2。",
+          "observation_summary": "生成步骤 S1，素材=M01,M02",
+          "reason": "方案已估算可行且预算充足，先执行第一条脚本 S1。",
+          "remaining_after": {
+            "budget": 42,
+            "time_budget": 174
+          },
+          "result": {
+            "charged": {
+              "cost": 6,
+              "duration": 20
+            },
+            "data": {
+              "generation_receipt": {
+                "model": "deepseek-flash",
+                "response_id": "06bd2d8d-93f3-4067-b115-c1a599504344",
+                "source": "real_model"
+              },
+              "material_ids": [
+                "M01",
+                "M02"
+              ],
+              "plan_step": {
+                "brief": "面向新手创作者，突出可手动编辑字幕文字、自由调整字体大小与颜色以适配不同背景，强调上手简单。",
+                "material_ids": [
+                  "M01",
+                  "M02"
+                ],
+                "step_id": "S1"
+              },
+              "scenes": [
+                {
+                  "material_ids": [
+                    "M01"
+                  ],
+                  "narration": "为视频添加字幕后，字幕文字支持手动编辑。",
+                  "visual": "画面展示一段带有字幕的视频画面，字幕文字清晰可见，镜头停留在字幕区域。"
+                },
+                {
+                  "material_ids": [
+                    "M01"
+                  ],
+                  "narration": "字幕文字可以手动编辑，按需要修改文字内容。",
+                  "visual": "画面展示字幕文字被修改后的效果，前后文字内容不同，突出文字内容可手动编辑。"
+                },
+                {
+                  "material_ids": [
+                    "M02"
+                  ],
+                  "narration": "字幕的字体大小和文字颜色可以调整，用于适配不同背景画面。",
+                  "visual": "画面展示同一字幕在不同背景画面上，分别调整字体大小和文字颜色，字幕与背景形成对比。"
+                },
+                {
+                  "material_ids": [
+                    "M02"
+                  ],
+                  "narration": "通过调整字体大小和文字颜色，让字幕适配不同的背景画面。",
+                  "visual": "画面并排展示调整字体大小与文字颜色后的字幕效果，字幕在背景画面中清晰可辨。"
+                }
+              ],
+              "step_id": "S1",
+              "title": "字幕文字可手动编辑，字体大小与颜色可调整"
+            },
+            "error": null,
+            "status": "succeeded",
+            "tool": "generate_script"
+          },
+          "source": "real_model",
+          "spent_after": {
+            "cost": 8,
+            "duration": 26
+          },
+          "step": 3
+        },
+        {
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "S2"
+          },
+          "model_receipt": {
+            "model": "deepseek-flash",
+            "response_id": "bf5895a5-37d4-41c4-9358-97badb39e6ed",
+            "source": "real_model",
+            "tool_call_id": "call_00_41j4xI7Cj2jmHy0dS0Ua1314"
+          },
+          "next_action": "finish",
+          "next_reason": "生成工具返回不可重试故障，需等待服务恢复后显式续跑。",
+          "observation_summary": "INJECTED_TOOL_FAILURE: 第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑",
+          "reason": "S1 已成功，继续执行已估算计划中的 S2。",
+          "remaining_after": {
+            "budget": 36,
+            "time_budget": 154
+          },
+          "result": {
+            "charged": {
+              "cost": 6,
+              "duration": 20
+            },
+            "data": null,
+            "error": {
+              "code": "INJECTED_TOOL_FAILURE",
+              "message": "第二条脚本生成失败，本次运行停止；可在服务恢复后显式续跑",
+              "retryable": false
+            },
+            "status": "failed",
+            "tool": "generate_script"
+          },
+          "source": "real_model",
+          "spent_after": {
+            "cost": 14,
+            "duration": 46
+          },
+          "step": 4
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "message": "第二条脚本（S2）生成时返回不可重试故障 INJECTED_TOOL_FAILURE，本次运行已停止。已完成并保留 S1（字幕文字可手动编辑、字体大小与颜色可调整）。剩余额度充足（预算 36、时间 154），请在服务恢复后显式发起续跑，我将仅重试 S2 并随后保存方案。"
+          },
+          "model_receipt": {
+            "model": "deepseek-flash",
+            "response_id": "44cf5915-9d2c-4b39-9e61-9c1723482763",
+            "source": "real_model",
+            "tool_call_id": "call_00_9qoHKkJTP9DC6sYNq3AE2092"
+          },
+          "next_action": "generate_script",
+          "observation_summary": "{'code': 'MODEL_STOPPED', 'message': '第二条脚本（S2）生成时返回不可重试故障 INJECTED_TOOL_FAILURE，本次运行已停止。已完成并保留 S1（字幕文字可手动编辑、字体大小与颜色可调整）。剩余额度充足（预算 36、时间 154），请在服务恢复后显式发起续跑，我将仅重试 S2 并随后保存方案。'}",
+          "reason": "生成工具返回不可重试故障，需等待服务恢复后显式续跑。",
+          "remaining_after": {
+            "budget": 36,
+            "time_budget": 154
+          },
+          "result": {
+            "charged": {
+              "cost": 0,
+              "duration": 0
+            },
+            "data": {
+              "code": "MODEL_STOPPED",
+              "message": "第二条脚本（S2）生成时返回不可重试故障 INJECTED_TOOL_FAILURE，本次运行已停止。已完成并保留 S1（字幕文字可手动编辑、字体大小与颜色可调整）。剩余额度充足（预算 36、时间 154），请在服务恢复后显式发起续跑，我将仅重试 S2 并随后保存方案。"
+            },
+            "status": "stopped",
+            "tool": "finish"
+          },
+          "source": "real_model",
+          "spent_after": {
+            "cost": 14,
+            "duration": 46
+          },
+          "step": 5,
+          "next_reason": "用户显式请求恢复任务，仅重试未完成的 S2，保留已成功的 S1。"
+        },
+        {
+          "step": 6,
+          "source": "real_model",
+          "action": "generate_script",
+          "arguments": {
+            "step_id": "S2"
+          },
+          "reason": "用户显式请求恢复任务，仅重试未完成的 S2，保留已成功的 S1。",
+          "model_receipt": {
+            "response_id": "926a1f2e-c6f5-4f2b-b62e-080082f850ca",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_4XEe4tg663zi3IkBi3rk4061"
+          },
+          "result": {
+            "tool": "generate_script",
+            "status": "succeeded",
+            "data": {
+              "step_id": "S2",
+              "plan_step": {
+                "brief": "面向进阶剪辑用户，突出字幕位置可调避免遮挡人物面部、可精确设置每条字幕起止时间与画面同步。",
+                "material_ids": [
+                  "M03",
+                  "M04"
+                ],
+                "step_id": "S2"
+              },
+              "title": "字幕位置与时间设置功能说明",
+              "scenes": [
+                {
+                  "visual": "画面中展示一段包含人物的视频素材，字幕位于画面中；随后演示将字幕位置调整到不遮挡人物面部的区域。",
+                  "narration": "产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                  "material_ids": [
+                    "M03"
+                  ]
+                },
+                {
+                  "visual": "画面展示字幕时间设置界面，逐条设置字幕的开始和结束时间，并对应到视频片段。",
+                  "narration": "产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                  "material_ids": [
+                    "M04"
+                  ]
+                },
+                {
+                  "visual": "画面同时呈现已调整位置的字幕与已设置起止时间的字幕，配合对应视频片段播放。",
+                  "narration": "通过设置字幕位置与每条字幕的起止时间，字幕可与对应视频片段一起出现，并可避免遮挡人物面部。",
+                  "material_ids": [
+                    "M03",
+                    "M04"
+                  ]
+                }
+              ],
+              "material_ids": [
+                "M03",
+                "M04"
+              ],
+              "generation_receipt": {
+                "response_id": "b8fd8112-1ef2-49c2-b3b3-5ebe88fbd7fa",
+                "model": "deepseek-flash",
+                "source": "real_model"
+              }
+            },
+            "error": null,
+            "charged": {
+              "cost": 6,
+              "duration": 20
+            }
+          },
+          "observation_summary": "生成步骤 S2，素材=M03,M04",
+          "spent_after": {
+            "cost": 20,
+            "duration": 66
+          },
+          "remaining_after": {
+            "budget": 30,
+            "time_budget": 134
+          },
+          "next_action": "save_plan",
+          "next_reason": "两条脚本均已生成成功，现保存完整活动方案。"
+        },
+        {
+          "step": 7,
+          "source": "real_model",
+          "action": "save_plan",
+          "arguments": {
+            "title": "字幕功能推广：双脚本内容方案",
+            "summary": "围绕字幕功能推广，产出两条脚本：S1 面向新手创作者，基于 M01、M02 展示字幕文字可手动编辑、字体大小与颜色可调以适配不同背景，强调上手简单；S2 面向进阶剪辑用户，基于 M03、M04 展示字幕位置可调避免遮挡人物面部、每条字幕起止时间可精确设置并与画面同步。两条脚本均已生成成功，可直接用于后续内容制作与投放排期。"
+          },
+          "reason": "两条脚本均已生成成功，现保存完整活动方案。",
+          "model_receipt": {
+            "response_id": "0eec3aa2-f18b-480b-a455-67baa38a01ad",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_DKmaGg3NUdgFFb8UROb97713"
+          },
+          "result": {
+            "tool": "save_plan",
+            "status": "succeeded",
+            "data": {
+              "title": "字幕功能推广：双脚本内容方案",
+              "summary": "围绕字幕功能推广，产出两条脚本：S1 面向新手创作者，基于 M01、M02 展示字幕文字可手动编辑、字体大小与颜色可调以适配不同背景，强调上手简单；S2 面向进阶剪辑用户，基于 M03、M04 展示字幕位置可调避免遮挡人物面部、每条字幕起止时间可精确设置并与画面同步。两条脚本均已生成成功，可直接用于后续内容制作与投放排期。",
+              "topic": "字幕功能推广",
+              "scripts": [
+                {
+                  "generation_receipt": {
+                    "model": "deepseek-flash",
+                    "response_id": "06bd2d8d-93f3-4067-b115-c1a599504344",
+                    "source": "real_model"
+                  },
+                  "material_ids": [
+                    "M01",
+                    "M02"
+                  ],
+                  "plan_step": {
+                    "brief": "面向新手创作者，突出可手动编辑字幕文字、自由调整字体大小与颜色以适配不同背景，强调上手简单。",
+                    "material_ids": [
+                      "M01",
+                      "M02"
+                    ],
+                    "step_id": "S1"
+                  },
+                  "scenes": [
+                    {
+                      "material_ids": [
+                        "M01"
+                      ],
+                      "narration": "为视频添加字幕后，字幕文字支持手动编辑。",
+                      "visual": "画面展示一段带有字幕的视频画面，字幕文字清晰可见，镜头停留在字幕区域。"
+                    },
+                    {
+                      "material_ids": [
+                        "M01"
+                      ],
+                      "narration": "字幕文字可以手动编辑，按需要修改文字内容。",
+                      "visual": "画面展示字幕文字被修改后的效果，前后文字内容不同，突出文字内容可手动编辑。"
+                    },
+                    {
+                      "material_ids": [
+                        "M02"
+                      ],
+                      "narration": "字幕的字体大小和文字颜色可以调整，用于适配不同背景画面。",
+                      "visual": "画面展示同一字幕在不同背景画面上，分别调整字体大小和文字颜色，字幕与背景形成对比。"
+                    },
+                    {
+                      "material_ids": [
+                        "M02"
+                      ],
+                      "narration": "通过调整字体大小和文字颜色，让字幕适配不同的背景画面。",
+                      "visual": "画面并排展示调整字体大小与文字颜色后的字幕效果，字幕在背景画面中清晰可辨。"
+                    }
+                  ],
+                  "step_id": "S1",
+                  "title": "字幕文字可手动编辑，字体大小与颜色可调整"
+                },
+                {
+                  "step_id": "S2",
+                  "plan_step": {
+                    "brief": "面向进阶剪辑用户，突出字幕位置可调避免遮挡人物面部、可精确设置每条字幕起止时间与画面同步。",
+                    "material_ids": [
+                      "M03",
+                      "M04"
+                    ],
+                    "step_id": "S2"
+                  },
+                  "title": "字幕位置与时间设置功能说明",
+                  "scenes": [
+                    {
+                      "visual": "画面中展示一段包含人物的视频素材，字幕位于画面中；随后演示将字幕位置调整到不遮挡人物面部的区域。",
+                      "narration": "产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                      "material_ids": [
+                        "M03"
+                      ]
+                    },
+                    {
+                      "visual": "画面展示字幕时间设置界面，逐条设置字幕的开始和结束时间，并对应到视频片段。",
+                      "narration": "产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                      "material_ids": [
+                        "M04"
+                      ]
+                    },
+                    {
+                      "visual": "画面同时呈现已调整位置的字幕与已设置起止时间的字幕，配合对应视频片段播放。",
+                      "narration": "通过设置字幕位置与每条字幕的起止时间，字幕可与对应视频片段一起出现，并可避免遮挡人物面部。",
+                      "material_ids": [
+                        "M03",
+                        "M04"
+                      ]
+                    }
+                  ],
+                  "material_ids": [
+                    "M03",
+                    "M04"
+                  ],
+                  "generation_receipt": {
+                    "response_id": "b8fd8112-1ef2-49c2-b3b3-5ebe88fbd7fa",
+                    "model": "deepseek-flash",
+                    "source": "real_model"
+                  }
+                }
+              ],
+              "task_plan": [
+                {
+                  "brief": "面向新手创作者，突出可手动编辑字幕文字、自由调整字体大小与颜色以适配不同背景，强调上手简单。",
+                  "material_ids": [
+                    "M01",
+                    "M02"
+                  ],
+                  "step_id": "S1"
+                },
+                {
+                  "brief": "面向进阶剪辑用户，突出字幕位置可调避免遮挡人物面部、可精确设置每条字幕起止时间与画面同步。",
+                  "material_ids": [
+                    "M03",
+                    "M04"
+                  ],
+                  "step_id": "S2"
+                }
+              ],
+              "cost_total": 20,
+              "duration_total": 68,
+              "mode": "real",
+              "plan_id": "P-0f9bd9566105714d",
+              "request_id": "partial-resume"
+            },
+            "error": null,
+            "charged": {
+              "cost": 0,
+              "duration": 2
+            }
+          },
+          "observation_summary": "方案已保存：P-0f9bd9566105714d",
+          "spent_after": {
+            "cost": 20,
+            "duration": 68
+          },
+          "remaining_after": {
+            "budget": 30,
+            "time_budget": 132
+          },
+          "next_action": "end"
+        }
+      ],
+      "replayed": false,
+      "evidence_scope": "真实模型调用与实际工具执行"
+    }
+  ],
+  "checks": {
+    "expected_status": true,
+    "cost_ledger": true,
+    "duration_ledger": true,
+    "within_budget": true,
+    "within_time": true,
+    "database_matches_saved_result": true,
+    "completion_requires_saved_plan": true,
+    "required_script_count": true,
+    "generated_text_present": true,
+    "failure_observed": true,
+    "partial_success_before_resume": true,
+    "resume_keeps_success": true,
+    "resume_does_not_regenerate_success": true
+  }
+}

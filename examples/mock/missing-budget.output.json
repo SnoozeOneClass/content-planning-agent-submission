@@ -1,0 +1,38 @@
+{
+  "input": {
+    "request_id": "missing-budget",
+    "topic": "字幕功能推广",
+    "time_budget": 30
+  },
+  "runs": [
+    {
+      "request_id": "missing-budget",
+      "mode": "mock",
+      "status": "needs_input",
+      "missing_fields": [
+        "budget"
+      ],
+      "reason": {
+        "code": "MISSING_INPUT",
+        "message": "请补充：budget"
+      },
+      "spent": {
+        "cost": 0,
+        "duration": 0
+      },
+      "steps": [],
+      "scripts": [],
+      "saved_plan": null,
+      "replayed": false
+    }
+  ],
+  "checks": {
+    "expected_status": true,
+    "cost_ledger": true,
+    "duration_ledger": true,
+    "database_matches_saved_result": true,
+    "completion_requires_saved_plan": true,
+    "missing_field_identified": true,
+    "missing_input_no_actions": true
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "input": {
+    "request_id": "step-limit",
+    "topic": "字幕功能推广",
+    "budget": 20,
+    "time_budget": 100
+  },
+  "runs": [
+    {
+      "request_id": "step-limit",
+      "request": {
+        "topic": "字幕功能推广",
+        "budget": 20,
+        "time_budget": 100,
+        "script_count": 1
+      },
+      "mode": "mock",
+      "status": "incomplete",
+      "reason": {
+        "code": "STEP_LIMIT",
+        "message": "达到 1 次模型决策上限，任务未完成"
+      },
+      "spent": {
+        "cost": 2,
+        "duration": 5
+      },
+      "remaining": {
+        "budget": 18,
+        "time_budget": 95
+      },
+      "decision_steps": 1,
+      "tool_calls": 1,
+      "task_plan": [],
+      "plan_revisions": [],
+      "scripts": [],
+      "saved_plan": null,
+      "steps": [
+        {
+          "step": 1,
+          "source": "offline_mock",
+          "action": "search_materials",
+          "arguments": {
+            "query": "字幕功能推广"
+          },
+          "reason": "Mock：先获取可用参考资料。",
+          "model_receipt": {
+            "source": "offline_mock",
+            "model": "deterministic-offline-mock"
+          },
+          "result": {
+            "tool": "search_materials",
+            "status": "succeeded",
+            "data": [
+              {
+                "material_id": "M01",
+                "topic": "字幕功能",
+                "content": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M02",
+                "topic": "字幕功能",
+                "content": "演示产品的字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M03",
+                "topic": "字幕功能",
+                "content": "演示产品允许设置字幕在画面中的位置，使用者可避免字幕遮挡人物面部。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M04",
+                "topic": "字幕功能",
+                "content": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+                "relevance_score": 0.72
+              },
+              {
+                "material_id": "M08",
+                "topic": "视频裁剪",
+                "content": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                "relevance_score": 0.14
+              }
+            ],
+            "error": null,
+            "charged": {
+              "cost": 2,
+              "duration": 5
+            }
+          },
+          "observation_summary": "检索返回 5 份素材：M01,M02,M03,M04,M08",
+          "spent_after": {
+            "cost": 2,
+            "duration": 5
+          },
+          "remaining_after": {
+            "budget": 18,
+            "time_budget": 95
+          },
+          "next_action": "end"
+        }
+      ],
+      "replayed": false,
+      "evidence_scope": "离线 Mock，仅验证流程，不证明真实模型决策效果"
+    }
+  ],
+  "checks": {
+    "expected_status": true,
+    "cost_ledger": true,
+    "duration_ledger": true,
+    "within_budget": true,
+    "within_time": true,
+    "database_matches_saved_result": true,
+    "completion_requires_saved_plan": true,
+    "unfinished_reason_present": true,
+    "explicit_step_limit": true
+  }
+}
