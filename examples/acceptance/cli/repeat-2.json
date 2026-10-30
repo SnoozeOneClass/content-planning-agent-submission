@@ -1,0 +1,538 @@
+{
+  "request_id": "repeat",
+  "request": {
+    "budget": 20,
+    "script_count": 1,
+    "time_budget": 100,
+    "topic": "视频裁剪推广"
+  },
+  "mode": "mock",
+  "status": "completed",
+  "reason": null,
+  "spent": {
+    "cost": 12,
+    "duration": 38
+  },
+  "remaining": {
+    "budget": 8,
+    "time_budget": 62
+  },
+  "decision_steps": 4,
+  "tool_calls": 4,
+  "task_plan": [
+    {
+      "brief": "视频裁剪推广介绍第1条",
+      "material_ids": [
+        "M05",
+        "M06",
+        "M07",
+        "M08"
+      ],
+      "step_id": "script_1",
+      "status": "succeeded",
+      "depends_on": [
+        "search_materials",
+        "estimate_plan"
+      ],
+      "attempts": 1
+    }
+  ],
+  "plan_revisions": [
+    {
+      "decision_step": 2,
+      "estimate": {
+        "feasible": true,
+        "includes_save": true,
+        "pending_step_ids": [
+          "script_1"
+        ],
+        "projected_total_cost": 12,
+        "projected_total_duration": 38,
+        "remaining_steps_cost": 10,
+        "remaining_steps_duration": 32,
+        "shortfall": {
+          "budget": 0,
+          "time_budget": 0
+        }
+      },
+      "plan": [
+        {
+          "brief": "视频裁剪推广介绍第1条",
+          "material_ids": [
+            "M05",
+            "M06",
+            "M07",
+            "M08"
+          ],
+          "step_id": "script_1"
+        }
+      ]
+    }
+  ],
+  "scripts": [
+    {
+      "generation_receipt": {
+        "model": "deterministic-offline-mock",
+        "source": "offline_mock"
+      },
+      "material_ids": [
+        "M05",
+        "M06",
+        "M07",
+        "M08"
+      ],
+      "plan_step": {
+        "brief": "视频裁剪推广介绍第1条",
+        "material_ids": [
+          "M05",
+          "M06",
+          "M07",
+          "M08"
+        ],
+        "step_id": "script_1"
+      },
+      "scenes": [
+        {
+          "material_ids": [
+            "M05"
+          ],
+          "narration": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+          "visual": "展示资料所述功能的使用画面"
+        },
+        {
+          "material_ids": [
+            "M06"
+          ],
+          "narration": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+          "visual": "展示资料所述功能的使用画面"
+        },
+        {
+          "material_ids": [
+            "M07"
+          ],
+          "narration": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+          "visual": "展示资料所述功能的使用画面"
+        },
+        {
+          "material_ids": [
+            "M08"
+          ],
+          "narration": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+          "visual": "展示资料所述功能的使用画面"
+        }
+      ],
+      "step_id": "script_1",
+      "title": "视频裁剪推广介绍第1条"
+    }
+  ],
+  "saved_plan": {
+    "cost_total": 12,
+    "duration_total": 38,
+    "mode": "mock",
+    "plan_id": "P-b578280bb4112d68",
+    "request_id": "repeat",
+    "scripts": [
+      {
+        "generation_receipt": {
+          "model": "deterministic-offline-mock",
+          "source": "offline_mock"
+        },
+        "material_ids": [
+          "M05",
+          "M06",
+          "M07",
+          "M08"
+        ],
+        "plan_step": {
+          "brief": "视频裁剪推广介绍第1条",
+          "material_ids": [
+            "M05",
+            "M06",
+            "M07",
+            "M08"
+          ],
+          "step_id": "script_1"
+        },
+        "scenes": [
+          {
+            "material_ids": [
+              "M05"
+            ],
+            "narration": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+            "visual": "展示资料所述功能的使用画面"
+          },
+          {
+            "material_ids": [
+              "M06"
+            ],
+            "narration": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+            "visual": "展示资料所述功能的使用画面"
+          },
+          {
+            "material_ids": [
+              "M07"
+            ],
+            "narration": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+            "visual": "展示资料所述功能的使用画面"
+          },
+          {
+            "material_ids": [
+              "M08"
+            ],
+            "narration": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+            "visual": "展示资料所述功能的使用画面"
+          }
+        ],
+        "step_id": "script_1",
+        "title": "视频裁剪推广介绍第1条"
+      }
+    ],
+    "summary": "围绕主题组织已生成脚本，按脚本顺序完成内容准备。",
+    "task_plan": [
+      {
+        "brief": "视频裁剪推广介绍第1条",
+        "material_ids": [
+          "M05",
+          "M06",
+          "M07",
+          "M08"
+        ],
+        "step_id": "script_1"
+      }
+    ],
+    "title": "视频裁剪推广内容活动方案",
+    "topic": "视频裁剪推广"
+  },
+  "steps": [
+    {
+      "action": "search_materials",
+      "arguments": {
+        "query": "视频裁剪推广"
+      },
+      "model_receipt": {
+        "model": "deterministic-offline-mock",
+        "source": "offline_mock"
+      },
+      "next_action": "estimate_plan",
+      "next_reason": "Mock：先估算候选计划。",
+      "observation_summary": "检索返回 6 份素材：M05,M06,M07,M08,M01,M04",
+      "reason": "Mock：先获取可用参考资料。",
+      "remaining_after": {
+        "budget": 18,
+        "time_budget": 95
+      },
+      "result": {
+        "charged": {
+          "cost": 2,
+          "duration": 5
+        },
+        "data": [
+          {
+            "content": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+            "material_id": "M05",
+            "relevance_score": 0.72,
+            "topic": "视频裁剪"
+          },
+          {
+            "content": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+            "material_id": "M06",
+            "relevance_score": 0.72,
+            "topic": "视频裁剪"
+          },
+          {
+            "content": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+            "material_id": "M07",
+            "relevance_score": 0.72,
+            "topic": "视频裁剪"
+          },
+          {
+            "content": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+            "material_id": "M08",
+            "relevance_score": 0.72,
+            "topic": "视频裁剪"
+          },
+          {
+            "content": "演示产品可以为视频添加字幕，字幕文字支持手动编辑。",
+            "material_id": "M01",
+            "relevance_score": 0.14,
+            "topic": "字幕功能"
+          },
+          {
+            "content": "演示产品支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
+            "material_id": "M04",
+            "relevance_score": 0.14,
+            "topic": "字幕功能"
+          }
+        ],
+        "error": null,
+        "status": "succeeded",
+        "tool": "search_materials"
+      },
+      "source": "offline_mock",
+      "spent_after": {
+        "cost": 2,
+        "duration": 5
+      },
+      "step": 1
+    },
+    {
+      "action": "estimate_plan",
+      "arguments": {
+        "scripts": [
+          {
+            "brief": "视频裁剪推广介绍第1条",
+            "material_ids": [
+              "M05",
+              "M06",
+              "M07",
+              "M08"
+            ],
+            "step_id": "script_1"
+          }
+        ]
+      },
+      "model_receipt": {
+        "model": "deterministic-offline-mock",
+        "source": "offline_mock"
+      },
+      "next_action": "generate_script",
+      "next_reason": "Mock：执行估算通过的未完成步骤。",
+      "observation_summary": "预计总费用 12，总耗时 38，可行=True",
+      "reason": "Mock：先估算候选计划。",
+      "remaining_after": {
+        "budget": 18,
+        "time_budget": 94
+      },
+      "result": {
+        "charged": {
+          "cost": 0,
+          "duration": 1
+        },
+        "data": {
+          "feasible": true,
+          "includes_save": true,
+          "pending_step_ids": [
+            "script_1"
+          ],
+          "projected_total_cost": 12,
+          "projected_total_duration": 38,
+          "remaining_steps_cost": 10,
+          "remaining_steps_duration": 32,
+          "shortfall": {
+            "budget": 0,
+            "time_budget": 0
+          }
+        },
+        "error": null,
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      "source": "offline_mock",
+      "spent_after": {
+        "cost": 2,
+        "duration": 6
+      },
+      "step": 2
+    },
+    {
+      "action": "generate_script",
+      "arguments": {
+        "step_id": "script_1"
+      },
+      "model_receipt": {
+        "model": "deterministic-offline-mock",
+        "source": "offline_mock"
+      },
+      "next_action": "save_plan",
+      "next_reason": "Mock：所有脚本成功后保存。",
+      "observation_summary": "生成步骤 script_1，素材=M05,M06,M07,M08",
+      "reason": "Mock：执行估算通过的未完成步骤。",
+      "remaining_after": {
+        "budget": 8,
+        "time_budget": 64
+      },
+      "result": {
+        "charged": {
+          "cost": 10,
+          "duration": 30
+        },
+        "data": {
+          "generation_receipt": {
+            "model": "deterministic-offline-mock",
+            "source": "offline_mock"
+          },
+          "material_ids": [
+            "M05",
+            "M06",
+            "M07",
+            "M08"
+          ],
+          "plan_step": {
+            "brief": "视频裁剪推广介绍第1条",
+            "material_ids": [
+              "M05",
+              "M06",
+              "M07",
+              "M08"
+            ],
+            "step_id": "script_1"
+          },
+          "scenes": [
+            {
+              "material_ids": [
+                "M05"
+              ],
+              "narration": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+              "visual": "展示资料所述功能的使用画面"
+            },
+            {
+              "material_ids": [
+                "M06"
+              ],
+              "narration": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+              "visual": "展示资料所述功能的使用画面"
+            },
+            {
+              "material_ids": [
+                "M07"
+              ],
+              "narration": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+              "visual": "展示资料所述功能的使用画面"
+            },
+            {
+              "material_ids": [
+                "M08"
+              ],
+              "narration": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+              "visual": "展示资料所述功能的使用画面"
+            }
+          ],
+          "step_id": "script_1",
+          "title": "视频裁剪推广介绍第1条"
+        },
+        "error": null,
+        "status": "succeeded",
+        "tool": "generate_script"
+      },
+      "source": "offline_mock",
+      "spent_after": {
+        "cost": 12,
+        "duration": 36
+      },
+      "step": 3
+    },
+    {
+      "action": "save_plan",
+      "arguments": {
+        "summary": "围绕主题组织已生成脚本，按脚本顺序完成内容准备。",
+        "title": "视频裁剪推广内容活动方案"
+      },
+      "model_receipt": {
+        "model": "deterministic-offline-mock",
+        "source": "offline_mock"
+      },
+      "next_action": "end",
+      "observation_summary": "方案已保存：P-b578280bb4112d68",
+      "reason": "Mock：所有脚本成功后保存。",
+      "remaining_after": {
+        "budget": 8,
+        "time_budget": 62
+      },
+      "result": {
+        "charged": {
+          "cost": 0,
+          "duration": 2
+        },
+        "data": {
+          "cost_total": 12,
+          "duration_total": 38,
+          "mode": "mock",
+          "plan_id": "P-b578280bb4112d68",
+          "request_id": "repeat",
+          "scripts": [
+            {
+              "generation_receipt": {
+                "model": "deterministic-offline-mock",
+                "source": "offline_mock"
+              },
+              "material_ids": [
+                "M05",
+                "M06",
+                "M07",
+                "M08"
+              ],
+              "plan_step": {
+                "brief": "视频裁剪推广介绍第1条",
+                "material_ids": [
+                  "M05",
+                  "M06",
+                  "M07",
+                  "M08"
+                ],
+                "step_id": "script_1"
+              },
+              "scenes": [
+                {
+                  "material_ids": [
+                    "M05"
+                  ],
+                  "narration": "演示产品允许选择视频片段的起点和终点，并保留所选区间。",
+                  "visual": "展示资料所述功能的使用画面"
+                },
+                {
+                  "material_ids": [
+                    "M06"
+                  ],
+                  "narration": "演示产品可以将长视频分割为多个片段，使用者可分别查看各段内容。",
+                  "visual": "展示资料所述功能的使用画面"
+                },
+                {
+                  "material_ids": [
+                    "M07"
+                  ],
+                  "narration": "演示产品允许调整视频片段的排列顺序，用于组织不同的叙述顺序。",
+                  "visual": "展示资料所述功能的使用画面"
+                },
+                {
+                  "material_ids": [
+                    "M08"
+                  ],
+                  "narration": "演示产品提供片段预览功能，使用者可在导出前查看裁剪后的内容。",
+                  "visual": "展示资料所述功能的使用画面"
+                }
+              ],
+              "step_id": "script_1",
+              "title": "视频裁剪推广介绍第1条"
+            }
+          ],
+          "summary": "围绕主题组织已生成脚本，按脚本顺序完成内容准备。",
+          "task_plan": [
+            {
+              "brief": "视频裁剪推广介绍第1条",
+              "material_ids": [
+                "M05",
+                "M06",
+                "M07",
+                "M08"
+              ],
+              "step_id": "script_1"
+            }
+          ],
+          "title": "视频裁剪推广内容活动方案",
+          "topic": "视频裁剪推广"
+        },
+        "error": null,
+        "status": "succeeded",
+        "tool": "save_plan"
+      },
+      "source": "offline_mock",
+      "spent_after": {
+        "cost": 12,
+        "duration": 38
+      },
+      "step": 4
+    }
+  ],
+  "replayed": true,
+  "evidence_scope": "离线 Mock，仅验证流程，不证明真实模型决策效果"
+}

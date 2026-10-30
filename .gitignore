@@ -13,3 +13,14 @@ runtime/
 *.db-*
 dist/
 *.log
+
+# Local credentials and private key material
+.secrets/
+.aws/
+.ssh/
+secrets*.json
+credentials*.json
+*.pem
+*.key
+*.p12
+*.pfx

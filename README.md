@@ -2,6 +2,8 @@
 
 根据主题、预算和剩余时间检索合成参考资料，由模型选择工具、估算候选计划、调整选材、生成脚本并保存内容活动方案。工具结果决定后续动作；费用、耗时和保存状态由程序核验。
 
+GitHub 仓库：[SnoozeOneClass/content-planning-agent-submission](https://github.com/SnoozeOneClass/content-planning-agent-submission)。仓库为私有，评审前需为指定评审账号开通读取权限。
+
 ## 评审入口
 
 - [需求与验收点](docs/01-requirements.md)
@@ -9,6 +11,7 @@
 - [测试预期和实际结果](docs/03-evaluation.md)
 - [AI 使用记录](docs/04-ai-usage.md)
 - [复盘与实际用时](docs/05-retrospective.md)
+- [独立模拟验收报告](docs/06-independent-acceptance.md)
 - [已确认的工具费用与耗时规则](docs/tool-cost-and-time.md)
 - [离线用例结果](examples/mock/results.json)
 - [真实 DeepSeek 用例结果](examples/real/results.json)
@@ -112,7 +115,7 @@ python -m src.main --input examples/inputs/partial-resume.json --mode mock --db 
 
 ## 提交
 
-所有代码、合成资料、文档、测试和运行材料放在同一仓库。正式题号以公司原题编号为准；选题名称为“内容任务规划 Agent”。准备提交时填写 GitHub URL，并执行以下命令取得最终 SHA：
+所有代码、合成资料、文档、测试和运行材料放在同一仓库。正式题号以公司原题编号为准；选题名称为“内容任务规划 Agent”。提交时使用本页仓库 URL，并执行以下命令取得最终 SHA：
 
 ```sh
 git rev-parse HEAD

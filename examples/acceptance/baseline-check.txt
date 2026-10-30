@@ -1,0 +1,27 @@
+Baseline commit: 0aa2ca62bf5d277c2e2e54d986a1ab955ae5ef23
+Captured before independent acceptance artifacts were created.
+
+Commands:
+python scripts/check_submission.py
+git remote -v
+git ls-files -- .env
+git check-ignore .env
+
+Observed combined stdout:
+{
+  "ready_for_submission": true,
+  "commit_sha": "0aa2ca62bf5d277c2e2e54d986a1ab955ae5ef23",
+  "remaining": [],
+  "manual_confirmation": [
+    "核对公司正式题号",
+    "填写 GitHub URL 并确保评审可读",
+    "阅读真实脚本并核对主题与素材"
+  ]
+}
+.env
+
+Interpretation:
+The submission checker reported ready_for_submission=true for the clean baseline.
+git remote -v returned no remote; GitHub URL/access is still an external submission condition.
+git ls-files -- .env returned no tracked credential file; git check-ignore .env returned .env.
+No credential contents were read or printed during this review.

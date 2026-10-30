@@ -1,0 +1,941 @@
+{
+  "baseline_commit": "0aa2ca62bf5d277c2e2e54d986a1ab955ae5ef23",
+  "started_at": "2026-10-30T09:52:25.394999+00:00",
+  "work_dir": "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/unit-tests.stdout.txt",
+      "stderr": "examples/acceptance/unit-tests.stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "src.main",
+        "--input",
+        "examples/inputs/normal.json",
+        "--mode",
+        "mock",
+        "--db",
+        "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad/normal.sqlite3",
+        "--env-file",
+        "runtime/acceptance-no-env",
+        "--output",
+        "examples/acceptance/cli/normal-1.json"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/cli-normal-1.stdout.txt",
+      "stderr": "examples/acceptance/cli-normal-1.stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "src.main",
+        "--input",
+        "examples/inputs/replan.json",
+        "--mode",
+        "mock",
+        "--db",
+        "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad/replan.sqlite3",
+        "--env-file",
+        "runtime/acceptance-no-env",
+        "--output",
+        "examples/acceptance/cli/replan-1.json"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/cli-replan-1.stdout.txt",
+      "stderr": "examples/acceptance/cli-replan-1.stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "src.main",
+        "--input",
+        "examples/inputs/missing-budget.json",
+        "--mode",
+        "mock",
+        "--db",
+        "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad/missing-budget.sqlite3",
+        "--env-file",
+        "runtime/acceptance-no-env",
+        "--output",
+        "examples/acceptance/cli/missing-budget-1.json"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/cli-missing-budget-1.stdout.txt",
+      "stderr": "examples/acceptance/cli-missing-budget-1.stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "src.main",
+        "--input",
+        "examples/inputs/missing-time.json",
+        "--mode",
+        "mock",
+        "--db",
+        "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad/missing-time.sqlite3",
+        "--env-file",
+        "runtime/acceptance-no-env",
+        "--output",
+        "examples/acceptance/cli/missing-time-1.json"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/cli-missing-time-1.stdout.txt",
+      "stderr": "examples/acceptance/cli-missing-time-1.stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "src.main",
+        "--input",
+        "examples/inputs/tool-failure.json",
+        "--mode",
+        "mock",
+        "--db",
+        "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad/tool-failure.sqlite3",
+        "--env-file",
+        "runtime/acceptance-no-env",
+        "--output",
+        "examples/acceptance/cli/tool-failure-1.json",
+        "--faults",
+        "examples/faults/generate-once.json"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/cli-tool-failure-1.stdout.txt",
+      "stderr": "examples/acceptance/cli-tool-failure-1.stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "src.main",
+        "--input",
+        "examples/inputs/save-failure.json",
+        "--mode",
+        "mock",
+        "--db",
+        "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad/save-failure.sqlite3",
+        "--env-file",
+        "runtime/acceptance-no-env",
+        "--output",
+        "examples/acceptance/cli/save-failure-1.json",
+        "--faults",
+        "examples/faults/save-always.json"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/cli-save-failure-1.stdout.txt",
+      "stderr": "examples/acceptance/cli-save-failure-1.stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "src.main",
+        "--input",
+        "examples/inputs/over-budget.json",
+        "--mode",
+        "mock",
+        "--db",
+        "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad/over-budget.sqlite3",
+        "--env-file",
+        "runtime/acceptance-no-env",
+        "--output",
+        "examples/acceptance/cli/over-budget-1.json"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/cli-over-budget-1.stdout.txt",
+      "stderr": "examples/acceptance/cli-over-budget-1.stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "src.main",
+        "--input",
+        "examples/inputs/out-of-time.json",
+        "--mode",
+        "mock",
+        "--db",
+        "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad/out-of-time.sqlite3",
+        "--env-file",
+        "runtime/acceptance-no-env",
+        "--output",
+        "examples/acceptance/cli/out-of-time-1.json"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/cli-out-of-time-1.stdout.txt",
+      "stderr": "examples/acceptance/cli-out-of-time-1.stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "src.main",
+        "--input",
+        "examples/inputs/no-materials.json",
+        "--mode",
+        "mock",
+        "--db",
+        "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad/no-materials.sqlite3",
+        "--env-file",
+        "runtime/acceptance-no-env",
+        "--output",
+        "examples/acceptance/cli/no-materials-1.json"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/cli-no-materials-1.stdout.txt",
+      "stderr": "examples/acceptance/cli-no-materials-1.stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "src.main",
+        "--input",
+        "examples/inputs/repeat.json",
+        "--mode",
+        "mock",
+        "--db",
+        "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad/repeat.sqlite3",
+        "--env-file",
+        "runtime/acceptance-no-env",
+        "--output",
+        "examples/acceptance/cli/repeat-1.json"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/cli-repeat-1.stdout.txt",
+      "stderr": "examples/acceptance/cli-repeat-1.stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "src.main",
+        "--input",
+        "examples/inputs/repeat.json",
+        "--mode",
+        "mock",
+        "--db",
+        "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad/repeat.sqlite3",
+        "--env-file",
+        "runtime/acceptance-no-env",
+        "--output",
+        "examples/acceptance/cli/repeat-2.json"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/cli-repeat-2.stdout.txt",
+      "stderr": "examples/acceptance/cli-repeat-2.stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "src.main",
+        "--input",
+        "examples/inputs/partial-resume.json",
+        "--mode",
+        "mock",
+        "--db",
+        "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad/partial-resume.sqlite3",
+        "--env-file",
+        "runtime/acceptance-no-env",
+        "--output",
+        "examples/acceptance/cli/partial-resume-1.json",
+        "--faults",
+        "examples/faults/second-script.json"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/cli-partial-resume-1.stdout.txt",
+      "stderr": "examples/acceptance/cli-partial-resume-1.stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "src.main",
+        "--input",
+        "examples/inputs/partial-resume.json",
+        "--mode",
+        "mock",
+        "--db",
+        "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad/partial-resume.sqlite3",
+        "--env-file",
+        "runtime/acceptance-no-env",
+        "--output",
+        "examples/acceptance/cli/partial-resume-2.json",
+        "--faults",
+        "examples/faults/second-script.json",
+        "--resume"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/cli-partial-resume-2.stdout.txt",
+      "stderr": "examples/acceptance/cli-partial-resume-2.stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "src.main",
+        "--input",
+        "examples/inputs/step-limit.json",
+        "--mode",
+        "mock",
+        "--db",
+        "runtime/acceptance-07dbb49a505142fcaa356bb328b831ad/step-limit.sqlite3",
+        "--env-file",
+        "runtime/acceptance-no-env",
+        "--output",
+        "examples/acceptance/cli/step-limit-1.json",
+        "--max-steps",
+        "1"
+      ],
+      "exit_code": 0,
+      "stdout": "examples/acceptance/cli-step-limit-1.stdout.txt",
+      "stderr": "examples/acceptance/cli-step-limit-1.stderr.txt"
+    }
+  ],
+  "cli": [
+    {
+      "case": "normal",
+      "run": 1,
+      "status": "completed",
+      "exit_code": 0,
+      "replayed": false,
+      "output": "examples/acceptance/cli/normal-1.json",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 12,
+        "recomputed_duration": 38,
+        "issues": []
+      },
+      "expected_status_passed": true,
+      "saved_rows_passed": true,
+      "saved_rows": 1
+    },
+    {
+      "case": "replan",
+      "run": 1,
+      "status": "completed",
+      "exit_code": 0,
+      "replayed": false,
+      "output": "examples/acceptance/cli/replan-1.json",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 8,
+        "recomputed_duration": 29,
+        "issues": []
+      },
+      "expected_status_passed": true,
+      "saved_rows_passed": true,
+      "saved_rows": 1
+    },
+    {
+      "case": "missing-budget",
+      "run": 1,
+      "status": "needs_input",
+      "exit_code": 0,
+      "replayed": false,
+      "output": "examples/acceptance/cli/missing-budget-1.json",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 0,
+        "recomputed_duration": 0,
+        "issues": []
+      },
+      "expected_status_passed": true,
+      "saved_rows_passed": true,
+      "saved_rows": 0
+    },
+    {
+      "case": "missing-time",
+      "run": 1,
+      "status": "needs_input",
+      "exit_code": 0,
+      "replayed": false,
+      "output": "examples/acceptance/cli/missing-time-1.json",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 0,
+        "recomputed_duration": 0,
+        "issues": []
+      },
+      "expected_status_passed": true,
+      "saved_rows_passed": true,
+      "saved_rows": 0
+    },
+    {
+      "case": "tool-failure",
+      "run": 1,
+      "status": "completed",
+      "exit_code": 0,
+      "replayed": false,
+      "output": "examples/acceptance/cli/tool-failure-1.json",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 22,
+        "recomputed_duration": 69,
+        "issues": []
+      },
+      "expected_status_passed": true,
+      "saved_rows_passed": true,
+      "saved_rows": 1
+    },
+    {
+      "case": "save-failure",
+      "run": 1,
+      "status": "incomplete",
+      "exit_code": 0,
+      "replayed": false,
+      "output": "examples/acceptance/cli/save-failure-1.json",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 12,
+        "recomputed_duration": 38,
+        "issues": []
+      },
+      "expected_status_passed": true,
+      "saved_rows_passed": true,
+      "saved_rows": 0
+    },
+    {
+      "case": "over-budget",
+      "run": 1,
+      "status": "incomplete",
+      "exit_code": 0,
+      "replayed": false,
+      "output": "examples/acceptance/cli/over-budget-1.json",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 2,
+        "recomputed_duration": 8,
+        "issues": []
+      },
+      "expected_status_passed": true,
+      "saved_rows_passed": true,
+      "saved_rows": 0
+    },
+    {
+      "case": "out-of-time",
+      "run": 1,
+      "status": "incomplete",
+      "exit_code": 0,
+      "replayed": false,
+      "output": "examples/acceptance/cli/out-of-time-1.json",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 2,
+        "recomputed_duration": 8,
+        "issues": []
+      },
+      "expected_status_passed": true,
+      "saved_rows_passed": true,
+      "saved_rows": 0
+    },
+    {
+      "case": "no-materials",
+      "run": 1,
+      "status": "incomplete",
+      "exit_code": 0,
+      "replayed": false,
+      "output": "examples/acceptance/cli/no-materials-1.json",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 4,
+        "recomputed_duration": 10,
+        "issues": []
+      },
+      "expected_status_passed": true,
+      "saved_rows_passed": true,
+      "saved_rows": 0
+    },
+    {
+      "case": "repeat",
+      "run": 1,
+      "status": "completed",
+      "exit_code": 0,
+      "replayed": false,
+      "output": "examples/acceptance/cli/repeat-1.json",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 12,
+        "recomputed_duration": 38,
+        "issues": []
+      }
+    },
+    {
+      "case": "repeat",
+      "run": 2,
+      "status": "completed",
+      "exit_code": 0,
+      "replayed": true,
+      "output": "examples/acceptance/cli/repeat-2.json",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 12,
+        "recomputed_duration": 38,
+        "issues": []
+      },
+      "expected_status_passed": true,
+      "saved_rows_passed": true,
+      "saved_rows": 1,
+      "deduplication_passed": true
+    },
+    {
+      "case": "partial-resume",
+      "run": 1,
+      "status": "incomplete",
+      "exit_code": 0,
+      "replayed": false,
+      "output": "examples/acceptance/cli/partial-resume-1.json",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 22,
+        "recomputed_duration": 66,
+        "issues": []
+      }
+    },
+    {
+      "case": "partial-resume",
+      "run": 2,
+      "status": "completed",
+      "exit_code": 0,
+      "replayed": false,
+      "output": "examples/acceptance/cli/partial-resume-2.json",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 32,
+        "recomputed_duration": 99,
+        "issues": []
+      },
+      "expected_status_passed": true,
+      "saved_rows_passed": true,
+      "saved_rows": 1,
+      "partial_preservation_passed": true
+    },
+    {
+      "case": "step-limit",
+      "run": 1,
+      "status": "incomplete",
+      "exit_code": 0,
+      "replayed": false,
+      "output": "examples/acceptance/cli/step-limit-1.json",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 2,
+        "recomputed_duration": 5,
+        "issues": []
+      },
+      "expected_status_passed": true,
+      "saved_rows_passed": true,
+      "saved_rows": 0
+    }
+  ],
+  "boundary": [
+    {
+      "case": "exact-boundary",
+      "status": "completed",
+      "spent": {
+        "cost": 6,
+        "duration": 23
+      },
+      "saved_rows": 1,
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 6,
+        "recomputed_duration": 23,
+        "issues": []
+      },
+      "passed": true
+    },
+    {
+      "case": "time-one-short",
+      "status": "incomplete",
+      "spent": {
+        "cost": 2,
+        "duration": 6
+      },
+      "saved_rows": 0,
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 2,
+        "recomputed_duration": 6,
+        "issues": []
+      },
+      "passed": true
+    },
+    {
+      "case": "budget-one-short",
+      "status": "incomplete",
+      "spent": {
+        "cost": 2,
+        "duration": 6
+      },
+      "saved_rows": 0,
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 2,
+        "recomputed_duration": 6,
+        "issues": []
+      },
+      "passed": true
+    },
+    {
+      "case": "duplicate-id",
+      "status": "completed",
+      "spent": {
+        "cost": 6,
+        "duration": 23
+      },
+      "saved_rows": 1,
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 6,
+        "recomputed_duration": 23,
+        "issues": []
+      },
+      "passed": true
+    },
+    {
+      "case": "save-fails-at-deadline",
+      "status": "incomplete",
+      "spent": {
+        "cost": 6,
+        "duration": 23
+      },
+      "saved_rows": 0,
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 6,
+        "recomputed_duration": 23,
+        "issues": []
+      },
+      "passed": true
+    }
+  ],
+  "real_evidence": [
+    {
+      "case": "missing-budget.output",
+      "run": 1,
+      "status": "needs_input",
+      "mode": "real",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 0,
+        "recomputed_duration": 0,
+        "issues": []
+      },
+      "recorded_model_decisions": 0,
+      "response_ids_present": true,
+      "actions": []
+    },
+    {
+      "case": "missing-time.output",
+      "run": 1,
+      "status": "needs_input",
+      "mode": "real",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 0,
+        "recomputed_duration": 0,
+        "issues": []
+      },
+      "recorded_model_decisions": 0,
+      "response_ids_present": true,
+      "actions": []
+    },
+    {
+      "case": "no-materials.output",
+      "run": 1,
+      "status": "incomplete",
+      "mode": "real",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 8,
+        "recomputed_duration": 20,
+        "issues": []
+      },
+      "recorded_model_decisions": 5,
+      "response_ids_present": true,
+      "actions": [
+        "search_materials",
+        "search_materials",
+        "search_materials",
+        "search_materials",
+        "finish"
+      ]
+    },
+    {
+      "case": "normal.output",
+      "run": 1,
+      "status": "completed",
+      "mode": "real",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 12,
+        "recomputed_duration": 38,
+        "issues": []
+      },
+      "recorded_model_decisions": 4,
+      "response_ids_present": true,
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "generate_script",
+        "save_plan"
+      ]
+    },
+    {
+      "case": "out-of-time.output",
+      "run": 1,
+      "status": "incomplete",
+      "mode": "real",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 2,
+        "recomputed_duration": 8,
+        "issues": []
+      },
+      "recorded_model_decisions": 5,
+      "response_ids_present": true,
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "estimate_plan",
+        "estimate_plan",
+        "finish"
+      ]
+    },
+    {
+      "case": "over-budget.output",
+      "run": 1,
+      "status": "incomplete",
+      "mode": "real",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 2,
+        "recomputed_duration": 7,
+        "issues": []
+      },
+      "recorded_model_decisions": 4,
+      "response_ids_present": true,
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "estimate_plan",
+        "finish"
+      ]
+    },
+    {
+      "case": "partial-resume.output",
+      "run": 1,
+      "status": "incomplete",
+      "mode": "real",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 14,
+        "recomputed_duration": 46,
+        "issues": []
+      },
+      "recorded_model_decisions": 5,
+      "response_ids_present": true,
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "generate_script",
+        "generate_script",
+        "finish"
+      ]
+    },
+    {
+      "case": "partial-resume.output",
+      "run": 2,
+      "status": "completed",
+      "mode": "real",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 20,
+        "recomputed_duration": 68,
+        "issues": []
+      },
+      "recorded_model_decisions": 7,
+      "response_ids_present": true,
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "generate_script",
+        "generate_script",
+        "finish",
+        "generate_script",
+        "save_plan"
+      ]
+    },
+    {
+      "case": "repeat.output",
+      "run": 1,
+      "status": "completed",
+      "mode": "real",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 12,
+        "recomputed_duration": 38,
+        "issues": []
+      },
+      "recorded_model_decisions": 4,
+      "response_ids_present": true,
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "generate_script",
+        "save_plan"
+      ]
+    },
+    {
+      "case": "repeat.output",
+      "run": 2,
+      "status": "completed",
+      "mode": "real",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 12,
+        "recomputed_duration": 38,
+        "issues": []
+      },
+      "recorded_model_decisions": 4,
+      "response_ids_present": true,
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "generate_script",
+        "save_plan"
+      ]
+    },
+    {
+      "case": "replan.output",
+      "run": 1,
+      "status": "completed",
+      "mode": "real",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 8,
+        "recomputed_duration": 29,
+        "issues": []
+      },
+      "recorded_model_decisions": 5,
+      "response_ids_present": true,
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "estimate_plan",
+        "generate_script",
+        "save_plan"
+      ]
+    },
+    {
+      "case": "save-failure.output",
+      "run": 1,
+      "status": "incomplete",
+      "mode": "real",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 12,
+        "recomputed_duration": 38,
+        "issues": []
+      },
+      "recorded_model_decisions": 5,
+      "response_ids_present": true,
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "generate_script",
+        "save_plan",
+        "finish"
+      ]
+    },
+    {
+      "case": "step-limit.output",
+      "run": 1,
+      "status": "incomplete",
+      "mode": "real",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 2,
+        "recomputed_duration": 5,
+        "issues": []
+      },
+      "recorded_model_decisions": 1,
+      "response_ids_present": true,
+      "actions": [
+        "search_materials"
+      ]
+    },
+    {
+      "case": "tool-failure.output",
+      "run": 1,
+      "status": "completed",
+      "mode": "real",
+      "ledger": {
+        "passed": true,
+        "recomputed_cost": 22,
+        "recomputed_duration": 68,
+        "issues": []
+      },
+      "recorded_model_decisions": 5,
+      "response_ids_present": true,
+      "actions": [
+        "search_materials",
+        "estimate_plan",
+        "generate_script",
+        "generate_script",
+        "save_plan"
+      ]
+    }
+  ],
+  "unit_tests_passed": true,
+  "finished_at": "2026-10-30T09:52:31.094741+00:00",
+  "all_checks_passed": true
+}
