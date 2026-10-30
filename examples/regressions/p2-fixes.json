@@ -1,0 +1,92 @@
+{
+  "verification_kind": "offline regression and protocol-stub checks",
+  "new_model_api_calls": 0,
+  "baseline_commit_before_fix": "c32b24746dbeafd6c61a335e9c8b7f0ec3800c35",
+  "checks": {
+    "final_shortfall": {
+      "before": {
+        "reported": {
+          "budget": 2,
+          "time_budget": 8
+        },
+        "expected": {
+          "budget": 4,
+          "time_budget": 13
+        },
+        "spent": {
+          "cost": 4,
+          "duration": 11
+        },
+        "reproduced": true
+      },
+      "after": {
+        "reported": {
+          "budget": 4,
+          "time_budget": 13
+        },
+        "expected": {
+          "budget": 4,
+          "time_budget": 13
+        },
+        "spent": {
+          "cost": 4,
+          "duration": 11
+        },
+        "reproduced": false
+      },
+      "passed": true,
+      "test": "tests.test_agent.AgentTests.test_finish_recalculates_shortfall_after_another_search"
+    },
+    "no_materials_model_outage": {
+      "before": {
+        "actual_error": "MODEL_ERROR",
+        "all_checks_passed": true,
+        "search_calls": 0,
+        "reproduced": true
+      },
+      "after": {
+        "actual_error": "MODEL_ERROR",
+        "all_checks_passed": false,
+        "search_calls": 0,
+        "reproduced": false
+      },
+      "passed": true,
+      "test": "tests.test_evaluation.EvaluationTests.test_model_outage_is_not_a_passing_no_materials_case"
+    },
+    "partial_report_preservation": {
+      "before": {
+        "before_total": 12,
+        "after_total": 1,
+        "remaining_output_files": 12,
+        "exit_code": 0,
+        "reproduced": true
+      },
+      "after": {
+        "before_total": 12,
+        "after_total": 12,
+        "remaining_output_files": 12,
+        "exit_code": 2,
+        "reproduced": false
+      },
+      "passed": true,
+      "test": "tests.test_evaluation.EvaluationTests.test_partial_cli_does_not_overwrite_existing_full_index"
+    },
+    "missing_evidence_rejection": {
+      "before": {
+        "omitted_real_files": 24,
+        "ready_for_submission": true,
+        "exit_code": 0,
+        "reproduced": true
+      },
+      "after": {
+        "omitted_real_files": 24,
+        "ready_for_submission": false,
+        "exit_code": 1,
+        "reproduced": false
+      },
+      "passed": true,
+      "test": "tests.test_submission.SubmissionEvidenceTests.test_summary_without_real_outputs_is_rejected"
+    }
+  },
+  "all_passed": true
+}

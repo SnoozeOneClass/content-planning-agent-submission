@@ -18,7 +18,7 @@
       "status": "incomplete",
       "reason": {
         "code": "MODEL_STOPPED",
-        "message": "已用四组不同关键词（火星地质勘探、火星 地质 探测、火星探测 地质 岩石 样本、火星 地质 岩石 矿物 探测任务）检索参考资料，结果均为空，没有可用的 material_id，因此无法为「火星地质勘探」规划并生成脚本。请补充可用的参考资料或素材来源（例如火星探测任务介绍、地质样本分析资料等），或确认是否放宽主题范围，我再继续。"
+        "message": "已围绕“火星地质勘探”主题进行四次不同角度的检索（火星地质勘探、火星地质探测、火星探测、火星地质岩石样本分析），结果均为空，没有可用的 material_id，因此无法规划并生成脚本。请补充可用的参考资料或提供素材来源，我将在此基础上继续完成方案。"
       },
       "spent": {
         "cost": 8,
@@ -44,10 +44,10 @@
           },
           "reason": "先检索与火星地质勘探主题相关的参考资料",
           "model_receipt": {
-            "response_id": "858b1fe4-3105-40b1-bf57-95e56e539136",
+            "response_id": "eb1902c0-be64-4f2c-aeb6-e9767af4547d",
             "model": "deepseek-flash",
             "source": "real_model",
-            "tool_call_id": "call_00_lHBBy9SvsxFmgiiVDC8F8278"
+            "tool_call_id": "call_00_aFHrzWV8SOFFodwfgDVa0432"
           },
           "result": {
             "tool": "search_materials",
@@ -80,10 +80,10 @@
           },
           "reason": "首次检索无结果，改用更宽泛的关键词再次检索火星地质相关素材。",
           "model_receipt": {
-            "response_id": "77f99e9e-38e0-422b-8205-1f61df091815",
+            "response_id": "8de70ec4-3368-47a3-b3e9-60bf07ee4eaa",
             "model": "deepseek-flash",
             "source": "real_model",
-            "tool_call_id": "call_00_Tcis3za3xixYIEtH0x8c9837"
+            "tool_call_id": "call_00_acimFxmke8suisX7JEPI7905"
           },
           "result": {
             "tool": "search_materials",
@@ -105,21 +105,21 @@
             "time_budget": 90
           },
           "next_action": "search_materials",
-          "next_reason": "前两次检索无结果，改写关键词再试一次以获取可用素材。"
+          "next_reason": "前两次查询无结果，改用更宽泛的主题词再检索一次"
         },
         {
           "step": 3,
           "source": "real_model",
           "action": "search_materials",
           "arguments": {
-            "query": "火星探测 地质 岩石 样本"
+            "query": "火星探测"
           },
-          "reason": "前两次检索无结果，改写关键词再试一次以获取可用素材。",
+          "reason": "前两次查询无结果，改用更宽泛的主题词再检索一次",
           "model_receipt": {
-            "response_id": "c1b5e564-5362-4103-95fb-9bc63e533e73",
+            "response_id": "e4519c0c-a5ff-42c1-a7e2-1bc253b73c19",
             "model": "deepseek-flash",
             "source": "real_model",
-            "tool_call_id": "call_00_MHlayTmzbULOwqvaFI2z5578"
+            "tool_call_id": "call_00_TTF7tupoxCZUHrT2LEyC9965"
           },
           "result": {
             "tool": "search_materials",
@@ -141,21 +141,21 @@
             "time_budget": 85
           },
           "next_action": "search_materials",
-          "next_reason": "前三次检索均无结果，改用更宽泛的关键词再试一次"
+          "next_reason": "前三次检索均无结果，改用更宽泛的地质样本相关查询再试一次。"
         },
         {
           "step": 4,
           "source": "real_model",
           "action": "search_materials",
           "arguments": {
-            "query": "火星 地质 岩石 矿物 探测任务"
+            "query": "火星 地质 岩石 样本 分析"
           },
-          "reason": "前三次检索均无结果，改用更宽泛的关键词再试一次",
+          "reason": "前三次检索均无结果，改用更宽泛的地质样本相关查询再试一次。",
           "model_receipt": {
-            "response_id": "99e62a57-8456-40df-a842-3feeb6656efb",
+            "response_id": "5466c868-530a-4dc9-9632-0c69be9d62a1",
             "model": "deepseek-flash",
             "source": "real_model",
-            "tool_call_id": "call_00_3x77ruJB1pRGhfnVTPDF1284"
+            "tool_call_id": "call_00_42wjDaTf77hTH7x88PED7937"
           },
           "result": {
             "tool": "search_materials",
@@ -177,35 +177,35 @@
             "time_budget": 80
           },
           "next_action": "finish",
-          "next_reason": "多次改写查询检索仍无任何素材，缺少可用 material_id，无法生成脚本。"
+          "next_reason": "多次改写查询检索均无结果，缺少可用素材，无法生成脚本。"
         },
         {
           "step": 5,
           "source": "real_model",
           "action": "finish",
           "arguments": {
-            "message": "已用四组不同关键词（火星地质勘探、火星 地质 探测、火星探测 地质 岩石 样本、火星 地质 岩石 矿物 探测任务）检索参考资料，结果均为空，没有可用的 material_id，因此无法为「火星地质勘探」规划并生成脚本。请补充可用的参考资料或素材来源（例如火星探测任务介绍、地质样本分析资料等），或确认是否放宽主题范围，我再继续。"
+            "message": "已围绕“火星地质勘探”主题进行四次不同角度的检索（火星地质勘探、火星地质探测、火星探测、火星地质岩石样本分析），结果均为空，没有可用的 material_id，因此无法规划并生成脚本。请补充可用的参考资料或提供素材来源，我将在此基础上继续完成方案。"
           },
-          "reason": "多次改写查询检索仍无任何素材，缺少可用 material_id，无法生成脚本。",
+          "reason": "多次改写查询检索均无结果，缺少可用素材，无法生成脚本。",
           "model_receipt": {
-            "response_id": "b42ce2f5-3cad-4876-8785-b09bc9b0a2d6",
+            "response_id": "df43c034-9c87-4a5f-a20a-98a3c020a1f6",
             "model": "deepseek-flash",
             "source": "real_model",
-            "tool_call_id": "call_00_N7YQ7d5d1f56bSscp7Ig3197"
+            "tool_call_id": "call_00_Z8YR5JP5FCOed9qobbVc8139"
           },
           "result": {
             "tool": "finish",
             "status": "stopped",
             "data": {
               "code": "MODEL_STOPPED",
-              "message": "已用四组不同关键词（火星地质勘探、火星 地质 探测、火星探测 地质 岩石 样本、火星 地质 岩石 矿物 探测任务）检索参考资料，结果均为空，没有可用的 material_id，因此无法为「火星地质勘探」规划并生成脚本。请补充可用的参考资料或素材来源（例如火星探测任务介绍、地质样本分析资料等），或确认是否放宽主题范围，我再继续。"
+              "message": "已围绕“火星地质勘探”主题进行四次不同角度的检索（火星地质勘探、火星地质探测、火星探测、火星地质岩石样本分析），结果均为空，没有可用的 material_id，因此无法规划并生成脚本。请补充可用的参考资料或提供素材来源，我将在此基础上继续完成方案。"
             },
             "charged": {
               "cost": 0,
               "duration": 0
             }
           },
-          "observation_summary": "{'code': 'MODEL_STOPPED', 'message': '已用四组不同关键词（火星地质勘探、火星 地质 探测、火星探测 地质 岩石 样本、火星 地质 岩石 矿物 探测任务）检索参考资料，结果均为空，没有可用的 material_id，因此无法为「火星地质勘探」规划并生成脚本。请补充可用的参考资料或素材来源（例如火星探测任务介绍、地质样本分析资料等），或确认是否放宽主题范围，我再继续。'}",
+          "observation_summary": "{'code': 'MODEL_STOPPED', 'message': '已围绕“火星地质勘探”主题进行四次不同角度的检索（火星地质勘探、火星地质探测、火星探测、火星地质岩石样本分析），结果均为空，没有可用的 material_id，因此无法规划并生成脚本。请补充可用的参考资料或提供素材来源，我将在此基础上继续完成方案。'}",
           "spent_after": {
             "cost": 8,
             "duration": 20
@@ -229,6 +229,10 @@
     "within_time": true,
     "database_matches_saved_result": true,
     "completion_requires_saved_plan": true,
-    "unfinished_reason_present": true
+    "unfinished_reason_present": true,
+    "empty_search_observed": true,
+    "no_materials_no_scripts": true,
+    "no_materials_not_saved": true,
+    "no_materials_stopped_by_model": true
   }
 }

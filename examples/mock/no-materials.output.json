@@ -151,6 +151,10 @@
     "within_time": true,
     "database_matches_saved_result": true,
     "completion_requires_saved_plan": true,
-    "unfinished_reason_present": true
+    "unfinished_reason_present": true,
+    "empty_search_observed": true,
+    "no_materials_no_scripts": true,
+    "no_materials_not_saved": true,
+    "no_materials_stopped_by_model": true
   }
 }

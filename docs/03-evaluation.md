@@ -10,7 +10,9 @@ python -m src.evaluate --mode real
 
 单元与集成测试检查业务约束、存储和模型接口协议；协议测试使用进程内 HTTP 传输替身，模型决策效果由真实运行评估。`evaluate` 为每个用例使用独立数据库，保存实际输出、逐步 Trace 和断言结果。
 
-当前 **34/34 项自动化测试通过**。执行 `python scripts/verify.py` 可同时重现测试与离线验收，并更新[实际测试结果](../examples/test-results.txt)。
+当前 **56/56 项自动化测试通过**。执行 `python scripts/verify.py` 可同时重现测试与离线验收，并更新[实际测试结果](../examples/test-results.txt)。
+
+部分用例可通过 `--case` 指定，默认写入独立的 `runtime/evaluations/` 子目录。已有完整验收索引受到保护；需要固定目录时，使用 `--out runtime/real-smoke` 等独立位置。
 
 ## 离线实际结果
 
@@ -37,30 +39,30 @@ python -m src.evaluate --mode real
 
 ## 真实模型验证
 
-使用 `deepseek-flash` 原生工具调用完成两轮真实验收。第二轮在改进生成提示词后完整重跑，**12/12 组程序化验收通过**，最终记录见 [真实 results.json](../examples/real/results.json)。动作由模型响应产生，Trace 保留 response ID、tool call ID 和工具执行结果。缺输入的两组由输入校验直接返回。
+使用 `deepseek-flash` 原生工具调用完成真实验收。四项 P2 修复后完整重跑，**12/12 组程序化验收通过**，最新记录见 [真实 results.json](../examples/real/results.json)。动作由模型响应产生，Trace 保留 response ID、tool call ID 和工具执行结果。缺输入的两组由输入校验直接返回。
 
 | 场景 | 实际状态 | 费用 / 耗时 | 实际材料 |
 | --- | --- | --- | --- |
 | 正常 | completed | 12 / 38 | [输出](../examples/real/normal.output.json)、[Trace](../examples/real/normal.trace.md) |
-| 超限后调整 | completed | 8 / 29 | [输出](../examples/real/replan.output.json)、[Trace](../examples/real/replan.trace.md) |
+| 超限后调整 | completed | 8 / 30 | [输出](../examples/real/replan.output.json)、[Trace](../examples/real/replan.trace.md) |
 | 缺预算 | needs_input | 0 / 0 | [输出](../examples/real/missing-budget.output.json)、[Trace](../examples/real/missing-budget.trace.md) |
 | 缺时间 | needs_input | 0 / 0 | [输出](../examples/real/missing-time.output.json)、[Trace](../examples/real/missing-time.trace.md) |
 | 生成暂时失败 | completed | 22 / 68 | [输出](../examples/real/tool-failure.output.json)、[Trace](../examples/real/tool-failure.trace.md) |
-| 保存失败 | incomplete | 12 / 38 | [输出](../examples/real/save-failure.output.json)、[Trace](../examples/real/save-failure.trace.md) |
+| 保存失败 | incomplete | 12 / 40 | [输出](../examples/real/save-failure.output.json)、[Trace](../examples/real/save-failure.trace.md) |
 | 无预算可行解 | incomplete | 2 / 7 | [输出](../examples/real/over-budget.output.json)、[Trace](../examples/real/over-budget.trace.md) |
 | 无时间可行解 | incomplete | 2 / 8 | [输出](../examples/real/out-of-time.output.json)、[Trace](../examples/real/out-of-time.trace.md) |
 | 无资料 | incomplete | 8 / 20 | [输出](../examples/real/no-materials.output.json)、[Trace](../examples/real/no-materials.trace.md) |
 | 重复执行 | completed | 12 / 38，无新增 | [两次输出](../examples/real/repeat.output.json)、[Trace](../examples/real/repeat.trace.md) |
-| 部分成功后续跑 | completed | 20 / 68 | [两次输出](../examples/real/partial-resume.output.json)、[Trace](../examples/real/partial-resume.trace.md) |
+| 部分成功后续跑 | completed | 20 / 69 | [两次输出](../examples/real/partial-resume.output.json)、[Trace](../examples/real/partial-resume.trace.md) |
 | 执行上限 | incomplete | 2 / 5 | [输出](../examples/real/step-limit.output.json)、[Trace](../examples/real/step-limit.trace.md) |
 
 其中三组可重点复核动态决策：
 
-1. 正常请求选择 M01–M04，估算通过后生成并保存；受限请求先得到费用 12、耗时 38 的超限反馈，模型随后保留支持添加编辑与时间同步的 M01、M04，重新估算为费用 8、耗时 29，再生成保存。
-2. 生成工具返回可重试错误后，模型依据剩余额度选择重试；保存工具返回不可恢复错误后，模型选择停止，保留脚本并说明未保存。
-3. 两条脚本中 S1 成功、S2 失败时，首次运行停止在费用 14、耗时 46；显式续跑只生成 S2 并保存，最终费用 20、耗时 68。S1 的原内容和生成响应记录完全保留。
+1. 正常请求选择 M01–M04，估算通过后生成并保存。受限请求先得到费用 12、耗时 38 的超限反馈，再缩减为三份素材，估算为费用 10、耗时 34；模型随后改为 M01、M02，估算为费用 8、耗时 30，完成生成与保存。
+2. 生成工具返回可重试错误后，模型依据剩余额度选择重试。本轮保存失败场景中，模型额外尝试了一次保存，连续失败后停止；两次保存耗时均已计入，总耗时为 40，脚本保留且未报告保存成功。
+3. 两条脚本中 S1 成功、S2 失败时，首次运行停止在费用 14、耗时 46；显式续跑重新估算剩余工作，只生成 S2 并保存，最终费用 20、耗时 69。S1 的原内容和生成响应记录完全保留。
 
-评估以约束、任务状态和工具执行结果为判断标准。两轮生成文本与动作路径的实际差异均保存在运行材料中。
+评估以约束、任务状态和工具执行结果为判断标准。每次完整重跑更新当前运行材料，历史版本可通过 Git 提交记录追溯。
 
 ## 生成内容复核与改进
 
@@ -71,7 +73,20 @@ python -m src.evaluate --mode real
 ## 开发中发现的问题与修正
 
 - Windows 测试环境的临时目录访问限制导致 SQLite 初始化失败，调整为在仓库 `runtime/` 下创建隔离目录后通过测试。
-- 模型接口协议采用进程内传输替身完成可重复测试；实际 HTTP 通信通过两轮 DeepSeek 运行验证，覆盖调用、返回解析和生成结果保存。
+- 模型接口协议采用进程内传输替身完成可重复测试；实际 HTTP 通信通过 DeepSeek 完整验收验证，覆盖调用、返回解析和生成结果保存。
+
+## 四项 P2 修复与回归
+
+后续 Review 的组合用例暴露了四项问题，已修复并增加回归测试。[修复前后核对结果](../examples/regressions/p2-fixes.json)记录了实际复测结果。
+
+| 问题 | 修复后的行为 | 回归测试 |
+| --- | --- | --- |
+| 结束时沿用旧缺口 | 补查后停止时，缺口从旧值 `2 / 8` 正确更新为 `4 / 13`；历史报价保持原值 | [Agent 测试](../tests/test_agent.py)中的 `test_finish_recalculates_shortfall_after_another_search` |
+| 仅有汇总也能通过提交检查 | 逐个读取用例输入、输出和 Trace；删除 24 个真实证据文件后检查返回失败 | [证据检查测试](../tests/test_submission.py)中的 `test_summary_without_real_outputs_is_rejected` |
+| 部分运行覆盖完整报告 | 部分用例使用独立目录，向已有完整报告目录写入会在执行前拒绝，原 12 组索引保留 | [评估测试](../tests/test_evaluation.py)中的 `test_partial_cli_does_not_overwrite_existing_full_index` |
+| 模型故障误判为无素材通过 | 必须观察到成功检索的空结果、保留空脚本状态，并由模型结束；`MODEL_ERROR` 不通过该场景 | [评估测试](../tests/test_evaluation.py)中的 `test_model_outage_is_not_a_passing_no_materials_case` |
+
+提交检查器还会核对用例集合、输入一致性、运行模式、素材与费率摘要、实际动作记录及 Trace 内容。数据库一致性在执行评估时检查，提交阶段重新核对保存下来的业务结果与证据文件。
 
 ## 评估范围与已知限制
 

@@ -18,7 +18,7 @@ GitHub 仓库：[SnoozeOneClass/content-planning-agent-submission](https://githu
 - [真实超限重规划 Trace](examples/real/replan.trace.md)
 - [真实部分成功后续跑 Trace](examples/real/partial-resume.trace.md)
 
-当前验证结果：**34 项自动化测试通过，12/12 组离线验收通过，12/12 组真实 DeepSeek 验收通过**。已记录正常完成、超限后重新选材、工具失败后重试或停止、重复执行和部分成功后续跑等真实路径。离线与真实模型证据分别保存。
+当前验证结果：**56 项自动化测试通过，12/12 组离线验收通过，12/12 组真实 DeepSeek 验收通过**。已记录正常完成、超限后重新选材、工具失败后重试或停止、重复执行和部分成功后续跑等真实路径。离线与真实模型证据分别保存。
 
 ## 环境与安装
 
@@ -69,8 +69,10 @@ python -m src.evaluate --mode real
 完整评估会调用模型多次。先检查接入时，可以只执行指定场景：
 
 ```sh
-python -m src.evaluate --mode real --case normal --case replan --case save-failure
+python -m src.evaluate --mode real --case normal --case replan --case save-failure --out runtime/real-smoke
 ```
+
+指定 `--case` 时，默认输出到独立的 `runtime/evaluations/` 子目录；也可像上面一样指定专用目录。部分运行不会覆盖 `examples/mock/`、`examples/real/` 中的完整验收报告。若指定目录已经包含其他用例的汇总，程序会提示更换输出目录。
 
 接口依据：[DeepSeek 接入说明](https://api-docs.deepseek.com/en/)、[工具调用](https://api-docs.deepseek.com/guides/tool_calls/)。接口异常返回 `MODEL_ERROR`，修复配置后可使用 `--resume` 继续任务。
 
@@ -111,7 +113,7 @@ python -m src.main --input examples/inputs/partial-resume.json --mode mock --db 
 
 第一条命令保留已成功的脚本，第二条只处理未完成步骤。累计费用、时间和决策次数继续保留。默认最多 `16` 次模型决策，含被拒绝的动作；`--max-steps` 可调整到 `1–100`，达到上限明确返回 `STEP_LIMIT`，续跑不重置计数。
 
-评估命令为每个用例创建独立临时数据库，因此可以重复执行而不会把上次缓存误当成本次运行。实际输出、Trace 和检查结果保存到 `examples/mock/` 或 `examples/real/`。
+评估命令为每个用例创建独立临时数据库。完整验收的实际输出、Trace 和检查结果保存到 `examples/mock/` 或 `examples/real/`；部分用例使用独立输出目录。
 
 ## 提交
 
@@ -122,4 +124,4 @@ git rev-parse HEAD
 python scripts/check_submission.py
 ```
 
-`.env`、运行数据库和临时文件由 `.gitignore` 排除。提交检查脚本核对材料完整性、运行证据和 Git 提交状态。
+`.env`、运行数据库和临时文件由 `.gitignore` 排除。提交检查脚本逐一读取输入、输出和 Trace，重新核对业务断言、模式、素材与费率摘要以及实际动作路径，并检查 Git 提交状态。

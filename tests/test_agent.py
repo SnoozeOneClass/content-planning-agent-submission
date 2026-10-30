@@ -263,6 +263,30 @@ class AgentTests(unittest.TestCase):
         self.assertTrue(second["replayed"])
         self.assertEqual(second["saved_plan"], first["saved_plan"])
 
+    def test_finish_recalculates_shortfall_after_another_search(self):
+        plan = [{"step_id": "S1", "material_ids": ["M01", "M02", "M03", "M04"], "brief": "字幕介绍"}]
+        actions = [("search_materials", {"query": "字幕功能"}), ("estimate_plan", {"scripts": plan}),
+                   ("search_materials", {"query": "字幕时间"}), ("finish", {"message": "停止当前计划"})]
+        agent = Agent(ScriptedModel(actions), self.store, self.materials, self.rates)
+        r = agent.run({"topic": "字幕功能推广", "budget": 10, "time_budget": 30})
+        self.assertEqual(r["spent"], {"cost": 4, "duration": 11})
+        self.assertEqual(r["reason"]["shortfall"], {"budget": 4, "time_budget": 13})
+        self.assertEqual(r["steps"][1]["result"]["data"]["shortfall"], {"budget": 2, "time_budget": 8})
+        self.assertEqual(r["plan_revisions"][0]["estimate"]["shortfall"], {"budget": 2, "time_budget": 8})
+        self.assert_accounting(r)
+
+    def test_finish_reports_new_shortfall_after_feasible_plan_fails(self):
+        plan = [{"step_id": "S1", "material_ids": ["M01", "M02", "M03", "M04"], "brief": "字幕介绍"}]
+        actions = [("search_materials", {"query": "字幕功能"}), ("estimate_plan", {"scripts": plan}),
+                   ("generate_script", {"step_id": "S1"}), ("finish", {"message": "失败后停止"})]
+        agent = Agent(ScriptedModel(actions), self.store, self.materials, self.rates,
+                      faults={"generate_script": {"at_calls": [1]}})
+        r = agent.run({"topic": "字幕功能推广", "budget": 12, "time_budget": 100})
+        self.assertTrue(r["plan_revisions"][0]["estimate"]["feasible"])
+        self.assertEqual(r["reason"]["shortfall"], {"budget": 10, "time_budget": 0})
+        self.assertEqual(r["spent"], {"cost": 12, "duration": 36})
+        self.assert_accounting(r)
+
 
 if __name__ == "__main__":
     unittest.main()

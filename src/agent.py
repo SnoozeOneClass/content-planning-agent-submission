@@ -90,8 +90,10 @@ class Agent:
                         message = args.get("message", "模型选择停止") if isinstance(args, dict) else "模型选择停止"
                         state["status"] = "incomplete"
                         state["reason"] = {"code": "MODEL_STOPPED", "message": str(message)}
-                        if state.get("quote") and not state["quote"]["feasible"]:
-                            state["reason"]["shortfall"] = state["quote"]["shortfall"]
+                        if state["plan"]:
+                            final_quote = self.feasibility(state)
+                            if not final_quote["feasible"]:
+                                state["reason"]["shortfall"] = final_quote["shortfall"]
                         result = {"tool": "finish", "status": "stopped", "data": state["reason"], "charged": {"cost": 0, "duration": 0}}
                     else:
                         result = self.execute(state, action, args)

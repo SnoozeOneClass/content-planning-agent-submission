@@ -18,18 +18,18 @@
       "status": "incomplete",
       "reason": {
         "code": "MODEL_STOPPED",
-        "message": "脚本 S1 已成功生成（基于 M01–M04，覆盖添加/编辑字幕、字体与颜色适配、字幕位置避让、时间轴对齐四项能力），但保存方案时返回不可恢复错误（INJECTED_TOOL_FAILURE：方案存储暂不可写，retryable=false），且该错误无法通过重试或重新生成解决。因此本次内容活动方案未能保存，任务无法标记为完成。已生成的脚本内容保留在会话状态中；请在存储恢复后发起显式恢复请求，我将仅重新执行保存步骤（无需重新生成脚本）。"
+        "message": "脚本 S1 已生成成功（基于 M01–M04，覆盖添加/编辑字幕、字体颜色适配、位置避让、起止时间同步），但方案保存接口连续两次返回不可恢复错误（INJECTED_TOOL_FAILURE，retryable=false，方案存储暂不可写），且该故障无法通过重试或调整素材解决。因此本次任务无法完成保存，脚本成果已保留在会话中。请在存储恢复后发起恢复请求，我将仅重新执行保存步骤，不重新生成脚本。"
       },
       "spent": {
         "cost": 12,
-        "duration": 38
+        "duration": 40
       },
       "remaining": {
         "budget": 8,
-        "time_budget": 62
+        "time_budget": 60
       },
-      "decision_steps": 5,
-      "tool_calls": 4,
+      "decision_steps": 6,
+      "tool_calls": 5,
       "task_plan": [
         {
           "step_id": "S1",
@@ -39,7 +39,7 @@
             "M03",
             "M04"
           ],
-          "brief": "以“字幕功能推广”为主题，展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、按时间轴对齐字幕与视频片段四大能力，突出易用与画面适配。",
+          "brief": "以字幕功能推广为主题，依次展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、设置每条字幕起止时间与画面同步，突出易用与画面适配能力。",
           "status": "succeeded",
           "depends_on": [
             "search_materials",
@@ -60,7 +60,7 @@
                 "M03",
                 "M04"
               ],
-              "brief": "以“字幕功能推广”为主题，展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、按时间轴对齐字幕与视频片段四大能力，突出易用与画面适配。"
+              "brief": "以字幕功能推广为主题，依次展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、设置每条字幕起止时间与画面同步，突出易用与画面适配能力。"
             }
           ],
           "estimate": {
@@ -91,33 +91,33 @@
               "M03",
               "M04"
             ],
-            "brief": "以“字幕功能推广”为主题，展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、按时间轴对齐字幕与视频片段四大能力，突出易用与画面适配。"
+            "brief": "以字幕功能推广为主题，依次展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、设置每条字幕起止时间与画面同步，突出易用与画面适配能力。"
           },
           "title": "字幕功能：添加、编辑与画面适配",
           "scenes": [
             {
-              "visual": "视频画面中先出现一段无字幕片段，随后画面下方出现一行字幕文字；镜头停留在字幕区域，展示文字内容可被手动修改。",
+              "visual": "视频画面中展示添加字幕后出现字幕文字，随后字幕文字被手动编辑修改。",
               "narration": "可以为视频添加字幕，字幕文字支持手动编辑。",
               "material_ids": [
                 "M01"
               ]
             },
             {
-              "visual": "同一画面切换不同背景：先浅色背景，再深色背景；字幕的字体大小与文字颜色随之调整，保持文字清晰可读。",
-              "narration": "字幕的字体大小和文字颜色可以调整，用于适配不同背景画面。",
+              "visual": "同一画面中对比不同字体大小和文字颜色的字幕，展示其适配不同背景画面。",
+              "narration": "字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
               "material_ids": [
                 "M02"
               ]
             },
             {
-              "visual": "画面中人物位于中央，字幕位置从画面中部移动到下方，避开人物面部区域。",
+              "visual": "画面中有人物，字幕位置被调整到不遮挡人物面部的位置。",
               "narration": "可以设置字幕在画面中的位置，避免字幕遮挡人物面部。",
               "material_ids": [
                 "M03"
               ]
             },
             {
-              "visual": "时间轴视图：每条字幕显示开始与结束时间标记，字幕随对应视频片段出现和消失。",
+              "visual": "展示每条字幕的开始和结束时间设置，字幕与对应视频片段一起出现。",
               "narration": "支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
               "material_ids": [
                 "M04"
@@ -131,7 +131,7 @@
             "M04"
           ],
           "generation_receipt": {
-            "response_id": "aabca26c-6796-4271-be27-c60edee2e8f6",
+            "response_id": "273b84b5-369b-4c88-adaa-4129c89267f9",
             "model": "deepseek-flash",
             "source": "real_model"
           }
@@ -148,10 +148,10 @@
           },
           "reason": "先检索与字幕功能推广相关的参考资料",
           "model_receipt": {
-            "response_id": "aa2b885d-dc17-4c3a-b162-5fdce34e289f",
+            "response_id": "420745d7-4178-46a4-823f-9d3a863b4fce",
             "model": "deepseek-flash",
             "source": "real_model",
-            "tool_call_id": "call_00_qnrv6fitG4aSlX8hD65C4480"
+            "tool_call_id": "call_00_9LtIxX4YvZgy9Ln58L3j1525"
           },
           "result": {
             "tool": "search_materials",
@@ -220,16 +220,16 @@
                   "M03",
                   "M04"
                 ],
-                "brief": "以“字幕功能推广”为主题，展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、按时间轴对齐字幕与视频片段四大能力，突出易用与画面适配。"
+                "brief": "以字幕功能推广为主题，依次展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、设置每条字幕起止时间与画面同步，突出易用与画面适配能力。"
               }
             ]
           },
           "reason": "已检索到4条高相关字幕功能素材，先估算单条脚本的整体费用与时间。",
           "model_receipt": {
-            "response_id": "5643e760-7b95-4e3c-befc-03b99fb9b497",
+            "response_id": "04ee27b8-14d3-4f26-b13e-7c143cbc148b",
             "model": "deepseek-flash",
             "source": "real_model",
-            "tool_call_id": "call_00_7ENnuRZas85nUBQ1SBkT1198"
+            "tool_call_id": "call_00_NOypbOme4ODXBoLX66Os5730"
           },
           "result": {
             "tool": "estimate_plan",
@@ -265,7 +265,7 @@
             "time_budget": 94
           },
           "next_action": "generate_script",
-          "next_reason": "方案已估算可行且预算时间充足，执行唯一待生成的脚本 S1。"
+          "next_reason": "方案已估算可行且预算时间充足，执行唯一待生成的脚本。"
         },
         {
           "step": 3,
@@ -274,12 +274,12 @@
           "arguments": {
             "step_id": "S1"
           },
-          "reason": "方案已估算可行且预算时间充足，执行唯一待生成的脚本 S1。",
+          "reason": "方案已估算可行且预算时间充足，执行唯一待生成的脚本。",
           "model_receipt": {
-            "response_id": "6fd56fa4-262c-450f-bb57-c08bb7d90ce3",
+            "response_id": "6d6e2cc8-5dae-4364-b3bf-c0046e023d08",
             "model": "deepseek-flash",
             "source": "real_model",
-            "tool_call_id": "call_00_gtLmWFJwmFbOhAhuzGCo2677"
+            "tool_call_id": "call_00_61UIqNFkL9OAq5J2rMZD0104"
           },
           "result": {
             "tool": "generate_script",
@@ -294,33 +294,33 @@
                   "M03",
                   "M04"
                 ],
-                "brief": "以“字幕功能推广”为主题，展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、按时间轴对齐字幕与视频片段四大能力，突出易用与画面适配。"
+                "brief": "以字幕功能推广为主题，依次展示添加与手动编辑字幕、调整字体大小与颜色适配背景、设置字幕位置避免遮挡人物、设置每条字幕起止时间与画面同步，突出易用与画面适配能力。"
               },
               "title": "字幕功能：添加、编辑与画面适配",
               "scenes": [
                 {
-                  "visual": "视频画面中先出现一段无字幕片段，随后画面下方出现一行字幕文字；镜头停留在字幕区域，展示文字内容可被手动修改。",
+                  "visual": "视频画面中展示添加字幕后出现字幕文字，随后字幕文字被手动编辑修改。",
                   "narration": "可以为视频添加字幕，字幕文字支持手动编辑。",
                   "material_ids": [
                     "M01"
                   ]
                 },
                 {
-                  "visual": "同一画面切换不同背景：先浅色背景，再深色背景；字幕的字体大小与文字颜色随之调整，保持文字清晰可读。",
-                  "narration": "字幕的字体大小和文字颜色可以调整，用于适配不同背景画面。",
+                  "visual": "同一画面中对比不同字体大小和文字颜色的字幕，展示其适配不同背景画面。",
+                  "narration": "字幕可以调整字体大小和文字颜色，用于适配不同背景画面。",
                   "material_ids": [
                     "M02"
                   ]
                 },
                 {
-                  "visual": "画面中人物位于中央，字幕位置从画面中部移动到下方，避开人物面部区域。",
+                  "visual": "画面中有人物，字幕位置被调整到不遮挡人物面部的位置。",
                   "narration": "可以设置字幕在画面中的位置，避免字幕遮挡人物面部。",
                   "material_ids": [
                     "M03"
                   ]
                 },
                 {
-                  "visual": "时间轴视图：每条字幕显示开始与结束时间标记，字幕随对应视频片段出现和消失。",
+                  "visual": "展示每条字幕的开始和结束时间设置，字幕与对应视频片段一起出现。",
                   "narration": "支持设置每条字幕的开始和结束时间，使文字与对应的视频片段一起出现。",
                   "material_ids": [
                     "M04"
@@ -334,7 +334,7 @@
                 "M04"
               ],
               "generation_receipt": {
-                "response_id": "aabca26c-6796-4271-be27-c60edee2e8f6",
+                "response_id": "273b84b5-369b-4c88-adaa-4129c89267f9",
                 "model": "deepseek-flash",
                 "source": "real_model"
               }
@@ -355,7 +355,7 @@
             "time_budget": 64
           },
           "next_action": "save_plan",
-          "next_reason": "唯一脚本 S1 已生成成功，按流程保存活动方案。"
+          "next_reason": "唯一脚本 S1 已生成成功，剩余额度足够保存，直接保存方案完成任务。"
         },
         {
           "step": 4,
@@ -363,14 +363,14 @@
           "action": "save_plan",
           "arguments": {
             "title": "字幕功能推广：添加、编辑与画面适配",
-            "summary": "围绕“字幕功能推广”制作 1 条脚本（S1），依次展示四大能力：添加字幕并手动编辑文字（M01）、调整字体大小与颜色适配不同背景（M02）、设置字幕位置避免遮挡人物面部（M03）、按时间轴设置每条字幕起止时间与视频片段同步（M04）。整体节奏由基础编辑到画面适配再到时间对齐，突出易用性与画面适配效果。"
+            "summary": "围绕字幕功能推广制作 1 条脚本（S1），依次展示：添加字幕并手动编辑文字（M01）、调整字体大小与颜色适配不同背景（M02）、设置字幕位置避免遮挡人物面部（M03）、设置每条字幕起止时间与画面同步（M04），突出易用性与画面适配能力。脚本已生成成功，现保存为唯一方案。"
           },
-          "reason": "唯一脚本 S1 已生成成功，按流程保存活动方案。",
+          "reason": "唯一脚本 S1 已生成成功，剩余额度足够保存，直接保存方案完成任务。",
           "model_receipt": {
-            "response_id": "b2219516-1138-4f0b-84a1-e817bb015d95",
+            "response_id": "01d0aa96-5f5e-4f50-972a-18d44aee672e",
             "model": "deepseek-flash",
             "source": "real_model",
-            "tool_call_id": "call_00_kVfbL47L086HT3HSKyub4149"
+            "tool_call_id": "call_00_A2U0xcJg64fvbtkV3WLZ5394"
           },
           "result": {
             "tool": "save_plan",
@@ -395,43 +395,84 @@
             "budget": 8,
             "time_budget": 62
           },
-          "next_action": "finish",
-          "next_reason": "保存步骤返回不可恢复的存储故障，已成功脚本保留，需说明缺口并请求恢复。"
+          "next_action": "save_plan",
+          "next_reason": "脚本已生成成功，仅需重试保存方案以完成任务。"
         },
         {
           "step": 5,
           "source": "real_model",
-          "action": "finish",
+          "action": "save_plan",
           "arguments": {
-            "message": "脚本 S1 已成功生成（基于 M01–M04，覆盖添加/编辑字幕、字体与颜色适配、字幕位置避让、时间轴对齐四项能力），但保存方案时返回不可恢复错误（INJECTED_TOOL_FAILURE：方案存储暂不可写，retryable=false），且该错误无法通过重试或重新生成解决。因此本次内容活动方案未能保存，任务无法标记为完成。已生成的脚本内容保留在会话状态中；请在存储恢复后发起显式恢复请求，我将仅重新执行保存步骤（无需重新生成脚本）。"
+            "title": "字幕功能推广：添加、编辑与画面适配",
+            "summary": "围绕字幕功能推广制作 1 条脚本（S1），依次展示：添加字幕并手动编辑文字（M01）、调整字体大小与颜色适配不同背景（M02）、设置字幕位置避免遮挡人物面部（M03）、设置每条字幕起止时间与画面同步（M04），突出易用性与画面适配能力。脚本已生成成功，现重试保存为唯一方案。"
           },
-          "reason": "保存步骤返回不可恢复的存储故障，已成功脚本保留，需说明缺口并请求恢复。",
+          "reason": "脚本已生成成功，仅需重试保存方案以完成任务。",
           "model_receipt": {
-            "response_id": "9aaff62e-35a9-45fb-a3dd-1d4db0e54d02",
+            "response_id": "5f7df606-f6e8-4f94-bf5a-b1cdb52c6e36",
             "model": "deepseek-flash",
             "source": "real_model",
-            "tool_call_id": "call_00_Hij9i2xlVkWEq1zB419f2172"
+            "tool_call_id": "call_00_EXYdnitJuljWLSMm2obl5314"
+          },
+          "result": {
+            "tool": "save_plan",
+            "status": "failed",
+            "data": null,
+            "error": {
+              "code": "INJECTED_TOOL_FAILURE",
+              "message": "方案存储暂不可写，当前执行无法修复",
+              "retryable": false
+            },
+            "charged": {
+              "cost": 0,
+              "duration": 2
+            }
+          },
+          "observation_summary": "INJECTED_TOOL_FAILURE: 方案存储暂不可写，当前执行无法修复",
+          "spent_after": {
+            "cost": 12,
+            "duration": 40
+          },
+          "remaining_after": {
+            "budget": 8,
+            "time_budget": 60
+          },
+          "next_action": "finish",
+          "next_reason": "保存接口不可恢复失败，脚本已成功但无法落盘，需说明缺口并请求恢复。"
+        },
+        {
+          "step": 6,
+          "source": "real_model",
+          "action": "finish",
+          "arguments": {
+            "message": "脚本 S1 已生成成功（基于 M01–M04，覆盖添加/编辑字幕、字体颜色适配、位置避让、起止时间同步），但方案保存接口连续两次返回不可恢复错误（INJECTED_TOOL_FAILURE，retryable=false，方案存储暂不可写），且该故障无法通过重试或调整素材解决。因此本次任务无法完成保存，脚本成果已保留在会话中。请在存储恢复后发起恢复请求，我将仅重新执行保存步骤，不重新生成脚本。"
+          },
+          "reason": "保存接口不可恢复失败，脚本已成功但无法落盘，需说明缺口并请求恢复。",
+          "model_receipt": {
+            "response_id": "1a6f3705-cf15-4638-a705-5775b3f23d9c",
+            "model": "deepseek-flash",
+            "source": "real_model",
+            "tool_call_id": "call_00_WVXEHlHK0aIQqcKfooM28718"
           },
           "result": {
             "tool": "finish",
             "status": "stopped",
             "data": {
               "code": "MODEL_STOPPED",
-              "message": "脚本 S1 已成功生成（基于 M01–M04，覆盖添加/编辑字幕、字体与颜色适配、字幕位置避让、时间轴对齐四项能力），但保存方案时返回不可恢复错误（INJECTED_TOOL_FAILURE：方案存储暂不可写，retryable=false），且该错误无法通过重试或重新生成解决。因此本次内容活动方案未能保存，任务无法标记为完成。已生成的脚本内容保留在会话状态中；请在存储恢复后发起显式恢复请求，我将仅重新执行保存步骤（无需重新生成脚本）。"
+              "message": "脚本 S1 已生成成功（基于 M01–M04，覆盖添加/编辑字幕、字体颜色适配、位置避让、起止时间同步），但方案保存接口连续两次返回不可恢复错误（INJECTED_TOOL_FAILURE，retryable=false，方案存储暂不可写），且该故障无法通过重试或调整素材解决。因此本次任务无法完成保存，脚本成果已保留在会话中。请在存储恢复后发起恢复请求，我将仅重新执行保存步骤，不重新生成脚本。"
             },
             "charged": {
               "cost": 0,
               "duration": 0
             }
           },
-          "observation_summary": "{'code': 'MODEL_STOPPED', 'message': '脚本 S1 已成功生成（基于 M01–M04，覆盖添加/编辑字幕、字体与颜色适配、字幕位置避让、时间轴对齐四项能力），但保存方案时返回不可恢复错误（INJECTED_TOOL_FAILURE：方案存储暂不可写，retryable=false），且该错误无法通过重试或重新生成解决。因此本次内容活动方案未能保存，任务无法标记为完成。已生成的脚本内容保留在会话状态中；请在存储恢复后发起显式恢复请求，我将仅重新执行保存步骤（无需重新生成脚本）。'}",
+          "observation_summary": "{'code': 'MODEL_STOPPED', 'message': '脚本 S1 已生成成功（基于 M01–M04，覆盖添加/编辑字幕、字体颜色适配、位置避让、起止时间同步），但方案保存接口连续两次返回不可恢复错误（INJECTED_TOOL_FAILURE，retryable=false，方案存储暂不可写），且该故障无法通过重试或调整素材解决。因此本次任务无法完成保存，脚本成果已保留在会话中。请在存储恢复后发起恢复请求，我将仅重新执行保存步骤，不重新生成脚本。'}",
           "spent_after": {
             "cost": 12,
-            "duration": 38
+            "duration": 40
           },
           "remaining_after": {
             "budget": 8,
-            "time_budget": 62
+            "time_budget": 60
           },
           "next_action": "end"
         }

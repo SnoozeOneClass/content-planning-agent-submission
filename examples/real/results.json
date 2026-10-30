@@ -1,6 +1,7 @@
 {
   "mode": "real",
-  "generated_at": "2026-10-30T09:41:39.969502+00:00",
+  "run_scope": "full",
+  "generated_at": "2026-10-30T11:13:18.423987+00:00",
   "python": "3.11.15",
   "materials_sha256": "a31d91998ae3f7d69e4f1a3347899ea0e929b62a69083bb2d173a385306047b8",
   "rates_sha256": "2600a4e10057d0376e6adbcbbf615eb9417b4184ebf75a0870d257fc44b60b81",
@@ -56,10 +57,11 @@
       "status": "completed",
       "spent": {
         "cost": 8,
-        "duration": 29
+        "duration": 30
       },
       "actions": [
         "search_materials",
+        "estimate_plan",
         "estimate_plan",
         "estimate_plan",
         "generate_script",
@@ -67,7 +69,7 @@
       ],
       "replanning_observed": true,
       "failure_handling_observed": false,
-      "real_model_responses": 5,
+      "real_model_responses": 6,
       "input": "examples/inputs/replan.json",
       "output": "replan.output.json",
       "trace": "replan.trace.md"
@@ -175,18 +177,19 @@
       "status": "incomplete",
       "spent": {
         "cost": 12,
-        "duration": 38
+        "duration": 40
       },
       "actions": [
         "search_materials",
         "estimate_plan",
         "generate_script",
         "save_plan",
+        "save_plan",
         "finish"
       ],
       "replanning_observed": false,
       "failure_handling_observed": true,
-      "real_model_responses": 5,
+      "real_model_responses": 6,
       "input": "examples/inputs/save-failure.json",
       "output": "save-failure.output.json",
       "trace": "save-failure.trace.md"
@@ -267,7 +270,11 @@
         "within_time": true,
         "database_matches_saved_result": true,
         "completion_requires_saved_plan": true,
-        "unfinished_reason_present": true
+        "unfinished_reason_present": true,
+        "empty_search_observed": true,
+        "no_materials_no_scripts": true,
+        "no_materials_not_saved": true,
+        "no_materials_stopped_by_model": true
       },
       "status": "incomplete",
       "spent": {
@@ -345,7 +352,7 @@
       "status": "completed",
       "spent": {
         "cost": 20,
-        "duration": 68
+        "duration": 69
       },
       "actions": [
         "search_materials",
@@ -353,12 +360,13 @@
         "generate_script",
         "generate_script",
         "finish",
+        "estimate_plan",
         "generate_script",
         "save_plan"
       ],
       "replanning_observed": false,
       "failure_handling_observed": true,
-      "real_model_responses": 7,
+      "real_model_responses": 8,
       "input": "examples/inputs/partial-resume.json",
       "output": "partial-resume.output.json",
       "trace": "partial-resume.trace.md"

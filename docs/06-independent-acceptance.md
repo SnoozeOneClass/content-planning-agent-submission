@@ -4,6 +4,8 @@
 
 技术验收基线：`0aa2ca62bf5d277c2e2e54d986a1ab955ae5ef23`。独立子 Agent 依据题目要求、已确认费率和数据范围完成实跑与证据复核；发布状态根据后续仓库检查同步更新。
 
+本报告保留基线版本的独立验收记录。后续四项 P2 修复及最新回归结果见[测试与评估](03-evaluation.md)。
+
 ## 整体结论
 
 **技术验收通过，核心功能与验证材料符合本题要求。公开仓库已发布并确认可访问。**
@@ -80,11 +82,11 @@ CLI 对合法业务请求返回 JSON 和退出码 `0`，任务结果由 `status`
 
 ### 路径一 正常估算后完成
 
-[真实 normal Trace](../examples/real/normal.trace.md) 中，步骤 1 检索、步骤 2 估算、步骤 3 生成、步骤 4 保存。四份资料的生成费用为 `2 + 2*4 = 10`，连同检索共 12；耗时为 `5 + 1 + 30 + 2 = 38`。
+[基线 normal Trace](https://github.com/SnoozeOneClass/content-planning-agent-submission/blob/0aa2ca62bf5d277c2e2e54d986a1ab955ae5ef23/examples/real/normal.trace.md) 中，步骤 1 检索、步骤 2 估算、步骤 3 生成、步骤 4 保存。四份资料的生成费用为 `2 + 2*4 = 10`，连同检索共 12；耗时为 `5 + 1 + 30 + 2 = 38`。
 
 ### 路径二 超限后重新选材
 
-[真实 replan Trace](../examples/real/replan.trace.md) 中：
+[基线 replan Trace](https://github.com/SnoozeOneClass/content-planning-agent-submission/blob/0aa2ca62bf5d277c2e2e54d986a1ab955ae5ef23/examples/real/replan.trace.md) 中：
 
 1. 步骤 2 选择 M01–M04，工具返回预计费用 12、耗时 38，不可行。
 2. 步骤 3 模型根据超限结果改选 M01、M04，公开依据为保留添加编辑与时间同步能力；再次估算为费用 8、耗时 29。
@@ -94,11 +96,11 @@ CLI 对合法业务请求返回 JSON 和退出码 `0`，任务结果由 `status`
 
 ### 路径三 错误结果改变后续动作
 
-[真实生成失败 Trace](../examples/real/tool-failure.trace.md) 中，步骤 3 返回可重试错误后，模型在步骤 4 根据剩余额度选择重试；失败调用费用仍保留，最终费用 22、耗时 68。
+[基线生成失败 Trace](https://github.com/SnoozeOneClass/content-planning-agent-submission/blob/0aa2ca62bf5d277c2e2e54d986a1ab955ae5ef23/examples/real/tool-failure.trace.md) 中，步骤 3 返回可重试错误后，模型在步骤 4 根据剩余额度选择重试；失败调用费用仍保留，最终费用 22、耗时 68。
 
-[真实保存失败 Trace](../examples/real/save-failure.trace.md) 中，步骤 4 返回不可恢复的存储错误，步骤 5 模型选择 `finish`；任务明确未完成，`saved_plan` 为 null，生成脚本保留。
+[基线保存失败 Trace](https://github.com/SnoozeOneClass/content-planning-agent-submission/blob/0aa2ca62bf5d277c2e2e54d986a1ab955ae5ef23/examples/real/save-failure.trace.md) 中，步骤 4 返回不可恢复的存储错误，步骤 5 模型选择 `finish`；任务明确未完成，`saved_plan` 为 null，生成脚本保留。
 
-[真实续跑 Trace](../examples/real/partial-resume.trace.md) 的首次运行保留 S1，S2 失败后停止在费用 14、耗时 46；显式恢复后只重做 S2 并保存，最终费用 20、耗时 68。旧的成功结果及响应 ID 保持不变。
+[基线续跑 Trace](https://github.com/SnoozeOneClass/content-planning-agent-submission/blob/0aa2ca62bf5d277c2e2e54d986a1ab955ae5ef23/examples/real/partial-resume.trace.md) 的首次运行保留 S1，S2 失败后停止在费用 14、耗时 46；显式恢复后只重做 S2 并保存，最终费用 20、耗时 68。旧的成功结果及响应 ID 保持不变。
 
 上述记录展示了模型在可行估算、超限反馈、可恢复错误和不可恢复错误下的不同动作；预算检查、防重和持久化状态由程序约束保障。
 

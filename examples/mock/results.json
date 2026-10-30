@@ -1,6 +1,7 @@
 {
   "mode": "mock",
-  "generated_at": "2026-10-30T09:44:22.876434+00:00",
+  "run_scope": "full",
+  "generated_at": "2026-10-30T11:11:52.825359+00:00",
   "python": "3.11.15",
   "materials_sha256": "a31d91998ae3f7d69e4f1a3347899ea0e929b62a69083bb2d173a385306047b8",
   "rates_sha256": "2600a4e10057d0376e6adbcbbf615eb9417b4184ebf75a0870d257fc44b60b81",
@@ -269,7 +270,11 @@
         "within_time": true,
         "database_matches_saved_result": true,
         "completion_requires_saved_plan": true,
-        "unfinished_reason_present": true
+        "unfinished_reason_present": true,
+        "empty_search_observed": true,
+        "no_materials_no_scripts": true,
+        "no_materials_not_saved": true,
+        "no_materials_stopped_by_model": true
       },
       "status": "incomplete",
       "spent": {

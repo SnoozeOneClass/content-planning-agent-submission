@@ -44,10 +44,10 @@
           },
           "reason": "先检索与字幕功能推广相关的参考资料",
           "model_receipt": {
-            "response_id": "7ef0a433-aeee-42ce-9bc9-a45ab57e47a4",
+            "response_id": "30f06766-3c89-4739-8ce9-8ac902d7cb44",
             "model": "deepseek-flash",
             "source": "real_model",
-            "tool_call_id": "call_00_LEXhL1vxPkXwVLkfNnK34061"
+            "tool_call_id": "call_00_LBU1ByW0GtocVPX6DYHa9618"
           },
           "result": {
             "tool": "search_materials",

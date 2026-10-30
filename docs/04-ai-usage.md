@@ -36,7 +36,7 @@ AI 助手根据上述约束实现了 Python CLI、四个业务工具、DeepSeek 
 
 实际验证由 AI 助手执行并保存原始材料：
 
-- [34 项自动化测试](../examples/test-results.txt)：检查费用、时间、依赖、失败记账、保存、防重复和恢复等行为。
+- [56 项自动化测试](../examples/test-results.txt)：检查费用、时间、依赖、失败记账、保存、防重复、恢复及评估材料完整性。
 - [12 组离线验收](../examples/mock/results.json)：验证工具流程、记账和状态。
 - [12 组真实模型验收](../examples/real/results.json)：记录模型根据工具反馈继续、调整或停止的实际路径。
 
