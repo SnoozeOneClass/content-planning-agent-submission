@@ -2,7 +2,7 @@
 
 根据主题、预算和剩余时间检索合成参考资料，由模型选择工具、估算候选计划、调整选材、生成脚本并保存内容活动方案。工具结果决定后续动作；费用、耗时和保存状态由程序核验。
 
-GitHub 仓库：[SnoozeOneClass/content-planning-agent-submission](https://github.com/SnoozeOneClass/content-planning-agent-submission)。仓库为私有，评审前需为指定评审账号开通读取权限。
+GitHub 仓库：[SnoozeOneClass/content-planning-agent-submission](https://github.com/SnoozeOneClass/content-planning-agent-submission)。仓库已公开，评审无需额外授权即可读取。
 
 ## 评审入口
 

@@ -142,4 +142,4 @@ CLI 的业务未完成状态按 README 约定返回退出码 `0`，判断是否�
 
 ## 发布准备补记
 
-独立验收结束后，主 Agent 根据用户指令创建了私有仓库 [SnoozeOneClass/content-planning-agent-submission](https://github.com/SnoozeOneClass/content-planning-agent-submission)，并将本报告及本次验收证据纳入发布版本的提交材料。前述工作区状态和 GitHub 缺项描述是验收基线时的记录，独立验收结论未作修改。正式评审仍需确认指定评审账号的读取权限。
+独立验收结束后，主 Agent 根据用户指令创建了仓库 [SnoozeOneClass/content-planning-agent-submission](https://github.com/SnoozeOneClass/content-planning-agent-submission)，并将本报告及本次验收证据纳入发布版本的提交材料。仓库随后按用户要求改为公开，已通过不携带凭据的请求确认可匿名读取。前述工作区状态和 GitHub 缺项描述是验收基线时的记录，独立验收结论未作修改；GitHub URL 和公开读取条件现已补齐。
